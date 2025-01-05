@@ -5,7 +5,7 @@ title: Executing a Trade
 
 ## Introduction
 
-This guide will build off our [quoting guide](./01-quoting.md) and show how to use a quote to construct and execute a trade on the Uniswap V3 protocol. It is based on the [Trading code example](https://github.com/Uniswap/examples/tree/main/v3-sdk/trading), found in the Uniswap code examples [repository](https://github.com/Uniswap/examples). To run this example, check out the guide's [README](https://github.com/Uniswap/examples/blob/main/v3-sdk/trading/README.md) and follow the setup instructions.
+This guide will build off our [quoting guide](./01-quoting.md) and show how to use a quote to construct and execute a trade on the t1 V3 protocol. It is based on the [Trading code example](https://github.com/Uniswap/examples/tree/main/v3-sdk/trading), found in the t1 code examples [repository](https://github.com/Uniswap/examples). To run this example, check out the guide's [README](https://github.com/Uniswap/examples/blob/main/v3-sdk/trading/README.md) and follow the setup instructions.
 
 :::info
 If you need a briefer on the SDK and to learn more about how these guides connect to the examples repository, please visit our [background](../01-background.md) page!
@@ -27,7 +27,7 @@ At the end of the guide, we should be able to create and execute a trade between
 Included in the example application is functionality to wrap/unwrap ETH as needed to fund the example `WETH` to `USDC` swap directly from an `ETH` balance.
 :::
 
-For this guide, the following Uniswap packages are used:
+For this guide, the following t1 packages are used:
 
 - [`@uniswap/v3-sdk`](https://www.npmjs.com/package/@uniswap/v3-sdk)
 - [`@uniswap/sdk-core`](https://www.npmjs.com/package/@uniswap/sdk-core)
@@ -136,7 +136,7 @@ Before continuing, let's talk about the values we fetched here and what they rep
 - `sqrtPriceX96` is the current Price of the pool, encoded as a ratio between `token0` and `token1`.
 - `tick` is the tick at the current price of the pool.
 
-Check out the [whitepaper](https://uniswap.org/whitepaper-v3.pdf) to learn more on how liquidity and ticks work in Uniswap V3.
+Check out the [whitepaper](https://uniswap.org/whitepaper-v3.pdf) to learn more on how liquidity and ticks work in t1 V3.
   
 You can find the full code in [`pool.ts`](https://github.com/Uniswap/examples/blob/main/v3-sdk/trading/src/libs/pool.ts).
 
@@ -284,7 +284,7 @@ The slippage of our trade is the maximum decrease from our calculated output amo
 The deadline is the latest point in time when we want the transaction to go through. 
 If we set this value too high, the transaction could be left waiting for days and we would need to pay gas fees to cancel it.
 
-Next, we use the `SwapRouter` class, a representation of the Uniswap [SwapRouter Contract](https://github.com/Uniswap/v3-periphery/blob/v1.0.0/contracts/SwapRouter.sol), to get the associated call parameters for our trade and options:
+Next, we use the `SwapRouter` class, a representation of the t1 [SwapRouter Contract](https://github.com/Uniswap/v3-periphery/blob/v1.0.0/contracts/SwapRouter.sol), to get the associated call parameters for our trade and options:
 
 ```typescript
 import { SwapRouter } from '@uniswap/v3-sdk'
@@ -309,4 +309,4 @@ const res = await wallet.sendTransaction(tx)
 
 ## Next Steps
 
-The resulting example allows for trading between any two ERC20 tokens, but this can be suboptimal for the best pricing and fees. To achieve the best possible price, we use the Uniswap auto router to route through pools to get an optimal cost. Our [routing](./03-routing.md) guide will show you how to use this router and execute optimal swaps.
+The resulting example allows for trading between any two ERC20 tokens, but this can be suboptimal for the best pricing and fees. To achieve the best possible price, we use the t1 auto router to route through pools to get an optimal cost. Our [routing](./03-routing.md) guide will show you how to use this router and execute optimal swaps.

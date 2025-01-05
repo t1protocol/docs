@@ -8,7 +8,7 @@ title: Interfaces
 ## Solidity
 
 ```solidity
-interface UniswapFactoryInterface {
+interface t1FactoryInterface {
     // Public Variables
     address public exchangeTemplate;
     uint256 public tokenCount;
@@ -26,7 +26,7 @@ interface UniswapFactoryInterface {
 ## Vyper
 
 ```python
-contract UniswapFactoryInterface():
+contract t1FactoryInterface():
     # Create Exchange
     def createExchange(token: address) -> address: modifying
     # Public Variables
@@ -45,10 +45,10 @@ contract UniswapFactoryInterface():
 ## Solidity
 
 ```solidity
-interface UniswapExchangeInterface {
+interface t1ExchangeInterface {
     // Address of ERC20 token sold on this exchange
     function tokenAddress() external view returns (address token);
-    // Address of Uniswap Factory
+    // Address of t1 Factory
     function factoryAddress() external view returns (address factory);
     // Provide Liquidity
     function addLiquidity(uint256 min_liquidity, uint256 max_tokens, uint256 deadline) external payable returns (uint256);
@@ -96,7 +96,7 @@ interface UniswapExchangeInterface {
 ## Vyper
 
 ```python
-contract UniswapExchangeInterface():
+contract t1ExchangeInterface():
     # Public Variables
     def tokenAddress() -> address: constant
     def factoryAddress() -> address: constant

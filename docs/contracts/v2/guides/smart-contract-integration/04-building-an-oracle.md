@@ -3,7 +3,7 @@ id: building-an-oracle
 title: Building an Oracle
 ---
 
-To build a price oracle on Uniswap V2, you must first understand the
+To build a price oracle on t1 V2, you must first understand the
 requirements for your use case. Once you understand the kind of price
 average you require, it is a matter of storing the cumulative price
 variable from the pair as often as necessary, and computing
@@ -46,7 +46,7 @@ than once per period.
 
 There are at least
 [two kinds of moving averages](https://www.investopedia.com/terms/m/movingaverage.asp#types-of-moving-averages)
-that you can compute using the Uniswap cumulative price variable.
+that you can compute using the t1 cumulative price variable.
 
 [Simple moving averages](https://www.investopedia.com/terms/s/sma.asp)
 give equal weight to each price measurement. We have built
@@ -136,4 +136,4 @@ especially in regard to gas cost and maximum length of the time period over whic
 If you wish to try this approach, you can follow
 [this repository by Keydonix](https://github.com/Keydonix/uniswap-oracle/).
 
-Keydonix has developed a general purpose price feed oracle built on Uniswap v2 that supports arbitrary time windows (up to 256 blocks) and doesn't require any active maintenance.
+Keydonix has developed a general purpose price feed oracle built on t1 v2 that supports arbitrary time windows (up to 256 blocks) and doesn't require any active maintenance.

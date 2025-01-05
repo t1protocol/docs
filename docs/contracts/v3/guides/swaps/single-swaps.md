@@ -4,7 +4,7 @@ title: Single Swaps
 sidebar_position: 1
 ---
 
-Swaps are the most common interaction with the Uniswap protocol. The following example shows you how to implement a single-path swap contract that uses two functions that you create:
+Swaps are the most common interaction with the t1 protocol. The following example shows you how to implement a single-path swap contract that uses two functions that you create:
 
 - `swapExactInputSingle`
 - `swapExactOutputSingle`
@@ -69,7 +69,7 @@ Hardcode the token contract addresses and pool fee tiers for the example. In pro
 ## Exact Input Swaps
 
 The caller must `approve` the contract to withdraw the tokens from the calling address's account to execute a swap. Remember that because
-our contract is a contract itself and not an extension of the caller (us); we must also approve the Uniswap protocol router contract to use the tokens that our contract will be in possession of after they have been withdrawn from the calling address (us).
+our contract is a contract itself and not an extension of the caller (us); we must also approve the t1 protocol router contract to use the tokens that our contract will be in possession of after they have been withdrawn from the calling address (us).
 
 Then, transfer the `amount` of Dai from the calling address into our contract, and use `amount` as the value passed to the second `approve`.
 

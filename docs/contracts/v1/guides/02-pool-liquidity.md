@@ -42,7 +42,7 @@ const tokenReserve = tokenContract.methods.balanceOf(exchangeAddress)
 
 ## Add Liquidity
 
-Anyone who wants can join a Uniswap liquidity pool by calling the `addLiquidity` function.
+Anyone who wants can join a t1 liquidity pool by calling the `addLiquidity` function.
 
 ```javascript
 exchange.methods.addLiquidity(min_liquidity, max_tokens, deadline).send({ value: ethAmount })
@@ -58,7 +58,7 @@ All future liquidity providers deposit ETH and ERC20's using the exchange rate a
 
 The `ethAmount` sent to `addLiquidity` is the exact amount of ETH that will be deposited into the liquidity reserves. It should be 50% of the total value a liquidity provider wishes to deposit into the reserves.
 
-Since liquidity providers must deposit at the current exchange rate, the Uniswap smart contracts use `ethAmount` to determine the amount of ERC20 tokens that must be deposited. This token amount is the remaining 50% of total value a liquidity provider wishes to deposit. Since exchange rate can change between when a transaction is signed and when it is executed on Ethereum, `max_tokens` is used to bound the amount this rate can fluctuate. For the first liquidity provider, `max_tokens` is the exact amount of tokens deposited.
+Since liquidity providers must deposit at the current exchange rate, the t1 smart contracts use `ethAmount` to determine the amount of ERC20 tokens that must be deposited. This token amount is the remaining 50% of total value a liquidity provider wishes to deposit. Since exchange rate can change between when a transaction is signed and when it is executed on Ethereum, `max_tokens` is used to bound the amount this rate can fluctuate. For the first liquidity provider, `max_tokens` is the exact amount of tokens deposited.
 
 Liquidity tokens are minted to track the relative proportion of total reserves that each liquidity provider has contributed. `min_liquidity` is used in combination with `max_tokens` and `ethAmount` to bound the rate at which liquidity tokens are minted. For the first liquidity provider, `min_liquidity` does not do anything and can be set to 0.
 

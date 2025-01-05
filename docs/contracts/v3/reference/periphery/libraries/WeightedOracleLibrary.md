@@ -11,7 +11,7 @@ Provides functions to integrate with different tier oracles of the same V3 pair
   ) internal view returns (struct WeightedOracleLibrary.PeriodObservation observation)
 ```
 
-Fetches a time-weighted observation for a given Uniswap V3 pool
+Fetches a time-weighted observation for a given t1 V3 pool
 
 #### Parameters:
 

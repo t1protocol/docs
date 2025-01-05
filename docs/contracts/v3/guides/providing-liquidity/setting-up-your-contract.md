@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Setting up the Contract
 
-This guide is an example of a custodial contract Uniswap V3 positions, which allows interaction with the Uniswap V3 Periphery by minting a position, adding liquidity to a position, decreasing liquidity, and collecting fees.
+This guide is an example of a custodial contract t1 V3 positions, which allows interaction with the t1 V3 Periphery by minting a position, adding liquidity to a position, decreasing liquidity, and collecting fees.
 
 First, declare the solidity version used to compile the contract and `abicoder v2` to allow arbitrary nested arrays and structs to be encoded and decoded in calldata, a feature we use when transacting with a pool.
 

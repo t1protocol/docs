@@ -3,15 +3,15 @@ id: becomequoter
 title: Become a Quoter
 sidebar_position: 2
 ---
-# Quoting on UniswapX
-This guide provides step-by-step instructions for integrating as a Quoter on UniswapX. It is intended for experienced defi teams that have experience running similar systems on other protocols.
+# Quoting on t1X
+This guide provides step-by-step instructions for integrating as a Quoter on t1X. It is intended for experienced defi teams that have experience running similar systems on other protocols.
 
-To ensure a smooth swapping experience for traders, the set of Quoters will be vetted by Uniswap Labs following UniswapX’s launch. There are plans to make the quoting system fully permissionless in the near future.
+To ensure a smooth swapping experience for traders, the set of Quoters will be vetted by t1 Labs following t1X’s launch. There are plans to make the quoting system fully permissionless in the near future.
 
-Once you've been approved to be a quoter by the Uniswap Labs team, follow the instructions below to complete your integration. If you have not been approved, please join the waitlist by filling out our [intake form](https://uniswap.typeform.com/to/UiPDKgY6).
+Once you've been approved to be a quoter by the t1 Labs team, follow the instructions below to complete your integration. If you have not been approved, please join the waitlist by filling out our [intake form](https://uniswap.typeform.com/to/UiPDKgY6).
 
 # Getting Started as a Quoter
-To participate as a quoter, you must host a service that adheres to the UniswapX RFQ API schema and responds to requests with quotes. The RFQ participant who submits the best quote for a given order will receive exclusive rights to fill it using their Executor during the _Exclusivity Period_ of the auction.
+To participate as a quoter, you must host a service that adheres to the t1X RFQ API schema and responds to requests with quotes. The RFQ participant who submits the best quote for a given order will receive exclusive rights to fill it using their Executor during the _Exclusivity Period_ of the auction.
 
 ## Performance Expectations
 To ensure a smooth experience for swappers and a fair auction process for quoters, we will hold participants to the following performance standards:
@@ -26,7 +26,7 @@ Quoters are expected to honor and execute the quotes they submit. If a quoter su
 - ***Cooldown Time:*** The cooldown period starts at 15 minutes for the first fade and increases exponentially for consecutive fades. More details on the cooldown calculation can be found in the [source code](https://github.com/Uniswap/uniswapx-parameterization-api/blob/bf87dcc0066fa21b72255f7155f5fbd04a518594/lib/cron/fade-rate-v2.ts#L215). 
 
 # RFQ API Integration Details
-To successfully receive and respond to UniswapX RFQ Quotes, you must have a publicly accessible endpoint that handles incoming quote requests according to the following schema:
+To successfully receive and respond to t1X RFQ Quotes, you must have a publicly accessible endpoint that handles incoming quote requests according to the following schema:
 
 ## Request Schema:
 ```jsx
@@ -81,10 +81,10 @@ All new quoter instances will start by being onboarded to our [Beta environment]
 
 ## Steps to Move to Production
 
-1. **Provide their quote server URL** to your Uniswap Labs contact along with the contract address you’re using to fill. We recommend that this be the same quoting infrastructure that you plan to run in production. 
-2. **(Optional) Provide notification webhook URL** to you Uniswap Labs contact. We’ll set up notifications of won orders to be served there. Alternatively, you can poll the [Beta /orders Endpoint](https://beta.api.uniswap.org/v2/uniswapx/docs) for won orders. 
-3. **Begin sending quotes and orders to beta** via the [UniswapX CLI](https://github.com/Uniswap/uniswapx-tool?tab=readme-ov-file#simple-order-creation). Reach out to the Uniswap team to be added to the private github.
+1. **Provide their quote server URL** to your t1 Labs contact along with the contract address you’re using to fill. We recommend that this be the same quoting infrastructure that you plan to run in production. 
+2. **(Optional) Provide notification webhook URL** to you t1 Labs contact. We’ll set up notifications of won orders to be served there. Alternatively, you can poll the [Beta /orders Endpoint](https://beta.api.uniswap.org/v2/uniswapx/docs) for won orders. 
+3. **Begin sending quotes and orders to beta** via the [UniswapX CLI](https://github.com/Uniswap/uniswapx-tool?tab=readme-ov-file#simple-order-creation). Reach out to the t1 team to be added to the private github.
 4. **Send hashes of 5 filled transactions** that demonstrate that the integration was able to fill during the exclusive period; specifically before [decayStartTime](https://github.com/Uniswap/UniswapX/blob/abd7a0b080148fc42ef7c86536d14de714eec4c7/src/lib/ExclusiveDutchOrderLib.sol#L12)
 
-The Uniswap Labs team will review the 5 transactions to confirm they were successful exclusive fills. Once they are confirmed, the quoters setup will be promoted to production and will start receiving traffic.
+The t1 Labs team will review the 5 transactions to confirm they were successful exclusive fills. Once they are confirmed, the quoters setup will be promoted to production and will start receiving traffic.
 

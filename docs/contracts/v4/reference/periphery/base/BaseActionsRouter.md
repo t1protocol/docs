@@ -4,7 +4,7 @@
 **Inherits:**
 [SafeCallback](contracts/v4/reference/periphery/base/SafeCallback.md)
 
-Abstract contract for performing a combination of actions on Uniswap v4.
+Abstract contract for performing a combination of actions on t1 v4.
 
 *Suggested uint256 action values are defined in Actions.sol, however any definition can be used*
 

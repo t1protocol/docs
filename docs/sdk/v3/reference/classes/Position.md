@@ -2,7 +2,7 @@
 
 # Class: Position
 
-Represents a position on a Uniswap V3 Pool
+Represents a position on a t1 V3 Pool
 
 ## Table of contents
 

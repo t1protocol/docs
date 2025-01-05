@@ -6,7 +6,7 @@ sidebar_position: 3
 
 # Signed Order Webhook Notifications
 
-Signed open orders can always be fetched via the UniswapX API, but to provide improved latency there is the option to register for webhook notifications. Fillers can register an endpoint and receive notifications for every newly posted order that matches their desired filter. 
+Signed open orders can always be fetched via the t1X API, but to provide improved latency there is the option to register for webhook notifications. Fillers can register an endpoint and receive notifications for every newly posted order that matches their desired filter. 
 
 ## Notifications
 
@@ -20,7 +20,7 @@ data: {
     createdAt: "timestamp at which the order was posted",
     signature: "the swapper signature to include with order execution",
     orderStatus: "current order status (always should be `open` upon receiving notification)",
-    encodedOrder: "The abi-encoded order to include with order execution. This can be decoded using the Uniswapx-SDK (https://github.com/uniswap/uniswapx-sdk) to verify order fields and signature",
+    encodedOrder: "The abi-encoded order to include with order execution. This can be decoded using the t1x-SDK (https://github.com/uniswap/uniswapx-sdk) to verify order fields and signature",
     chainId: "The chain ID that the order originates from and must be settled on",
     filler?: "If this order was quoted by an RFQ participant then this will be their filler address",
     quoteId?: "If this order was quoted by an RFQ participant then this will be the requestId from the quote request",

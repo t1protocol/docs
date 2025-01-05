@@ -22,7 +22,7 @@ import '@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol';
 import '@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol';
 
 /// @title Flash contract implementation
-/// @notice An example contract using the Uniswap V3 flash function
+/// @notice An example contract using the t1 V3 flash function
 contract PairFlash is IUniswapV3FlashCallback, PeripheryImmutableState, PeripheryPayments {
     using LowGasSafeMath for uint256;
     using LowGasSafeMath for int256;

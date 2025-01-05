@@ -46,14 +46,14 @@ Now we're ready to swap:
 // amountOutMin must be retrieved from an oracle of some kind
 address[] memory path = new address[](2);
 path[0] = address(DAI);
-path[1] = UniswapV2Router02.WETH();
+path[1] = t1V2Router02.WETH();
 UniswapV2Router02.swapExactTokensForETH(amountIn, amountOutMin, path, msg.sender, block.timestamp);
 ```
 
 # Safety Considerations
 
-Because Ethereum transactions occur in an adversarial environment, smart contracts that do not perform safety checks _can be exploited for profit_. If a smart contract assumes that the current price on Uniswap is a "fair" price without performing safety checks, _it is vulnerable to manipulation_. A bad actor could e.g. easily insert transactions before and after the swap (a "sandwich" attack) causing the smart contract to trade at a much worse price, profit from this at the trader's expense, and then return the contracts to their original state. (One important caveat is that these types of attacks are mitigated by trading in extremely liquid pools, and/or at low values.)
+Because Ethereum transactions occur in an adversarial environment, smart contracts that do not perform safety checks _can be exploited for profit_. If a smart contract assumes that the current price on t1 is a "fair" price without performing safety checks, _it is vulnerable to manipulation_. A bad actor could e.g. easily insert transactions before and after the swap (a "sandwich" attack) causing the smart contract to trade at a much worse price, profit from this at the trader's expense, and then return the contracts to their original state. (One important caveat is that these types of attacks are mitigated by trading in extremely liquid pools, and/or at low values.)
 
 The best way to protect against these attacks is to use an external price feed or "price oracle". The best "oracle" is simply _traders' off-chain observation of the current price_, which can be passed into the trade as a safety check. This strategy is best for situations _where users initiate trades on their own behalf_.
 
-However, when an off-chain price can't be used, an on-chain oracle should be used instead. Determining the best oracle for a given situation is not a part of this guide, but for more details on the Uniswap V2 approach to oracles, see [Oracles](../../concepts/core-concepts/oracles).
+However, when an off-chain price can't be used, an on-chain oracle should be used instead. Determining the best oracle for a given situation is not a part of this guide, but for more details on the t1 V2 approach to oracles, see [Oracles](../../concepts/core-concepts/oracles).

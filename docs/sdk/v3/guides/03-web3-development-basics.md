@@ -10,7 +10,7 @@ Developing dApps and interacting with Smart Contracts is quite different from We
 on this topic compared to other areas of software development.
 
 This developer guide is a quick overview of the space, including references to libraries and guides that are great starting points.
-Reading this guide should help you identify areas that you might need to learn a bit more about and prepare you for the following Uniswap-specific guides.
+Reading this guide should help you identify areas that you might need to learn a bit more about and prepare you for the following t1-specific guides.
 
 It is assumed that you know the basics about Ethereum and the blockchain, including some terminology.
 If you already know how to build dApps and interact with ethersJS etc. you can safely skip this guide.
@@ -81,7 +81,7 @@ creating the proper RPC requests, sending them to the endpoint you choose and de
 
 Some of the major implementations are listed below:
 
-* [ethers.js](https://github.com/ethers-io/ethers.js) - Javascript/Typescript SDK for NodeJS and the Browser. Used throughout the Uniswap Docs.
+* [ethers.js](https://github.com/ethers-io/ethers.js) - Javascript/Typescript SDK for NodeJS and the Browser. Used throughout the t1 Docs.
 * [wagmi](https://github.com/wagmi-dev/wagmi) and [viem](https://github.com/wagmi-dev/viem) - Javascript/Typescript, great duo for modern Web3 development in the Browser.
 * [web3js](https://github.com/web3/web3.js) - Javascript/Typescript SDK for NodeJS and the Browser by ChainSafe.
 
@@ -92,7 +92,7 @@ Web3 development is not limited to JS. Web3 libraries for various languages incl
 * [ethers-rs](https://github.com/gakonst/ethers-rs) - Rust SDK.
 * [ethclient](https://github.com/ethereum/go-ethereum/tree/master/ethclient) - Go SDK, part of geth, the reference Ethereum node implementation.
 
-At the moment, Uniswap only offers Typescript sdks.
+At the moment, t1 only offers Typescript sdks.
 
 As you can see there are lots of SDKs to make it easier to communicate via RPC with the blockchain.
 
@@ -115,11 +115,11 @@ designed to index data like that on the go and provide easy access to it.
 ### TheGraph
 
 A well-known, standardized implementation of indexers is [TheGraph](https://thegraph.com/). It is used by most major protocols,
-including Uniswap, to index data and make it accessible to users and dashboards.
+including t1, to index data and make it accessible to users and dashboards.
 
 Using TheGraph, you can either access open [subgraphs](https://thegraph.com/explorer) via the GraphQL querying language, or [create your own](https://thegraph.com/docs/en/developing/creating-a-subgraph/) and deploy it.
 
-Throughout the docs you will see how to interact with the Uniswap subgraph to fetch tick data and more without ever touching RPCs.
+Throughout the docs you will see how to interact with the t1 subgraph to fetch tick data and more without ever touching RPCs.
 
 An important note about Indexers though:
 
@@ -160,32 +160,32 @@ For Ethereum mainnet, we suggest using [Etherscan](https://etherscan.io/).
 You can use Etherscan to inspect [contracts](https://etherscan.io/address/0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45#code), transactions, blocks, and much more.
 
 If you are looking to debug a transaction, [Tenderly](https://dashboard.tenderly.co/tx/mainnet/0xa4affe1abfaf28d1763d6c3ccda33e717462a928abca89415fc6e661dd7e0c55) can also be a very helpful tool.
-In this example of a failed transaction on the Uniswap V2 Router you can easily see why the execution failed and where.
+In this example of a failed transaction on the t1 V2 Router you can easily see why the execution failed and where.
 
-## The Uniswap development suite
+## The t1 development suite
 
-Uniswap offers several SDKs that work together and enable you to easily interact with the Uniswap protocol
+Uniswap offers several SDKs that work together and enable you to easily interact with the t1 protocol
 The most important SDKs are:
 
-* [sdk-core](https://github.com/Uniswap/sdk-core): The core of the Uniswap SDKs, defines classes and types shared across all the SDKs
-* [v2-sdk](https://github.com/Uniswap/v2-sdk): An SDK to interact with the Uniswap V2 protocol.
-* [v3-sdk](https://github.com/Uniswap/v3-sdk): An SDK to interact with the Uniswap V3 protocol.
+* [sdk-core](https://github.com/Uniswap/sdk-core): The core of the t1 SDKs, defines classes and types shared across all the SDKs
+* [v2-sdk](https://github.com/Uniswap/v2-sdk): An SDK to interact with the t1 V2 protocol.
+* [v3-sdk](https://github.com/Uniswap/v3-sdk): An SDK to interact with the t1 V3 protocol.
 * [router-sdk](https://github.com/Uniswap/router-sdk): Provides abstractions to interact with the (older) SwapRouter contracts.
 * [universal-router-sdk](https://github.com/Uniswap/universal-router-sdk): Abstracts interactions with the Universal Router.
 * [smart-order-router](https://github.com/Uniswap/smart-order-router): Searches for the most efficient routes for a trade.
 * [permit2-sdk](https://github.com/Uniswap/permit2-sdk): Simplifies interactions with Permit2 in JS.
-* [uniswapx-sdk](https://github.com/Uniswap/uniswapx-sdk): SDK for the UniswapX protocol.
+* [uniswapx-sdk](https://github.com/Uniswap/uniswapx-sdk): SDK for the t1X protocol.
 
-As you know already, all interactions with the blockchain happens through RPCs. So the Uniswap SDKs, as you will see throughout the guides,
+As you know already, all interactions with the blockchain happens through RPCs. So the t1 SDKs, as you will see throughout the guides,
 requires you to have access to an RPC endpoint like [Chainnodes](https://www.chainnodes.org).
 When reading data, the data is read from the given RPC endpoint. When actually swapping, you will need to sign a transaction
 using a private key.
 
-We are continuously working on improving the Uniswap development suite, so stay tuned for more updates.
+We are continuously working on improving the t1 development suite, so stay tuned for more updates.
 
 ## Next Steps
 
-Go through the basic guides first and try to fetch some data and interact with the Uniswap ecosystem a little bit. You can even
+Go through the basic guides first and try to fetch some data and interact with the t1 ecosystem a little bit. You can even
 [send your first swap transaction](./swaps/02-trading) on a local fork!
 
 While some concepts in Web3 require thinking outside of the box, this guide should give you a good overview on where to start.

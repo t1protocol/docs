@@ -10,7 +10,7 @@ Interface for the PositionManager contract
 ## Functions
 ### modifyLiquidities
 
-Unlocks Uniswap v4 PoolManager and batches actions for modifying liquidity
+Unlocks t1 v4 PoolManager and batches actions for modifying liquidity
 
 *This is the standard entrypoint for the PositionManager*
 

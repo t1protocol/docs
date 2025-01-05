@@ -3,7 +3,7 @@ id: getting-started
 title: Getting Started
 ---
 
-The pages that follow contain technical reference information on the Uniswap SDK.
+The pages that follow contain technical reference information on the t1 SDK.
 Looking for a [quick start](../guides/quick-start) instead?
 You may also want to jump into a [guide](../guides/fetching-data),
 which offers a friendlier introduction to the SDK!

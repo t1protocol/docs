@@ -1,4 +1,4 @@
-Wraps Uniswap V3 positions in the ERC721 non-fungible token interface
+Wraps t1 V3 positions in the ERC721 non-fungible token interface
 
 ## Functions
 

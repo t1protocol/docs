@@ -7,7 +7,7 @@ title: Pair
 constructor(tokenAmountA: CurrencyAmount, tokenAmountB: CurrencyAmount)
 ```
 
-The Pair entity represents a Uniswap pair with a balance of each of its pair tokens.
+The Pair entity represents a t1 pair with a balance of each of its pair tokens.
 
 # Example
 

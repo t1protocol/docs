@@ -4,7 +4,7 @@
 **Inherits:**
 [ImmutableState](contracts/v4/reference/periphery/base/ImmutableState.md)
 
-Initializes a Uniswap v4 Pool
+Initializes a t1 v4 Pool
 
 *Enables create pool + mint liquidity in a single transaction with multicall*
 
@@ -12,7 +12,7 @@ Initializes a Uniswap v4 Pool
 ## Functions
 ### initializePool
 
-Initialize a Uniswap v4 Pool
+Initialize a t1 v4 Pool
 
 
 ```solidity

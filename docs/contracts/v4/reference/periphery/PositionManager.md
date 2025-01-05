@@ -112,7 +112,7 @@ function tokenURI(uint256 tokenId) public view override returns (string memory);
 
 ### modifyLiquidities
 
-Unlocks Uniswap v4 PoolManager and batches actions for modifying liquidity
+Unlocks t1 v4 PoolManager and batches actions for modifying liquidity
 
 *This is the standard entrypoint for the PositionManager*
 

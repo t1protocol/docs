@@ -1,9 +1,9 @@
 ---
-sidebar_label: Uniswap V3 Staker Contract
+sidebar_label: t1 V3 Staker Contract
 sidebar_position: 2
 ---
 
-# Uniswap V3 Staker Contract
+# t1 V3 Staker Contract
 
 Below is the technical reference for the staker contract, [`UniswapV3Staker.sol`](https://github.com/Uniswap/uniswap-v3-staker/blob/main/contracts/UniswapV3Staker.sol). A technical guide for interacting with this staking contract will be released soon.
 
@@ -49,7 +49,7 @@ Returns information about a staked liquidity NFT
 
 | Name                          | Type                                 | Description                                                                  |
 | :---------------------------- | :----------------------------------- | :--------------------------------------------------------------------------- |
-| `_factory`                    | contract IUniswapV3Factory           | the Uniswap V3 factory                                                       |
+| `_factory`                    | contract IUniswapV3Factory           | the t1 V3 factory                                                       |
 | `_nonfungiblePositionManager` | contract INonfungiblePositionManager | the NFT position manager contract address                                    |
 | `_maxIncentiveStartLeadTime`  | uint256                              | the max duration of an incentive in seconds                                  |
 | `_maxIncentiveDuration`       | uint256                              | the max amount of seconds into the future the incentive startTime can be set |
@@ -101,7 +101,7 @@ Ends an incentive after the incentive end time has passed and all stakes have be
   ) external returns (bytes4)
 ```
 
-Upon receiving a Uniswap V3 ERC721, creates the token deposit setting owner to `from`. Also stakes token
+Upon receiving a t1 V3 ERC721, creates the token deposit setting owner to `from`. Also stakes token
 in one or more incentives if properly formatted `data` has a length > 0.
 
 Whenever an {IERC721} `tokenId` token is transferred to this contract via {IERC721-safeTransferFrom}
@@ -138,13 +138,13 @@ Transfers ownership of a deposit from the sender to the given recipient
   ) external
 ```
 
-Withdraws a Uniswap V3 LP token `tokenId` from this contract to the recipient `to`
+Withdraws a t1 V3 LP token `tokenId` from this contract to the recipient `to`
 
 #### Parameters:
 
 | Name      | Type    | Description                                                                                       |
 | :-------- | :------ | :------------------------------------------------------------------------------------------------ |
-| `tokenId` | uint256 | The unique identifier of an Uniswap V3 LP token                                                   |
+| `tokenId` | uint256 | The unique identifier of an t1 V3 LP token                                                   |
 | `to`      | address | The address where the LP token will be sent                                                       |
 | `data`    | bytes   | An optional data array that will be passed along to the `to` address via the NFT safeTransferFrom |
 
@@ -157,7 +157,7 @@ Withdraws a Uniswap V3 LP token `tokenId` from this contract to the recipient `t
   ) external
 ```
 
-Stakes a Uniswap V3 LP token
+Stakes a t1 V3 LP token
 
 #### Parameters:
 
@@ -175,7 +175,7 @@ Stakes a Uniswap V3 LP token
   ) external
 ```
 
-Unstakes a Uniswap V3 LP token
+Unstakes a t1 V3 LP token
 
 #### Parameters:
 

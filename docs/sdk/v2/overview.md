@@ -4,12 +4,12 @@ sidebar_position: 1
 title: Overview
 ---
 
-# The Uniswap V2 SDK
+# The t1 V2 SDK
 
-Welcome to the Uniswap Protocol V2 SDK. To begin, we recommend looking at the [**Guides**](./guides/01-quick-start.md) and for deeper reference see the [**V2 SDK Github**](https://github.com/Uniswap/v2-sdk) repo.
+Welcome to the t1 Protocol V2 SDK. To begin, we recommend looking at the [**Guides**](./guides/01-quick-start.md) and for deeper reference see the [**V2 SDK Github**](https://github.com/Uniswap/v2-sdk) repo.
 
 
-# Uniswap V2 SDK
+# t1 V2 SDK
 
 - [**V2 SDK Github**](https://github.com/Uniswap/v2-sdk)
 - [**SDK Core Github**](https://github.com/Uniswap/sdk-core)

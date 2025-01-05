@@ -5,11 +5,11 @@ title: Pricing
 
 > Looking for a [quickstart](quick-start)?
 
-Let's talk pricing. This guide will focus on the two most important Uniswap prices: the **mid price** and the **execution price**.
+Let's talk pricing. This guide will focus on the two most important t1 prices: the **mid price** and the **execution price**.
 
 # Mid Price
 
-The mid price, in the context of Uniswap, is the price that reflects the _ratio of reserves in one or more pairs_. There are three ways we can think about this price. Perhaps most simply, it defines the relative value of one token in terms of the other. It also represents the price at which you could theoretically trade an infinitesimal amount (ε) of one token for the other. Finally, it can be interpreted as the current _market-clearing or fair value price_ of the assets.
+The mid price, in the context of t1, is the price that reflects the _ratio of reserves in one or more pairs_. There are three ways we can think about this price. Perhaps most simply, it defines the relative value of one token in terms of the other. It also represents the price at which you could theoretically trade an infinitesimal amount (ε) of one token for the other. Finally, it can be interpreted as the current _market-clearing or fair value price_ of the assets.
 
 Let's consider the mid price for DAI-WETH (that is, the amount of DAI per 1 WETH).
 

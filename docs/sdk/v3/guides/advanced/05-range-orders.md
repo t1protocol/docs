@@ -5,8 +5,8 @@ title: Range Orders
 
 ## Introduction
 
-This guide will cover how single-side liquidity provisioning can be used to execute **Limit Orders** on Uniswap V3 Pools.
-An example to showcase this concept can be found in the [Range Order example](https://github.com/Uniswap/examples/tree/main/v3-sdk/range-order), in the Uniswap code examples [repository](https://github.com/Uniswap/example).
+This guide will cover how single-side liquidity provisioning can be used to execute **Limit Orders** on t1 V3 Pools.
+An example to showcase this concept can be found in the [Range Order example](https://github.com/Uniswap/examples/tree/main/v3-sdk/range-order), in the t1 code examples [repository](https://github.com/Uniswap/example).
 To run this example, check out the guide's [README](https://github.com/Uniswap/examples/blob/main/v3-sdk/price-oracle/README.md) and follow the setup instructions.
 
 :::info
@@ -25,9 +25,9 @@ This guide will **cover**:
 4. Observing the price of the Pool
 5. Closing the Limit Order
 
-Before working through this guide, consider checking out the Range Orders [concept page](../../../../concepts/protocol/range-orders.md) to understand how Limit orders can be executed with Uniswap V3.
+Before working through this guide, consider checking out the Range Orders [concept page](../../../../concepts/protocol/range-orders.md) to understand how Limit orders can be executed with t1 V3.
 
-For this guide, the following Uniswap packages are used:
+For this guide, the following t1 packages are used:
   
 - [`@uniswap/v3-sdk`](https://www.npmjs.com/package/@uniswap/v3-sdk)
 - [`@uniswap/sdk-core`](https://www.npmjs.com/package/@uniswap/sdk-core)
@@ -427,4 +427,4 @@ Executing a range order has certain limitations that may have become obvious dur
 This guide showcases everything you need to implement Range Orders on your own, but only demonstrates creating a Take Profit order in `token0` to `token1` direction.
 Consider implementing Buy Limit orders as described in the [Range Orders concept page](../../../../concepts/protocol/range-orders.md#buy-limit-orders).
 
-This is currently the last guide in the `v3-sdk` series. Consider joining the [Uniswap Discord](https://discord.com/invite/uniswap) or checkout the official [Github](https://github.com/Uniswap) to learn more about the Uniswap Protocol.
+This is currently the last guide in the `v3-sdk` series. Consider joining the [Uniswap Discord](https://discord.com/invite/uniswap) or checkout the official [Github](https://github.com/Uniswap) to learn more about the t1 Protocol.

@@ -1,15 +1,15 @@
-# Uniswap Documentation
+# t1 Documentation
 
-This web application contains all documentation for Uniswap products. It is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+This web application contains all documentation for t1 products. It is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 
 # Project Layout
 
-### Uniswap documentation is broken down into four sections:
-- Concepts - General Uniswap information or concepts useful for using Uniswap products, such as *Liquidity* and *Fees*
-- Contracts - Uniswap smart contracts such as the V3 Contracts or *Permit2*
-- SDKs - Uniswap integrations such as the *v3-sdk* and the *Swap Widget*
-- APIs - The Uniswap APIs such the *Subgraph API*
+### t1 documentation is broken down into four sections:
+- Concepts - General t1 information or concepts useful for using t1 products, such as *Liquidity* and *Fees*
+- Contracts - t1 smart contracts such as the V3 Contracts or *Permit2*
+- SDKs - t1 integrations such as the *v3-sdk* and the *Swap Widget*
+- APIs - The t1 APIs such the *Subgraph API*
 
 ### Each item in a section should include the following:
 - *Overview*
@@ -31,7 +31,7 @@ A good example is the [V3 Smart Contracts](./docs/contracts/v3/overview.md).
 
 ### Guides
 > Guides should follow the **Principles of a Good Guide**:
-- A guide corresponds to a reusable piece of code that demonstrates a single concept in the Uniswap ecosystem.
+- A guide corresponds to a reusable piece of code that demonstrates a single concept in the t1 ecosystem.
 - Guides have three parts:
     1. An **introduction** that explains the concept that the piece of code implements and a summary of what the guide will cover and result in.
     2. A step-by-step **walkthrough** of each line of the example code 
@@ -45,7 +45,7 @@ A good example is the [V3 Smart Contracts](./docs/contracts/v3/overview.md).
 - Use the least dependencies as possible
 - Input changes (eg address, tokens, amounts) should be in the code
 
-By implementing these consistent principles Uniswap will have docs that are easy to understand and produce reusable code for its community.
+By implementing these consistent principles t1 will have docs that are easy to understand and produce reusable code for its community.
 
 
 A good example is the [V3 SDK Guides](./docs/sdk/v3/guides/01-quick-start.md).
@@ -54,7 +54,7 @@ A good example is the [V3 SDK Guides](./docs/sdk/v3/guides/01-quick-start.md).
 This should contain the technical reference for the exported interfaces. A good example is the [V3 SDK](./docs/sdk/v3/reference/overview).
 These files can be created using the [guides below](#how-to-create-a-technical-reference).
 
-# Contributing to Uniswap Docs
+# Contributing to t1 Docs
 
 ## Guidelines
 Contributing to the docs site is a great way to get involved in the dev community and help other developers along the way! Check out our guidelines [here](./CONTRIBUTING.md).

@@ -4,7 +4,7 @@
 **Inherits:**
 [ImmutableState](contracts/v4/reference/periphery/base/ImmutableState.md), IUnlockCallback
 
-A contract that only allows the Uniswap v4 PoolManager to call the unlockCallback
+A contract that only allows the t1 v4 PoolManager to call the unlockCallback
 
 
 ## Functions

@@ -3,7 +3,7 @@ id: v2-deployments
 title: V2 Deployment Addresses
 ---
 
-# Uniswap v2 Contract Deployments
+# t1 v2 Contract Deployments
 
 Contract addresses for the [`Uniswap V2 Factory`](https://github.com/Uniswap/v2-core/blob/master/contracts/UniswapV2Factory.sol) and the [`Uniswap V2Router02`](https://github.com/Uniswap/v2-periphery/blob/master/contracts/UniswapV2Router02.sol)
 

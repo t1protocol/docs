@@ -1,4 +1,4 @@
-The Uniswap V3 Factory facilitates creation of Uniswap V3 pools and control over the protocol fees
+The t1 V3 Factory facilitates creation of t1 V3 pools and control over the protocol fees
 
 ## Functions
 

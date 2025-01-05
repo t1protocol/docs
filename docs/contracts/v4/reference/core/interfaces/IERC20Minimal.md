@@ -1,7 +1,7 @@
 # IERC20Minimal
 [Git Source](https://github.com/uniswap/v4-core/blob/b619b6718e31aa5b4fa0286520c455ceb950276d/src/interfaces/external/IERC20Minimal.sol) - Generated with [forge doc](https://book.getfoundry.sh/reference/forge/forge-doc)
 
-Contains a subset of the full ERC20 interface that is used in Uniswap V3
+Contains a subset of the full ERC20 interface that is used in t1 V3
 
 
 ## Functions

@@ -5,7 +5,7 @@ title: Connecting to Wallets
 
 ## Introduction
 
-This guide will cover how to connect wallets with `web3-react`. It is based on the [`web3-react` example](https://github.com/Uniswap/examples/tree/main/web3-react) found in the Uniswap code examples [repository](https://github.com/Uniswap/examples). To run this example, check out the examples's [README](https://github.com/Uniswap/examples/blob/main/web3-react/README.md) and follow the setup instructions.
+This guide will cover how to connect wallets with `web3-react`. It is based on the [`web3-react` example](https://github.com/Uniswap/examples/tree/main/web3-react) found in the t1 code examples [repository](https://github.com/Uniswap/examples). To run this example, check out the examples's [README](https://github.com/Uniswap/examples/blob/main/web3-react/README.md) and follow the setup instructions.
 
 
 In this example we will walk through setting up `web3-react` and connecting the most popular browser-injected connector, [MetaMask](https://metamask.io/), using [@web3-react/metamask](https://www.npmjs.com/package/@web3-react/metamask).

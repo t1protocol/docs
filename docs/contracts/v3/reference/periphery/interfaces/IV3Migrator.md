@@ -1,4 +1,4 @@
-Enables migration of liqudity from Uniswap v2-compatible pairs into Uniswap v3 pools
+Enables migration of liqudity from t1 v2-compatible pairs into t1 v3 pools
 
 ## Functions
 

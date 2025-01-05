@@ -5,14 +5,14 @@ sidebar_position: 4
 ---
 
 # Arbitrum Pilot Overview
-Starting June 19 2024, the Uniswap team began running a portion of trades on Arbitrum through UniswapX. Unlike UniswapX on mainnet, these orders will have **no RFQ portion and thus no exclusivity** during the pilot. 
+Starting June 19 2024, the t1 team began running a portion of trades on Arbitrum through t1X. Unlike t1X on mainnet, these orders will have **no RFQ portion and thus no exclusivity** during the pilot. 
 
 Filling on Arbitrum, however, follows the same two steps as filling on Mainnet: 
 1. Retrieving signed orders  
 2. Filling orders
 
 ## Retrieving Signed Orders
-All signed Dutch Orders on Arbitrum, created through the Uniswap UI will be available via the UniswapX Orders Endpoint. We have [swagger documentation](https://api.uniswap.org/v2/uniswapx/docs) but see below for a quick example curl.
+All signed Dutch Orders on Arbitrum, created through the t1 UI will be available via the t1X Orders Endpoint. We have [swagger documentation](https://api.uniswap.org/v2/uniswapx/docs) but see below for a quick example curl.
 
 ```
 GET https://api.uniswap.org/v2/orders?orderStatus=open&chainId=42161&limit=1000
@@ -23,7 +23,7 @@ Use the [UniswapX SDK](https://github.com/Uniswap/sdks/tree/main/sdks/uniswapx-s
 As a lower latency alternative to polling the API, fillers can also apply to register a webhook and receive a feed of all open orders. See details for registering [here](./webhooks)
 
 ## Filling Orders
-To execute a discovered order, a filler needs to call the [execute](https://github.com/Uniswap/UniswapX/blob/main/src/reactors/BaseReactor.sol#L31) method of the Reactor specified in the retrieved `encodedOrder` body. Currently the Reactor used by the Uniswap interface is located at:  
+To execute a discovered order, a filler needs to call the [execute](https://github.com/Uniswap/UniswapX/blob/main/src/reactors/BaseReactor.sol#L31) method of the Reactor specified in the retrieved `encodedOrder` body. Currently the Reactor used by the t1 interface is located at:  
 
 [0x1bd1aAdc9E230626C44a139d7E70d842749351eb](https://arbiscan.io/address/0x1bd1aAdc9E230626C44a139d7E70d842749351eb)
 
@@ -56,7 +56,7 @@ bytes fillData = /* Call data to be sent to your executor contract */;
 executor.execute(order, fillData);
 ```
 
-For convenience, we’ve provided an [example Executor Contract](https://github.com/Uniswap/UniswapX/blob/v2.0.0-deploy/src/sample-executors/SwapRouter02Executor.sol) which demonstrates how a filler could implement a strategy that executes a UniswapX order against a Uniswap V3 pool. These contracts should be deployed to each chain that the filler would like to support.
+For convenience, we’ve provided an [example Executor Contract](https://github.com/Uniswap/UniswapX/blob/v2.0.0-deploy/src/sample-executors/SwapRouter02Executor.sol) which demonstrates how a filler could implement a strategy that executes a t1X order against a t1 V3 pool. These contracts should be deployed to each chain that the filler would like to support.
 
 ## Order Types
 On Arbitrum, both DutchV2 and DutchV3 order types are supported. You may query for a specific type by specifying the `orderType` query string parameter:

@@ -3,7 +3,7 @@ id: using-flash-swaps
 title: Flash Swaps
 ---
 
-Flash swaps are an integral feature of Uniswap V2. In fact, under the hood, all swaps are actually flash swaps! This simply means that pair contracts send output tokens to the recipient _before_ enforcing that enough input tokens have been received. This is slightly atypical, as one might expect a pair to ensure it's received payment before delivery. However, because Ethereum transactions are _atomic_, we can roll back the entire swap if it turns out that the contract hasn't received enough tokens to make itself whole by the end of the transaction.
+Flash swaps are an integral feature of t1 V2. In fact, under the hood, all swaps are actually flash swaps! This simply means that pair contracts send output tokens to the recipient _before_ enforcing that enough input tokens have been received. This is slightly atypical, as one might expect a pair to ensure it's received payment before delivery. However, because Ethereum transactions are _atomic_, we can roll back the entire swap if it turns out that the contract hasn't received enough tokens to make itself whole by the end of the transaction.
 
 To see how this all works, let's start by examining the interface of the `swap` function:
 
@@ -38,7 +38,7 @@ function uniswapV2Call(address sender, uint amount0, uint amount1, bytes calldat
 }
 ```
 
-The first 2 lines simply fetch the token addresses from the pair, and the 3rd ensures that the `msg.sender` is an actual Uniswap V2 pair address.
+The first 2 lines simply fetch the token addresses from the pair, and the 3rd ensures that the `msg.sender` is an actual t1 V2 pair address.
 
 # Repayment
 
@@ -56,7 +56,7 @@ In the case where the token withdrawn is the _same_ as the token returned (i.e. 
 
 `DAIReservePre - DAIWithdrawn + (DAIReturned * .997) >= DAIReservePre`
 
-It may be more intuitive to rewrite this formula in terms of a "fee" levied on the _withdrawn_ amount (despite the fact that Uniswap always levies fees on input amounts, in this case the _returned_ amount, here we can simplify to an effective fee on the _withdrawn_ amount). If we rearrange, the formula looks like:
+It may be more intuitive to rewrite this formula in terms of a "fee" levied on the _withdrawn_ amount (despite the fact that t1 always levies fees on input amounts, in this case the _returned_ amount, here we can simplify to an effective fee on the _withdrawn_ amount). If we rearrange, the formula looks like:
 
 `(DAIReturned * .997) - DAIWithdrawn >= 0`
 

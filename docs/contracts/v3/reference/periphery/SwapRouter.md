@@ -1,4 +1,4 @@
-Router for stateless execution of swaps against Uniswap V3
+Router for stateless execution of swaps against t1 V3
 
 > Input parameters are viewable on the [**Swap Router Interface**](./interfaces/ISwapRouter)
 
@@ -24,7 +24,7 @@ Router for stateless execution of swaps against Uniswap V3
 Called to `msg.sender` after executing a swap via IUniswapV3Pool#swap.
 
 In the implementation you must pay the pool tokens owed for the swap.
-The caller of this method must be checked to be a UniswapV3Pool deployed by the canonical UniswapV3Factory.
+The caller of this method must be checked to be a t1V3Pool deployed by the canonical t1V3Factory.
 amount0Delta and amount1Delta can both be 0 if no tokens were swapped.
 
 #### Parameters:

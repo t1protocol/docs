@@ -1,7 +1,7 @@
 # SVG
 [Git Source](https://github.com/uniswap/v4-periphery/blob/3f295d8435e4f776ea2daeb96ce1bc6d63f33fc7/src/libraries/SVG.sol) - Generated with [forge doc](https://book.getfoundry.sh/reference/forge/forge-doc)
 
-Provides a function for generating an SVG associated with a Uniswap NFT
+Provides a function for generating an SVG associated with a t1 NFT
 
 *Reference: https://github.com/Uniswap/v3-periphery/blob/main/contracts/libraries/NFTSVG.sol*
 
@@ -66,7 +66,7 @@ string constant curve8 = "M1 1C1 97 49 145 145 145";
 ## Functions
 ### generateSVG
 
-Generate the SVG associated with a Uniswap v4 NFT
+Generate the SVG associated with a t1 v4 NFT
 
 
 ```solidity

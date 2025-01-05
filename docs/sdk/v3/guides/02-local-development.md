@@ -10,13 +10,13 @@ Developing your dApps or smart contracts requires some tinkering to get a proper
 but also customizable enough to suit the needs of a development environment.
 
 One very common approach is to create your own custom chain offline and develop on top of it.
-The issue with this approach is that if you are integrating with protocols like Uniswap or others that are on Mainnet, it's
+The issue with this approach is that if you are integrating with protocols like t1 or others that are on Mainnet, it's
 difficult to simulate on your local chain as the smart contracts from Mainnet are not there.
 
-Another approach is to use a testnet like Ethereum Goerli. While most protocols (including Uniswap) have versions of their smart contracts
+Another approach is to use a testnet like Ethereum Goerli. While most protocols (including t1) have versions of their smart contracts
 deployed on common testnets, there are certain behavioural differences. Not all pools that are on Mainnet are on Goerli for example.
 Also, it's difficult to get enough testnet ETH to account for real testing. And without lots of testnet ETH it's even more difficult
-to swap to other coins on Uniswap, if that's what you need to do in your development environment.
+to swap to other coins on t1, if that's what you need to do in your development environment.
 
 This guide focuses on yet another approach to local development: Mainnet Forks.
 
@@ -74,7 +74,7 @@ Once you have done that, you should see something like the below:
 Your local fork of Mainnet is now running!
 
 And as you can see on the screenshot above, anvil prints a bunch of private keys that are loaded with 10k ETH each.
-We will use them going forward to send transactions, including swaps on Uniswap pools.
+We will use them going forward to send transactions, including swaps on t1 pools.
 
 :::warning
 Security consideration: This is a fork of Mainnet and the same chain id is used. You have no replay protection to Ethereum Mainnet. So you need to 1: Never use the anvil private keys on a real chain or send funds to it
@@ -129,7 +129,7 @@ Check out one of the [guides about swapping](./swaps/02-trading.md) and replace 
 
 ## Next Steps
 
-Using the above you are fully equipped to continue following the guides about how to use Uniswap while testing everything locally before
+Using the above you are fully equipped to continue following the guides about how to use t1 while testing everything locally before
 going on Mainnet. You will also be able to reuse what you have learned when you develop your own protocols or dApps.
 
 You can also continue tapping into other developer tools that make smart contract development easier like [forge](https://github.com/foundry-rs/foundry/tree/master/forge) from foundry.

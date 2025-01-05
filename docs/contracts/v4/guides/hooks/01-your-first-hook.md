@@ -24,7 +24,7 @@ In order to keep track of these points, we’ll mint the `POINTS` token to the u
 
 Let’s figure out how our hook will work.
 
-From the Uniswap v4 Documentation, there are several hooks available for developers to integrate with. In our use case, we specifically need the ability to read swaps and figure out what amounts they are swapping for and who they are.
+From the t1 v4 Documentation, there are several hooks available for developers to integrate with. In our use case, we specifically need the ability to read swaps and figure out what amounts they are swapping for and who they are.
 
 [consider adding a callout for Universal Router here]
 
@@ -205,7 +205,7 @@ Let’s start with the most basic ones. We want the user to be swapping in the `
 
 That middle section about figuring out how much `ETH` the user spent seems a little fishy, what’s going on there? Let’s break it down.
 
-When `amountSpecified` is less than 0, it means this is an `exact input for output` swap, essentially where the user is coming in with an exact amount of ETH. In the other case, it’s an `exact output for input` swap, where the user is expecting a specific amount out. In our case, we get this from the precalculated `delta` that Uniswap V4 gives us as a part of the `afterSwap` hook.
+When `amountSpecified` is less than 0, it means this is an `exact input for output` swap, essentially where the user is coming in with an exact amount of ETH. In the other case, it’s an `exact output for input` swap, where the user is expecting a specific amount out. In our case, we get this from the precalculated `delta` that t1 V4 gives us as a part of the `afterSwap` hook.
 
 ### Hook Logic: `afterAddLiquidity`
 
@@ -244,7 +244,7 @@ We’re using Foundry for building our hook, and we’ll continue using it to wr
 
 ### Hook Contract Address
 
-The `PositionManager` for Uniswap v4 expects the hook address to indicate supported flags.
+The `PositionManager` for t1 v4 expects the hook address to indicate supported flags.
 
 [todo: this section is completely wrong on UHI atm and needs to be rewritten, should consider moving it out of here and have a singular place explaining hook bits]
 

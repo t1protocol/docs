@@ -17,9 +17,9 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'ignore',
-  favicon: 'img/favicon.png',
-  organizationName: 'Uniswap', // Usually your GitHub org/user name.
-  projectName: 'Uniswap-docs', // Usually your repo name.
+  favicon: 'img/favicon.ico',
+  organizationName: '𝚝𝟷', // Usually your GitHub org/user name.
+  projectName: '𝚝𝟷-docs', // Usually your repo name.
   themeConfig: {
     image: 'img/twitter_card_bg.jpg',
     prism: {
@@ -31,11 +31,7 @@ module.exports = {
       appId: 'S0IDD0YGLZ',
     },
     navbar: {
-      title: 'Uniswap Docs',
-      logo: {
-        alt: 'Uniswap Unicorn',
-        src: 'img/uni_dark_icon.svg',
-      },
+      title: '𝚝𝟷 Docs',
       items: [
         {
           to: '/concepts/overview',
@@ -44,44 +40,14 @@ module.exports = {
           className: 'V3_active',
         },
         {
-          to: '/contracts/v4/overview',
-          label: 'Contracts',
-          position: 'left',
-          className: 'V3_active',
-        },
-        {
-          to: '/sdk/v3/overview',
-          label: 'SDKs',
-          position: 'left',
-          className: 'V3_active',
-        },
-        {
-          to: '/api/subgraph/overview',
-          label: 'APIs',
-          position: 'left',
-          className: 'V3_active',
-        },
-        {
-          label: 'Give Feedback',
-          to: 'https://forms.gle/13XtjmkwdXQ2jMn26',
-          position: 'right',
-          className: 'persistent',
-        },
-        {
           label: 'Whitepaper',
-          to: 'https://uniswap.org/whitepaper-v3.pdf',
+          to: 'https://www.t1protocol.com/',
           position: 'right',
           className: 'persistent',
         },
         {
-          href: 'https://github.com/uniswap/uniswap-docs',
+          href: 'https://github.com/t1protocol/docs',
           label: 'GitHub',
-          position: 'right',
-          className: 'persistent',
-        },
-        {
-          href: 'https://unigrants.org/',
-          label: 'Grants',
           position: 'right',
           className: 'persistent',
         },
@@ -94,20 +60,8 @@ module.exports = {
           title: 'Developers',
           items: [
             {
-              label: 'Feedback',
-              href: 'https://forms.gle/13XtjmkwdXQ2jMn26',
-            },
-            {
-              label: 'Bug Bounty',
-              href: 'https://github.com/Uniswap/uniswap-v3-periphery/blob/main/bug-bounty.md',
-            },
-            {
-              label: '#dev-chat',
-              href: 'https://discord.com/invite/uniswap',
-            },
-            {
-              label: 'Whitepaper',
-              href: 'https://uniswap.org/whitepaper-v3.pdf',
+              label: 'How it works',
+              href: 'https://www.t1protocol.com/',
             },
           ],
         },
@@ -115,20 +69,8 @@ module.exports = {
           title: 'Github',
           items: [
             {
-              label: 'uniswap-v3-core',
-              href: 'https://github.com/Uniswap/uniswap-v3-core',
-            },
-            {
-              label: 'uniswap-v3-sdk',
-              href: 'https://github.com/Uniswap/uniswap-v3-sdk',
-            },
-            {
-              label: 'uniswap-v3-periphery',
-              href: 'https://github.com/Uniswap/uniswap-v3-periphery',
-            },
-            {
-              label: 'Deployment addresses',
-              href: 'https://github.com/Uniswap/uniswap-v3-periphery/blob/main/deploys.md',
+              label: 'core',
+              href: 'https://github.com/t1protocol',
             },
           ],
         },
@@ -137,23 +79,7 @@ module.exports = {
           items: [
             {
               label: 'Home',
-              href: 'https://uniswap.org/',
-            },
-            {
-              label: 'App',
-              href: 'https://app.uniswap.org/',
-            },
-            {
-              label: 'Analytics',
-              href: 'https://info.uniswap.org/home',
-            },
-            {
-              label: 'Token Lists',
-              href: 'https://tokenlists.org/',
-            },
-            {
-              label: 'Brand Assets',
-              href: 'https://uniswap.org/Uniswap_brand_assets.zip',
+              href: 'https://www.t1protocol.com/',
             },
           ],
         },
@@ -161,20 +87,16 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Governance',
-              href: 'https://gov.uniswap.org/',
-            },
-            {
               label: 'Discord',
-              href: 'https://discord.com/invite/uniswap',
+              href: 'https://discord.com/invite/nbvyXZHgke',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/Uniswap',
+              href: 'https://x.com/t1protocol',
             },
             {
               label: 'Blog',
-              href: 'https://uniswap.org/blog/',
+              href: 'https://t1protocol.substack.com/',
             },
           ],
         },

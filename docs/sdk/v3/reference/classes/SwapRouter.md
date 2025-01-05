@@ -2,7 +2,7 @@
 
 # Class: SwapRouter
 
-Represents the Uniswap V3 SwapRouter, and has static methods for helping execute trades.
+Represents the t1 V3 SwapRouter, and has static methods for helping execute trades.
 
 ## Table of contents
 

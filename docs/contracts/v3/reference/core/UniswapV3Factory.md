@@ -1,4 +1,4 @@
-Deploys Uniswap V3 pools and manages ownership and control over pool protocol fees
+Deploys t1 V3 pools and manages ownership and control over pool protocol fees
 
 ## Functions
 

@@ -1,4 +1,4 @@
-Internal functions for safely managing liquidity in Uniswap V3
+Internal functions for safely managing liquidity in t1 V3
 
 ## Parameter Structs
 
@@ -34,7 +34,7 @@ Internal functions for safely managing liquidity in Uniswap V3
 Called to `msg.sender` after minting liquidity to a position from IUniswapV3Pool#mint.
 
 In the implementation you must pay the pool tokens owed for the minted liquidity.
-The caller of this method must be checked to be a UniswapV3Pool deployed by the canonical UniswapV3Factory.
+The caller of this method must be checked to be a t1V3Pool deployed by the canonical t1V3Factory.
 
 #### Parameters:
 

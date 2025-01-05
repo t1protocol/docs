@@ -3,20 +3,20 @@ id: entities
 title: Entities
 ---
 
-Entities define the schema of the subgraph, and represent the data that can be queried. Within each entity are sets of fields that store useful information related to the entity. Below is a list of the available entities within the Uniswap Subgraph, and descriptions for the available fields.
+Entities define the schema of the subgraph, and represent the data that can be queried. Within each entity are sets of fields that store useful information related to the entity. Below is a list of the available entities within the t1 Subgraph, and descriptions for the available fields.
 
 To see an interactive sandbox of all entities see the [Graph Explorer](https://thegraph.com/explorer/subgraph/uniswap/uniswap-v2).
 
 Each entity is defined with a value type, which will always be a base AssemblyScript type, or a custom type provided by The Graph's custom TypeScript library. For more information on value types see [here](https://thegraph.com/docs/en/developing/assemblyscript-api/#api-reference).
 
-### Uniswap Factory
+### t1 Factory
 
-The Uniswap Factory entity is responsible for storing aggregate information across all Uniswap pairs. It can be used to view stats about total liquidity, volume, amount of pairs and more. There is only one UniswapFactory entity in the subgraph.
+The t1 Factory entity is responsible for storing aggregate information across all t1 pairs. It can be used to view stats about total liquidity, volume, amount of pairs and more. There is only one t1Factory entity in the subgraph.
 
 | Field Name        | Value Type | Description                                                     |
 | ----------------- | ---------- | --------------------------------------------------------------- |
 | id                | ID         | factory address                                                 |
-| pairCount         | Int        | amount of pairs created by the Uniswap factory                  |
+| pairCount         | Int        | amount of pairs created by the t1 factory                  |
 | totalVolumeUSD    | BigDecimal | all time USD volume across all pairs (USD is derived)           |
 | totalVolumeETH    | BigDecimal | all time volume in ETH across all pairs (ETH is derived)        |
 | totalLiquidityUSD | BigDecimal | total liquidity across all pairs stored as a derived USD amount |
@@ -47,7 +47,7 @@ Information about a pair. Includes references to each token within the pair, vol
 | Field Name           | Value Type          | Description                                                                                                         |
 | -------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | id                   | ID                  | pair contract address                                                                                               |
-| factory              | UniswapFactory      | reference to Uniswap factory entity                                                                                 |
+| factory              | t1Factory      | reference to t1 factory entity                                                                                 |
 | token0               | Token               | reference to token0 as stored in pair contract                                                                      |
 | token1               | Token               | reference to token1 as stored in pair contract                                                                      |
 | reserve0             | BigDecimal          | reserve of token0                                                                                                   |
@@ -69,7 +69,7 @@ Information about a pair. Includes references to each token within the pair, vol
 
 ### User
 
-A user entity is created for any address that provides liquidity to a pool on Uniswap. This entity
+A user entity is created for any address that provides liquidity to a pool on t1. This entity
 can be used to track open positions for users. LiquidyPosition entities can be referenced to get
 specific data about each position.
 
@@ -93,7 +93,7 @@ information from the pair itself can be used to provide position sizes, token de
 
 ### Transaction
 
-Transaction entities are created for each Ethereum transaction that contains an interaction within Uniswap contracts. This subgraph tracks Mint, Burn, and Swap events on the Uniswap core contracts. Each transaction contains 3 arrays, and at least one of these arrays has a length of 1.
+Transaction entities are created for each Ethereum transaction that contains an interaction within t1 contracts. This subgraph tracks Mint, Burn, and Swap events on the t1 core contracts. Each transaction contains 3 arrays, and at least one of these arrays has a length of 1.
 
 | Field Name  | Value Type | Description                                               |
 | ----------- | ---------- | --------------------------------------------------------- |
@@ -106,7 +106,7 @@ Transaction entities are created for each Ethereum transaction that contains an 
 
 ### Mint
 
-Mint entities are created for every emitted Mint event on the Uniswap core contracts. The Mint entity stores key data about the event like token amounts, who sent the transaction, who received the liquidity, and more. This entity can be used to track liquidity provisions on pairs.
+Mint entities are created for every emitted Mint event on the t1 core contracts. The Mint entity stores key data about the event like token amounts, who sent the transaction, who received the liquidity, and more. This entity can be used to track liquidity provisions on pairs.
 
 | Field Name   | Value Type  | Description                                                 |
 | ------------ | ----------- | ----------------------------------------------------------- |
@@ -126,7 +126,7 @@ Mint entities are created for every emitted Mint event on the Uniswap core contr
 
 ### Burn
 
-Burn entities are created for every emitted Burn event on the Uniswap core contracts. The Burn entity stores key data about the event like token amounts, who burned LP tokens, who received tokens, and more. This entity can be used to track liquidity removals on pairs.
+Burn entities are created for every emitted Burn event on the t1 core contracts. The Burn entity stores key data about the event like token amounts, who burned LP tokens, who received tokens, and more. This entity can be used to track liquidity removals on pairs.
 
 | Field Name   | Value Type  | Description                                               |
 | ------------ | ----------- | --------------------------------------------------------- |
@@ -178,11 +178,11 @@ be used in other places in the subgraph.
 
 ## Historical Entities
 
-The subgraph tracks aggregated information grouped by days to provide insights to daily activity on Uniswap. While [time travel queries](https://blocklytics.org/blog/ethereum-blocks-subgraph-made-for-time-travel/) can be used for direct comparison against values in the past, it is much more expensive to query grouped data. For this reason the subgraph tracks information grouped in daily buckets, using timestamps provided by contract events. These entities can be used to query things like total volume on a given day, price of a token on a given day, etc.
+The subgraph tracks aggregated information grouped by days to provide insights to daily activity on t1. While [time travel queries](https://blocklytics.org/blog/ethereum-blocks-subgraph-made-for-time-travel/) can be used for direct comparison against values in the past, it is much more expensive to query grouped data. For this reason the subgraph tracks information grouped in daily buckets, using timestamps provided by contract events. These entities can be used to query things like total volume on a given day, price of a token on a given day, etc.
 
 For each DayData type, a new entity is created each day.
 
-### UniswapDayData
+### t1DayData
 
 Tracks data across all pairs aggregated into a daily bucket.
 
@@ -197,7 +197,7 @@ Tracks data across all pairs aggregated into a daily bucket.
 | totalVolumeUSD    | BigDecimal      | all time volume across all pairs in USD up to and including this day             |
 | totalLiquidityUSD | BigDecimal      | total liquidity across all pairs in USD up to and including this day             |
 | maxStored         | Int             | reference used to store most liquid tokens, used for historical liquidity charts |
-| mostLiquidTokens  | [TokenDayData!] | tokens with most liquidity in Uniswap                                            |
+| mostLiquidTokens  | [TokenDayData!] | tokens with most liquidity in t1                                            |
 | txCount           | BigInt          | number of transactions throughout this day                                       |
 
 ### Pair Day Data

@@ -23,105 +23,50 @@ import SearchBarWithAnalytics from '../theme/SearchBar'
 
 export const actions = [
   {
-    title: 'What is Uniswap',
+    title: 'What is 𝚝𝟷',
     icon: Info,
     to: '/concepts/overview',
-    text: `Learn about the core concepts of the Uniswap Protocol, Swaps, Pools, Concentrated Liquidity and more.`,
+    text: `Learn about the core concepts of the 𝚝𝟷 Protocol.`,
   },
   {
-    title: 'Integrate with Uniswap',
+    title: 'Integrate with 𝚝𝟷',
     icon: HelpCircle,
-    to: '/sdk/v3/overview',
-    text: `Learn how to integrate with Uniswap by building a dApp through guided examples.`,
+    to: '',
+    text: `Learn how to integrate with 𝚝𝟷.`,
   },
   {
-    title: 'The Uniswap smart contracts',
+    title: 'The 𝚝𝟷 smart contracts',
     icon: BookOpen,
-    to: '/contracts/v3/overview',
-    text: `Learn about the architecture of the Uniswap Protocol smart contracts through guided examples.`,
+    to: '',
+    text: `Learn about the architecture of 𝚝𝟷 smart contracts.`,
   },
 ]
 
 export const developerLinks = [
   {
-    title: 'uniswap-v3-core',
-    href: 'https://github.com/Uniswap/uniswap-v3-core',
+    title: 't1-reth (placeholder for monorepo)',
+    href: 'https://github.com/t1protocol/reth',
     icon: GitHub,
-  },
-  {
-    title: 'uniswap-v3-sdk',
-    href: 'https://github.com/Uniswap/uniswap-v3-sdk',
-    icon: GitHub,
-  },
-  {
-    title: 'uniswap-v3-periphery',
-    href: 'https://github.com/Uniswap/uniswap-v3-periphery',
-    icon: GitHub,
-  },
-  {
-    title: 'Deployment addresses',
-    href: 'https://github.com/Uniswap/uniswap-v3-periphery/blob/main/deploys.md',
-    icon: GitHub,
-  },
-  {
-    title: 'widgets',
-    href: 'https://www.npmjs.com/package/@uniswap/widgets',
-    icon: Npm,
   },
 ]
 
 export const dAppGuides = [
   {
-    title: 'Fetch token prices',
-    text: 'Fetch the price of tokens in a specific Pool',
-    to: 'sdk/v3/guides/swaps/quoting',
+    title: 'xChain',
+    text: 'Initiate real-time cross-chain transactions',
+    to: '',
   },
   {
-    title: 'Create a Trade',
-    text: 'Fetch a Quote for a Trade and execute the Trade',
-    to: '/sdk/v3/guides/swaps/trading',
-  },
-  {
-    title: 'Route trades',
-    text: 'Use Routing to get optimized prices for your Trades',
-    to: '/sdk/v3/guides/swaps/routing',
-  },
-  {
-    title: 'Provide liquidity',
-    text: "Contribute to a Pool's liquidity by using tokens to earn fees",
-    to: '/sdk/v3/guides/liquidity/minting',
-  },
-  {
-    title: 'UI Component',
-    text: 'Integrate with the Swap Widget, a React component that works out of the box ',
-    to: '/sdk/swap-widget/overview',
+    title: 'T-DEX',
+    text: 'Swap tokens on 𝚝𝟷 without needing to bridge',
+    to: '',
   },
 ]
 export const smartContractGuides = [
   {
     title: 'Setup your environment',
     text: 'Prepare your local environment by installing the required dependencies',
-    to: '/contracts/v3/guides/local-environment',
-  },
-  {
-    title: 'Implement a Swap',
-    text: 'Start swapping from a smart contract in Solidity',
-    to: '/contracts/v3/guides/swaps/single-swaps',
-  },
-  {
-    title: 'Provide Liquidity',
-    text: 'Provide liquidity from a smart contract in Solidity',
-    to: '/contracts/v3/guides/providing-liquidity/setting-up',
-  },
-  {
-    title: 'Mine Liquidity',
-    text: 'Start Mining liquidity from a smart contract in Solidity',
-    to: '/contracts/v3/guides/liquidity-mining/overview',
-  },
-  {
-    title: 'Implement Flash Swaps',
-    text: 'Implement Flash Swaps from a smart contract in Solidity',
-    to: '/contracts/v3/guides/flash-integrations/inheritance-constructors',
+    to: '',
   },
 ]
 
@@ -298,7 +243,7 @@ const StyledIcon = styled.div`
 
 export default function Home() {
   return (
-    <Layout title={`Uniswap Docs`} description="Technical Documentation For The Uniswap Protocol">
+    <Layout title={`t1 Docs`} description="Technical Documentation For The 𝚝𝟷 Protocol">
       <Container>
         <DocsHeader>
           <div
@@ -310,15 +255,15 @@ export default function Home() {
               alignItems: 'center',
             }}
           >
-            <h1 style={{ fontWeight: 600 }}> Welcome to Uniswap Docs</h1>
+            <h1 style={{ fontWeight: 600 }}> Welcome to 𝚝𝟷 Docs</h1>
             <HideMedium>
               <SearchBarWithAnalytics />
             </HideMedium>
           </div>
           <StyledTitleImage
             sources={{
-              light: useBaseUrl('/img/grow.png'),
-              dark: useBaseUrl('/img/grow2.png'),
+              light: useBaseUrl('/img/t1-cover-no-text.png'),
+              dark: useBaseUrl('/img/t1-cover-no-text.png'),
             }}
           />
           <Row>
@@ -356,7 +301,7 @@ export default function Home() {
         >
           <div>
             <h2>Integrate your dApp</h2>
-            <p>Explore these guided tutorials to get started integrating with Uniswap in your dApp.</p>
+            <p>Explore these guided tutorials to get started integrating with 𝚝𝟷 in your dApp.</p>
             <div>
               {dAppGuides.map((action) => (
                 <TraceEvent
@@ -385,7 +330,7 @@ export default function Home() {
           </div>
           <div>
             <h2>Integrate your smart contracts</h2>
-            <p>Explore these guided tutorials to get started integrating with Uniswap in your smart contracts.</p>
+            <p>Explore these guided tutorials to get started integrating with 𝚝𝟷 in your smart contracts.</p>
             <div>
               {smartContractGuides.map((action) => (
                 <TraceEvent
@@ -423,8 +368,8 @@ export default function Home() {
           <StyledImage
             style={{ maxHeight: '400px' }}
             sources={{
-              light: useBaseUrl('/img/use.png'),
-              dark: useBaseUrl('/img/use2.png'),
+              light: useBaseUrl('/img/t1-rollup.png'),
+              dark: useBaseUrl('/img/t1-rollup.png'),
             }}
           />
           <div>
@@ -466,7 +411,7 @@ export default function Home() {
             section={SectionName.BOTTOM_MENU_LINKS}
             name={SharedEventName.PAGE_CLICKED}
           >
-            <Link style={{ textDecoration: 'none' }} href={'https://discord.gg/ybKVQUWb4s'}>
+            <Link style={{ textDecoration: 'none' }} href={'https://discord.com/invite/nbvyXZHgke'}>
               <CenterCard>
                 <Discord style={{ width: '48px', height: '48px' }} />
                 <div>
@@ -478,66 +423,23 @@ export default function Home() {
           </TraceEvent>
           <TraceEvent
             events={[BrowserEvent.onClick]}
-            element={ElementName.GRANTS}
-            section={SectionName.BOTTOM_MENU_LINKS}
-            name={SharedEventName.PAGE_CLICKED}
-          >
-            <Link style={{ textDecoration: 'none' }} href={'https://gov.uniswap.org/'}>
-              <CenterCard>
-                <MessageCircle style={{ width: '48px', height: '48px' }} />
-                <div>
-                  <h3>Forum</h3>
-                  <p>Discuss governance and more.</p>
-                </div>
-              </CenterCard>
-            </Link>
-          </TraceEvent>
-          <TraceEvent
-            events={[BrowserEvent.onClick]}
             section={SectionName.BOTTOM_MENU_LINKS}
             element={ElementName.GITHUB}
             name={SharedEventName.PAGE_CLICKED}
           >
-            <Link style={{ textDecoration: 'none' }} href={'https://github.com/Uniswap'}>
+            <Link style={{ textDecoration: 'none' }} href={'https://github.com/t1protocol'}>
               <CenterCard>
                 <StyledIcon>
                   <GitHub style={{ width: '48px', height: '48px' }} />
                 </StyledIcon>
                 <div>
                   <h3>GitHub</h3>
-                  <p>View all Uniswap repositories.</p>
+                  <p>View all 𝚝𝟷 repositories.</p>
                 </div>
               </CenterCard>
             </Link>
           </TraceEvent>
         </Row>
-        <Link
-          style={{
-            textDecoration: 'none',
-            maxWidth: '960px',
-            margin: '0 auto 4rem auto',
-            width: '100%',
-          }}
-          href={'https://unigrants.org/'}
-        >
-          <WideCard
-            style={{
-              alignItems: 'center',
-              flexDirection: 'row',
-              justifyContent: 'center',
-              gap: '24px',
-            }}
-          >
-            <img src={UGP} width={'120px'} />
-            <div>
-              <h2 style={{ marginBottom: '0.5rem' }}>Uniswap Grants Program</h2>
-              <p style={{ margin: '0rem' }}>
-                Uniswap Governance offers grant funding for people who are building apps, tools, and activities for
-                Uniswap Protocol users, builders, and community members.{' '}
-              </p>
-            </div>
-          </WideCard>
-        </Link>
       </Container>
     </Layout>
   )

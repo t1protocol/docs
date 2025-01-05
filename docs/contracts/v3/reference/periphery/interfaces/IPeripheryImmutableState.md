@@ -13,7 +13,7 @@ Functions that return immutable state of the router
 
 | Type    | Description                           |
 | :------ | :------------------------------------ |
-| address | the address of the Uniswap V3 factory |
+| address | the address of the t1 V3 factory |
 
 ### WETH9
 

@@ -9,7 +9,7 @@ Allows staking nonfungible liquidity tokens in exchange for reward tokens
   ) external view returns (contract IUniswapV3Factory)
 ```
 
-The Uniswap V3 Factory
+The t1 V3 Factory
 
 ### nonfungiblePositionManager
 
@@ -197,13 +197,13 @@ Transfers ownership of a deposit from the sender to the given recipient
   ) external
 ```
 
-Withdraws a Uniswap V3 LP token `tokenId` from this contract to the recipient `to`
+Withdraws a t1 V3 LP token `tokenId` from this contract to the recipient `to`
 
 #### Parameters:
 
 | Name      | Type    | Description                                                                                       |
 | :-------- | :------ | :------------------------------------------------------------------------------------------------ |
-| `tokenId` | uint256 | The unique identifier of an Uniswap V3 LP token                                                   |
+| `tokenId` | uint256 | The unique identifier of an t1 V3 LP token                                                   |
 | `to`      | address | The address where the LP token will be sent                                                       |
 | `data`    | bytes   | An optional data array that will be passed along to the `to` address via the NFT safeTransferFrom |
 
@@ -216,7 +216,7 @@ Withdraws a Uniswap V3 LP token `tokenId` from this contract to the recipient `t
   ) external
 ```
 
-Stakes a Uniswap V3 LP token
+Stakes a t1 V3 LP token
 
 #### Parameters:
 
@@ -234,7 +234,7 @@ Stakes a Uniswap V3 LP token
   ) external
 ```
 
-Unstakes a Uniswap V3 LP token
+Unstakes a t1 V3 LP token
 
 #### Parameters:
 
@@ -316,7 +316,7 @@ Event emitted when a liquidity mining incentive has been created
 | Name          | Type                    | Description                                                               |
 | :------------ | :---------------------- | :------------------------------------------------------------------------ |
 | `rewardToken` | contract IERC20Minimal  | The token being distributed as a reward                                   |
-| `pool`        | contract IUniswapV3Pool | The Uniswap V3 pool                                                       |
+| `pool`        | contract IUniswapV3Pool | The t1 V3 pool                                                       |
 | `startTime`   | uint256                 | The time when the incentive program begins                                |
 | `endTime`     | uint256                 | The time when rewards stop accruing                                       |
 | `refundee`    | address                 | The address which receives any remaining reward tokens after the end time |
@@ -370,13 +370,13 @@ Emitted when ownership of a deposit changes
   )
 ```
 
-Event emitted when a Uniswap V3 LP token has been staked
+Event emitted when a t1 V3 LP token has been staked
 
 #### Parameters:
 
 | Name          | Type    | Description                                     |
 | :------------ | :------ | :---------------------------------------------- |
-| `tokenId`     | uint256 | The unique identifier of an Uniswap V3 LP token |
+| `tokenId`     | uint256 | The unique identifier of an t1 V3 LP token |
 | `liquidity`   | bytes32 | The amount of liquidity staked                  |
 | `incentiveId` | uint128 | The incentive in which the token is staking     |
 
@@ -389,13 +389,13 @@ Event emitted when a Uniswap V3 LP token has been staked
   )
 ```
 
-Event emitted when a Uniswap V3 LP token has been unstaked
+Event emitted when a t1 V3 LP token has been unstaked
 
 #### Parameters:
 
 | Name          | Type    | Description                                     |
 | :------------ | :------ | :---------------------------------------------- |
-| `tokenId`     | uint256 | The unique identifier of an Uniswap V3 LP token |
+| `tokenId`     | uint256 | The unique identifier of an t1 V3 LP token |
 | `incentiveId` | bytes32 | The incentive in which the token is staking     |
 
 ### RewardClaimed

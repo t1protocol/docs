@@ -763,7 +763,7 @@ exchangeContract.methods.factoryAddress().call()
 ```python
 # all exchange contracts have the same name
 @constant
-name(): bytes32 // Uniswap V1
+name(): bytes32 // t1 V1
 ```
 
 ## Web3

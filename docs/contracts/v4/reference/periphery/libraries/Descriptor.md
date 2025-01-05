@@ -17,7 +17,7 @@ uint256 constant sqrt10X128 = 1076067327063303206878105757264492625226;
 ## Functions
 ### constructTokenURI
 
-Constructs the token URI for a Uniswap v4 NFT
+Constructs the token URI for a t1 v4 NFT
 
 
 ```solidity
@@ -47,7 +47,7 @@ function escapeSpecialCharacters(string memory symbol) internal pure returns (st
 
 ### generateDescriptionPartOne
 
-Generates the first part of the description for a Uniswap v4 NFT
+Generates the first part of the description for a t1 v4 NFT
 
 
 ```solidity
@@ -74,7 +74,7 @@ function generateDescriptionPartOne(
 
 ### generateDescriptionPartTwo
 
-Generates the second part of the description for a Uniswap v4 NFTs
+Generates the second part of the description for a t1 v4 NFTs
 
 
 ```solidity
@@ -107,7 +107,7 @@ function generateDescriptionPartTwo(
 
 ### generateName
 
-Generates the name for a Uniswap v4 NFT
+Generates the name for a t1 v4 NFT
 
 
 ```solidity
@@ -263,7 +263,7 @@ function addressToString(address addr) internal pure returns (string memory);
 
 ### generateSVGImage
 
-Generates the SVG image for a Uniswap v4 NFT
+Generates the SVG image for a t1 v4 NFT
 
 
 ```solidity

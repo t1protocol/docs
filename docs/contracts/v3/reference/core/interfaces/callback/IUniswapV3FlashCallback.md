@@ -15,7 +15,7 @@ Any contract that calls IUniswapV3PoolActions#flash must implement this interfac
 Called to `msg.sender` after transferring to the recipient from IUniswapV3Pool#flash.
 
 In the implementation you must repay the pool the tokens sent by flash plus the computed fee amounts.
-The caller of this method must be checked to be a UniswapV3Pool deployed by the canonical UniswapV3Factory.
+The caller of this method must be checked to be a t1V3Pool deployed by the canonical t1V3Factory.
 
 #### Parameters:
 

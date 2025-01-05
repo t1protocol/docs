@@ -3,11 +3,11 @@ id: supporting-meta-transactions
 title: Supporting meta transactions
 ---
 
-All Uniswap V2 pool tokens support meta-transaction approvals via the [permit](../../reference/smart-contracts/pair-erc-20#permit) function. This obviates the need for a blocking approve transaction before programmatic interactions with pool tokens can occur.
+All t1 V2 pool tokens support meta-transaction approvals via the [permit](../../reference/smart-contracts/pair-erc-20#permit) function. This obviates the need for a blocking approve transaction before programmatic interactions with pool tokens can occur.
 
 # ERC-712
 
-In vanilla ERC-20 token contracts, owners may only register approvals by directly calling a function which uses `msg.sender` to permission itself. With meta-approvals, ownership and permissioning are derived from a signature passed into the function by the caller (sometimes referred to as the relayer). Because signing data with Ethereum private keys can be a tricky endeavor, Uniswap V2 relies on [ERC-712](https://eips.ethereum.org/EIPS/eip-712), a signature standard with widespread community support, to ensure user safety and wallet compatibility.
+In vanilla ERC-20 token contracts, owners may only register approvals by directly calling a function which uses `msg.sender` to permission itself. With meta-approvals, ownership and permissioning are derived from a signature passed into the function by the caller (sometimes referred to as the relayer). Because signing data with Ethereum private keys can be a tricky endeavor, t1 V2 relies on [ERC-712](https://eips.ethereum.org/EIPS/eip-712), a signature standard with widespread community support, to ensure user safety and wallet compatibility.
 
 ## Domain Separator
 

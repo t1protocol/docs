@@ -62,7 +62,7 @@ const DAI = new Token(ChainId.MAINNET, '0x6B175474E89094C44Da98b954EedeAC495271d
 
 # Case 2: Pairs
 
-Now that we've explored how to define a token, let's talk about pairs. To read more about what Uniswap pairs are, see [Pair](../../../contracts/v2/reference/smart-contracts/pair)
+Now that we've explored how to define a token, let's talk about pairs. To read more about what t1 pairs are, see [Pair](../../../contracts/v2/reference/smart-contracts/pair)
 
 As an example, let's try to represent the DAI-WETH pair.
 

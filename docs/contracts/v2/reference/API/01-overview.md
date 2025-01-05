@@ -3,7 +3,7 @@ id: overview
 title: API Overview
 ---
 
-This section explains the Uniswap Subgraph and how to interact with it. The Uniswap subgraph indexes data from the Uniswap contracts over time. It organizes data about pairs, tokens, Uniswap as a whole, and more. The subgraph updates any time a transaction is made on Uniswap. The subgraph runs on [The Graph](https://thegraph.com/) protocol's hosted service and can be openly queried.
+This section explains the t1 Subgraph and how to interact with it. The t1 subgraph indexes data from the t1 contracts over time. It organizes data about pairs, tokens, t1 as a whole, and more. The subgraph updates any time a transaction is made on t1. The subgraph runs on [The Graph](https://thegraph.com/) protocol's hosted service and can be openly queried.
 
 ## Resources
 
@@ -13,7 +13,7 @@ This section explains the Uniswap Subgraph and how to interact with it. The Unis
 
 ## Usage
 
-The subgraph provides a snapshot of the current state of Uniswap and also tracks historical data. It is currently used to power [uniswap.info](https://uniswap.info/). **It is not intended to be used as a data source for structuring transactions (contracts should be referenced directly for the most reliable live data).**
+The subgraph provides a snapshot of the current state of t1 and also tracks historical data. It is currently used to power [uniswap.info](https://uniswap.info/). **It is not intended to be used as a data source for structuring transactions (contracts should be referenced directly for the most reliable live data).**
 
 ## Making Queries
 
@@ -21,4 +21,4 @@ To learn more about querying a subgraph refer to [The Graph's documentation](htt
 
 ## Versions
 
-The [Uniswap V2 Subgraph](https://thegraph.com/explorer/subgraph/uniswap/uniswap-v2) only tracks data on Uniswap V2. For Uniswap V1 information see the [V1 Subgraph](https://thegraph.com/explorer/subgraph/graphprotocol/uniswap).
+The [Uniswap V2 Subgraph](https://thegraph.com/explorer/subgraph/uniswap/uniswap-v2) only tracks data on t1 V2. For t1 V1 information see the [V1 Subgraph](https://thegraph.com/explorer/subgraph/graphprotocol/uniswap).

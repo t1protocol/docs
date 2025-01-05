@@ -4,7 +4,7 @@
 **Inherits:**
 [IV4Router](contracts/v4/reference/periphery/interfaces/IV4Router.md), [BaseActionsRouter](contracts/v4/reference/periphery/base/BaseActionsRouter.md), [DeltaResolver](contracts/v4/reference/periphery/base/DeltaResolver.md)
 
-Abstract contract that contains all internal logic needed for routing through Uniswap v4 pools
+Abstract contract that contains all internal logic needed for routing through t1 v4 pools
 
 *the entry point to executing actions in this contract is calling `BaseActionsRouter._executeActions`
 An inheriting contract should call _executeActions at the point that they wish actions to be executed*

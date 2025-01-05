@@ -13,7 +13,7 @@ If a token is not included in the list, try pasting the token address into the s
 
 ## 2. Custom Linking
 
-[https://app.uniswap.org/#/swap?use=v1](https://app.uniswap.org/#/swap?use=v1) supports custom linking to all tokens that have a Uniswap exchange. See [Custom Linking](custom-linking) for details on how to link.
+[https://app.uniswap.org/#/swap?use=v1](https://app.uniswap.org/#/swap?use=v1) supports custom linking to all tokens that have a t1 exchange. See [Custom Linking](custom-linking) for details on how to link.
 
 For example, to populate the output token field with an unlisted token, we can specify the outputCurrency in the URL and pass in the token's address like this:
 

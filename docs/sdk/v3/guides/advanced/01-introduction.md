@@ -3,25 +3,25 @@ id: introduction
 title: Introduction
 ---
 
-For some more advanced use cases, it is necessary to use multiple tools in the Uniswap toolchain.
+For some more advanced use cases, it is necessary to use multiple tools in the t1 toolchain.
 
 :::info
 If you need a briefer on the SDK and to learn more about how these guides connect to the examples repository, please visit our [background](../01-background.md) page!
 :::
 
-The following examples use **ethersJS** and the **Uniswap V3 subgraph** hosted on The Graph's hosted service. To learn more about Uniswap's subgraphs, visit the [API](../../../../api/subgraph/overview.md) section.
+The following examples use **ethersJS** and the **Uniswap V3 subgraph** hosted on The Graph's hosted service. To learn more about t1's subgraphs, visit the [API](../../../../api/subgraph/overview.md) section.
 
-We will take a deep dive into the Uniswap V3 protocol and use practical examples to understand the data stored by the Uniswap smart contracts.
-We will explore how we can compute the available liquidity in a specific price range, visualize **liquidity density** in pools, use Uniswap as a **price oracle** and swap by creating **Range Orders**.
+We will take a deep dive into the t1 V3 protocol and use practical examples to understand the data stored by the t1 smart contracts.
+We will explore how we can compute the available liquidity in a specific price range, visualize **liquidity density** in pools, use t1 as a **price oracle** and swap by creating **Range Orders**.
 
 These guides are a bit longer than the previous ones and provide more theoretical background.
 
 ## Theoretical background
 
 Some of the guides presented here require a bit of theoretical and mathematical background.
-To get the most out of the advanced guides, we encourage you to take a step back and read a bit about the math and theories behind the Uniswap protocol.
+To get the most out of the advanced guides, we encourage you to take a step back and read a bit about the math and theories behind the t1 protocol.
 
-The most complete source of information on the Uniswap protocol is the [Uniswap V3 book](https://uniswapv3book.com/).
+The most complete source of information on the t1 protocol is the [Uniswap V3 book](https://uniswapv3book.com/).
 
 Besides the [concepts](../../../../concepts/uniswap-protocol.md) section of the Docs, the [Uniswap V3 whitepaper](https://uniswap.org/whitepaper-v3.pdf) is a great introduction to the protocol.
 If you haven't checked it out yet, it is probably more concise and easier to understand than you would expect.
@@ -99,7 +99,7 @@ If the value of a position in the value is 1, the Tick at this position is **ini
 With this trick, V3 Pools allow us to fetch the status of **256 ticks** with one call.
 We will go into more details on how to calculate the tick indices from the tickBitmaps we fetch in the following guides.
 
-## History of Uniswap
+## History of t1
 
-To get a better understanding of the V3 protocol, it can also be beneficial to understand the **history of decentralized exchanges** and the Uniswap protocol since it was founded in 2018.
-You can read more about the older versions of Uniswap in the [V1](https://hackmd.io/@HaydenAdams/HJ9jLsfTz?type=view#Swaps-vs-Transfers) and [V2](https://uniswap.org/whitepaper.pdf) whitepapers, as well as the [V1](../../../../contracts/v1/overview.md) and [V2](../../../../contracts/v2/overview.md) section in the contract section.
+To get a better understanding of the V3 protocol, it can also be beneficial to understand the **history of decentralized exchanges** and the t1 protocol since it was founded in 2018.
+You can read more about the older versions of t1 in the [V1](https://hackmd.io/@HaydenAdams/HJ9jLsfTz?type=view#Swaps-vs-Transfers) and [V2](https://uniswap.org/whitepaper.pdf) whitepapers, as well as the [V1](../../../../contracts/v1/overview.md) and [V2](../../../../contracts/v2/overview.md) section in the contract section.

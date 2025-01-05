@@ -1,14 +1,7 @@
 ---
 id: overview
-title: Uniswap Overview
+title: 𝚝𝟷 Overview
 sidebar_position: 1
 ---
 
-## Protocol, Interface, Labs
-
-To begin, we should make clear the distinctions between the different areas of "Uniswap", some of which may confuse new users.
-
-- **Uniswap Labs**: The company which developed the Uniswap protocol, along with the web interface.
-- **The Uniswap Protocol**: A suite of persistent, non-upgradable smart contracts that together create an automated market maker, a protocol that facilitates peer-to-peer market making and swapping of ERC-20 tokens on the Ethereum blockchain.
-- **The Uniswap Interface**: A web interface that allows for easy interaction with the Uniswap protocol. The interface is only one of many ways one may interact with the Uniswap protocol.
-- **Uniswap Governance**: A governance system for governing the Uniswap Protocol, enabled by the UNI token.
+𝚝𝟷 is a rollup designed to fix fragmentation and other composability challenges in scaling Ethereum. By leveraging AVS-secured Trusted Execution Environments, 𝚝𝟷 introduces real-time proofs (RTP) that prove the integrity of 𝚝𝟷 execution to Ethereum in less than 12 seconds. RTP enables instant settlement on Ethereum and therefore composability across different rollups. 𝚝𝟷’s mission is to unify Ethereum and the rollup ecosystem to provide a superior UX.

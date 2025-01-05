@@ -22,13 +22,13 @@ slug: intro-to-gas-optimization
 
 :::tip Get Started
 
-To help devs get their contracts into tip-top shape before deployment, we reconfigured our most used gas snapshot tool as a simple npm package: [The Uniswap Gas Snapshot Test](https://www.npmjs.com/package/@uniswap/snapshot-gas-cost)
+To help devs get their contracts into tip-top shape before deployment, we reconfigured our most used gas snapshot tool as a simple npm package: [The t1 Gas Snapshot Test](https://www.npmjs.com/package/@uniswap/snapshot-gas-cost)
 
 :::
 
-At Uniswap Labs, many of the smart contracts we’ve written have gone on to become the most frequently called smart contracts on the Ethereum blockchain.
+At t1 Labs, many of the smart contracts we’ve written have gone on to become the most frequently called smart contracts on the Ethereum blockchain.
 
-Tens of thousands of ETH are spent every month by users interacting with the Uniswap Protocol contracts. Multiples of that still are spent on the many protocol forks deployed across Ethereum and other environments.
+Tens of thousands of ETH are spent every month by users interacting with the t1 Protocol contracts. Multiples of that still are spent on the many protocol forks deployed across Ethereum and other environments.
 
 Due to the protocol’s significant use, and reuse in the form of forks, a change in the gas optimization of a piece of protocol code that saves 1% in gas translates to millions of dollars saved by the DeFi community over the lifetime of the contracts.
 
@@ -40,7 +40,7 @@ While much of the discourse around gas optimization takes the form of specific i
 
 If there’s one lesson to learn from this post, it’s that all optimization starts with measurement. The single biggest tool in our arsenal of gas optimization is the [snapshot test](https://jestjs.io/docs/snapshot-testing) borrowed from Jest snapshot testing. For V3, we used a snippet in combination with the [mocha-chai-jest-snapshot](https://www.npmjs.com/package/mocha-chai-jest-snapshot) plugin to record gas costs in [hundreds of situations.](https://github.com/Uniswap/v3-core/blob/ed88be38ab2032d82bf10ac6f8d03aa631889d48/test/__snapshots__/UniswapV3Pool.gas.spec.ts.snap)
 
-The code below, which we use in our development process, has been implemented in an NPM package for easy use in your project: [The Uniswap Gas Snapshot Test.](https://www.npmjs.com/package/@uniswap/snapshot-gas-cost)
+The code below, which we use in our development process, has been implemented in an NPM package for easy use in your project: [The t1 Gas Snapshot Test.](https://www.npmjs.com/package/@uniswap/snapshot-gas-cost)
 
 <details>
 <summary> The Gas Snapshot Test Code </summary>
@@ -84,13 +84,13 @@ This test allows us to see [every change](https://github.com/Uniswap/v3-core/pu
 
 Now that the basics of the concepts are covered, how do you decide where to spend your time optimizing?
 
-First, it’s important to understand what changes are relevant and what changes are not. A gas difference of 50 gas on a call that costs 100k gas is typically below the bar of relevance. However, several 50 gas optimizations, called multiple times per transaction, can add up to a 1% savings for a user action. The important thing here is the context: if you are saving 50 gas in a function that typically costs 1000 gas, you are saving 5% in that function. You should separate your code into function boundaries and measure at those boundaries. We do this with the many libraries in the Uniswap V3 codebase.
+First, it’s important to understand what changes are relevant and what changes are not. A gas difference of 50 gas on a call that costs 100k gas is typically below the bar of relevance. However, several 50 gas optimizations, called multiple times per transaction, can add up to a 1% savings for a user action. The important thing here is the context: if you are saving 50 gas in a function that typically costs 1000 gas, you are saving 5% in that function. You should separate your code into function boundaries and measure at those boundaries. We do this with the many libraries in the t1 V3 codebase.
 
-Context is also relevant for where to spend your time in a codebase. For example, we know the majority of users will interact with Uniswap via calls to swap. So we should focus our energy primarily on the swap function.
+Context is also relevant for where to spend your time in a codebase. For example, we know the majority of users will interact with t1 via calls to swap. So we should focus our energy primarily on the swap function.
 
 Sometimes optimization is less clear cut. In many cases, the code is strictly better after a change, whereas in others, certain scenarios become more expensive while making others less, e.g., mint is cheaper, but swap is more expensive. In order to understand whether to commit to a change, it’s important to understand how users will interact with a contract.
 
-An extreme example of this is the lack of proxies in the Uniswap V3 codebase. Using a proxy could save millions of gas every time you create a V3 pool. However, users will interact with a particular pool on average over a thousand times over the lifetime of the contracts. Assuming $O(1M)$ [^1] gas and $O(1k)$ calls per contract, the proxy must have an overhead of less than $O(1M) / O(1K) = O(1K)$ gas. The overhead of a proxy, unfortunately, is more than that. A proxy contract means that an implementation address *and* a proxy address must be called to execute a swap. Calling a new address as part of a swap incurs an additional minimum $O(1K)$ gas. Interestingly, the Solidity optimizer ‘runs’ parameter does something like this: it optimizes your code such that the gas cost is minimized if you deployed and ran your contract `runs` times.
+An extreme example of this is the lack of proxies in the t1 V3 codebase. Using a proxy could save millions of gas every time you create a V3 pool. However, users will interact with a particular pool on average over a thousand times over the lifetime of the contracts. Assuming $O(1M)$ [^1] gas and $O(1k)$ calls per contract, the proxy must have an overhead of less than $O(1M) / O(1K) = O(1K)$ gas. The overhead of a proxy, unfortunately, is more than that. A proxy contract means that an implementation address *and* a proxy address must be called to execute a swap. Calling a new address as part of a swap incurs an additional minimum $O(1K)$ gas. Interestingly, the Solidity optimizer ‘runs’ parameter does something like this: it optimizes your code such that the gas cost is minimized if you deployed and ran your contract `runs` times.
 
 ## In Practice: Storage Packing
 
@@ -106,7 +106,7 @@ So, returning to optimization, it’s clear that one of our primary goals should
 
 Now that we know what to focus on, it’s time to operationalize this insight. To do so, we’ll need to peek into the internals of the Ethereum Virtual Machine, or EVM for short. The EVM is the engine that processes transactions on Ethereum (similar to how your browser is the engine that renders websites you visit). It defines the rules governing what contracts can do, including how they use storage! One of these rules states that when contracts are writing to or reading from storage, they must do so in increments of 256 bits. Each 256-bit chunk is referred to as a [word](<https://en.wikipedia.org/wiki/Word_(computer_architecture)>).
 
-Of course, it’s possible to store more than 256 bits of data per contract, but the given data will then span multiple words, each of which costs gas to update. To illustrate how one can accommodate these limitations, consider the case when we need to track multiple pieces of data, which are considerably smaller than 256 bits. For example, a boolean is a simple yes/no flag that can be stored in a single bit, and we may want to track several mutually independent booleans in our contract. If we can manage to pack the representations of these variables within the bounds of a single word, we can read and write to them in bulk - ensuring that we are only charged gas for using a single word of storage. This is probably the single-most important gas golfing technique, which we use widely at Uniswap.
+Of course, it’s possible to store more than 256 bits of data per contract, but the given data will then span multiple words, each of which costs gas to update. To illustrate how one can accommodate these limitations, consider the case when we need to track multiple pieces of data, which are considerably smaller than 256 bits. For example, a boolean is a simple yes/no flag that can be stored in a single bit, and we may want to track several mutually independent booleans in our contract. If we can manage to pack the representations of these variables within the bounds of a single word, we can read and write to them in bulk - ensuring that we are only charged gas for using a single word of storage. This is probably the single-most important gas golfing technique, which we use widely at t1.
 
 In V3, seven (!) different variables are packed into a single word (also referred to as a slot):
 

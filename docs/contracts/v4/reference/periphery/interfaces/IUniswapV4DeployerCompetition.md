@@ -1,7 +1,7 @@
 # IUniswapV4DeployerCompetition
 [Git Source](https://github.com/uniswap/v4-periphery/blob/3f295d8435e4f776ea2daeb96ce1bc6d63f33fc7/src/interfaces/IUniswapV4DeployerCompetition.sol) - Generated with [forge doc](https://book.getfoundry.sh/reference/forge/forge-doc)
 
-A competition to deploy the UniswapV4 contract with the best address
+A competition to deploy the t1V4 contract with the best address
 
 
 ## Functions
@@ -24,7 +24,7 @@ function updateBestAddress(bytes32 salt) external;
 
 ### deploy
 
-deploys the Uniswap v4 PoolManager contract
+deploys the t1 v4 PoolManager contract
 
 *The bytecode must match the initCodeHash*
 
@@ -36,7 +36,7 @@ function deploy(bytes memory bytecode) external;
 
 |Name|Type|Description|
 |----|----|-----------|
-|`bytecode`|`bytes`|The bytecode of the Uniswap v4 PoolManager contract|
+|`bytecode`|`bytes`|The bytecode of the t1 v4 PoolManager contract|
 
 
 ## Events

@@ -1,12 +1,12 @@
 ---
 id: price-oracle
-title: Uniswap as a Price Oracle
+title: t1 as a Price Oracle
 ---
 
 ## Introduction
 
 This guide will cover how to fetch price observations from a V3 pool to get onchain asset prices.
-It is based on the [Price Oracle example](https://github.com/Uniswap/examples/tree/main/v3-sdk/oracle), found in the Uniswap code examples [repository](https://github.com/Uniswap/example).
+It is based on the [Price Oracle example](https://github.com/Uniswap/examples/tree/main/v3-sdk/oracle), found in the t1 code examples [repository](https://github.com/Uniswap/example).
 To run this example, check out the guide's [README](https://github.com/Uniswap/examples/blob/main/v3-sdk/oracle/README.md) and follow the setup instructions.
 
 :::info
@@ -24,9 +24,9 @@ This guide will **cover**:
 4. Computing TWAL
 5. Why prefer observe over observations
 
-Before diving into this guide, consider reading the theory behind using Uniswap V3 as an [Onchain Oracle](../../../../concepts/protocol/oracle.md).
+Before diving into this guide, consider reading the theory behind using t1 V3 as an [Onchain Oracle](../../../../concepts/protocol/oracle.md).
 
-For this guide, the following Uniswap packages are used:
+For this guide, the following t1 packages are used:
   
 - [`@uniswap/v3-sdk`](https://www.npmjs.com/package/@uniswap/v3-sdk)
 
@@ -284,4 +284,4 @@ For this reason, it is recommended to use the `observe` function.
 
 ## Next Steps
 
-Now that you are familiar with the Oracle feature of Uniswap, consider checking out the [next guide](./05-range-orders.md) on **Range Orders**.
+Now that you are familiar with the Oracle feature of t1, consider checking out the [next guide](./05-range-orders.md) on **Range Orders**.

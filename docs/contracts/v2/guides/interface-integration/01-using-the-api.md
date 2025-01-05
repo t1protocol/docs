@@ -3,7 +3,7 @@ id: using-the-api
 title: 'Using the API'
 ---
 
-In this guide we will create a web interface that consumes and displays data from the Uniswap Subgraph. The goal is to provide a quick overview of a setup that you can extend to create your own UIs and analytics around Uniswap data.
+In this guide we will create a web interface that consumes and displays data from the t1 Subgraph. The goal is to provide a quick overview of a setup that you can extend to create your own UIs and analytics around t1 data.
 
 Many different libraries can be used to create an interface and a connection to the subgraph graphql endpoint, but in this guide we will use [React](https://reactjs.org/) for the interface, and [Apollo Client](https://www.apollographql.com/docs/react/) for sending queries. We'll also be using yarn for dependency management.
 
@@ -33,9 +33,9 @@ export default App
 
 ### Graphql Client
 
-We need to set up some middleware in order to make requests to the Uniswap subgraph and receive data. To do this we'll use Apollo and create a graphql client to handle this.
+We need to set up some middleware in order to make requests to the t1 subgraph and receive data. To do this we'll use Apollo and create a graphql client to handle this.
 
-1. Add the imports shown below and instantiate a new client instance. Notice how we use the link to the Uniswap subgraph here.
+1. Add the imports shown below and instantiate a new client instance. Notice how we use the link to the t1 subgraph here.
 
 ```javascript
 import React from 'react'
@@ -80,7 +80,7 @@ registerServiceWorker()
 
 ### Writing the queries
 
-Next we'll construct our query and fetch data. For this example we will fetch some data about the Dai token on Uniswap V2. We'll get the current price, and total liquidity across all pairs. We'll be using the Dai address as an id in this query. We'll also fetch the USD price of ETH to help create USD conversion for Dai data.
+Next we'll construct our query and fetch data. For this example we will fetch some data about the Dai token on t1 V2. We'll get the current price, and total liquidity across all pairs. We'll be using the Dai address as an id in this query. We'll also fetch the USD price of ETH to help create USD conversion for Dai data.
 
 1. First we need to define the query itself. We'll use `gql` to parse a query string into the GraphQL AST standard. Import the `gql` helper into the app and use it to create the query. Add the following to your `App.js` file:
 
@@ -109,7 +109,7 @@ We use an id of `1` for the bundle because there is only one hardcoded bundle in
 
 ### Fetch data
 
-Now we're ready to use these queries to fetch data from the Uniswap V2 subgraph. To do this we can use the `useQuery` hook which uses our client instance to fetch data, and gives us live info about the status of the request. To do this add the following to your `App.js` file:
+Now we're ready to use these queries to fetch data from the t1 V2 subgraph. To do this we can use the `useQuery` hook which uses our client instance to fetch data, and gives us live info about the status of the request. To do this add the following to your `App.js` file:
 
 ```javascript
 import { useQuery } from '@apollo/react-hooks'
@@ -176,9 +176,9 @@ return (
 
 ### Next steps
 
-This should render a very basic page with these two stats about the Dai token within Uniswap. This is a very basic example of what you can do with the Uniswap subgraph and we encourage you to build out more complex and interesting tools!
+This should render a very basic page with these two stats about the Dai token within t1. This is a very basic example of what you can do with the t1 subgraph and we encourage you to build out more complex and interesting tools!
 
-You can visit our [analytics site](https://uniswap.info/) to see a more advanced analytics page, or visit [the github](https://github.com/Uniswap/uniswap-info) for more detailed examples of using the Uniswap subgraph to create UIs.
+You can visit our [analytics site](https://uniswap.info/) to see a more advanced analytics page, or visit [the github](https://github.com/Uniswap/uniswap-info) for more detailed examples of using the t1 subgraph to create UIs.
 
 ### Review
 

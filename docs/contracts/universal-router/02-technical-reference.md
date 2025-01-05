@@ -88,7 +88,7 @@ The input parameters required for each command are outlined below:
 - `address` The recipient of the output of the trade
 - `uint256` The amount of input tokens for the trade
 - `uint256` The minimum amount of output tokens the user wants
-- `bytes` The UniswapV3 encoded path to trade along
+- `bytes` The t1V3 encoded path to trade along
 - `bool` A flag for whether the input tokens should come from the `msg.sender` (through Permit2) or whether the funds are already in the `UniversalRouter`
 
 ### `V3_SWAP_EXACT_OUT`
@@ -96,7 +96,7 @@ The input parameters required for each command are outlined below:
 - `address` The recipient of the output of the trade
 - `uint256` The amount of output tokens to receive
 - `uint256` The maximum number of input tokens that should be spent
-- `bytes` The UniswapV3 encoded path to trade along
+- `bytes` The t1V3 encoded path to trade along
 - `bool` A flag for whether the input tokens should come from the `msg.sender` (through Permit2) or whether the funds are already in the `UniversalRouter`
 
 ### `PERMIT2_TRANSFER_FROM`
@@ -137,7 +137,7 @@ The individual that signed the permits must be the `msg.sender` of the transacti
 - `address` The recipient of the output of the trade
 - `uint256` The amount of input tokens for the trade
 - `uint256` The minimum amount of output tokens the user wants
-- `address[]` The UniswapV2 token path to trade along
+- `address[]` The t1V2 token path to trade along
 - `bool` A flag for whether the input tokens should come from the `msg.sender` (through Permit2) or whether the funds are already in the `UniversalRouter`
 
 ### `V2_SWAP_EXACT_OUT`
@@ -145,7 +145,7 @@ The individual that signed the permits must be the `msg.sender` of the transacti
 - `address` The recipient of the output of the trade
 - `uint256` The amount of output tokens to receive
 - `uint256` The maximum number of input tokens that should be spent
-- `address[]` The UniswapV2 token path to trade along
+- `address[]` The t1V2 token path to trade along
 - `bool` A flag for whether the input tokens should come from the `msg.sender` (through Permit2) or whether the funds are already in the `UniversalRouter`
 
 ### `PERMIT2_PERMIT`

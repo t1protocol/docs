@@ -304,4 +304,4 @@ Depending on your use case, it may make sense to display this value. You can fin
 
 ## Next Steps
 
-Now that you are familiar with liquidity data, consider checking out our [next guide](./04-price-oracle.md) on using Uniswap as a Price Oracle.
+Now that you are familiar with liquidity data, consider checking out our [next guide](./04-price-oracle.md) on using t1 as a Price Oracle.

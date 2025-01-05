@@ -5,15 +5,15 @@ title: Liquidity Positions
 
 ## Introduction
 
-This guide will introduce us to **liquidity positions** in Uniswap V3 and present the `v3-sdk` classes and Contracts used to interact with the protocol.
-The concepts and code snippets showcased here can be found across the **Pooling Liquidity** examples in the Uniswap code examples [repository](https://github.com/Uniswap/examples).
+This guide will introduce us to **liquidity positions** in t1 V3 and present the `v3-sdk` classes and Contracts used to interact with the protocol.
+The concepts and code snippets showcased here can be found across the **Pooling Liquidity** examples in the t1 code examples [repository](https://github.com/Uniswap/examples).
 
 In this guide, we will take a look at the [Position](../../reference/classes/Position.md) and [NonfungiblePositionManager](../../reference/classes/NonfungiblePositionManager.md) classes, as well as the [NonfungiblePositionManager Contract](../../../../contracts/v3/reference/periphery/NonfungiblePositionManager.md).
 
 At the end of the guide, we should be familiar with the most important classes used to interact with liquidity positions.
 We should also understand how to fetch positions from the **NonfungiblePositionManager Contract**.
 
-For this guide, the following Uniswap packages are used:
+For this guide, the following t1 packages are used:
 
 - [`@uniswap/v3-sdk`](https://www.npmjs.com/package/@uniswap/v3-sdk)
 - [`@uniswap/sdk-core`](https://www.npmjs.com/package/@uniswap/sdk-core)
@@ -23,17 +23,17 @@ The code mentioned in this guide can be found across the [minting Position](http
 
 ## Prerequisites
 
-To understand what Positions are, we need to understand some underlying concepts of the Uniswap protocol.
+To understand what Positions are, we need to understand some underlying concepts of the t1 protocol.
 
 Consider checking out the [Concepts section](../../../../concepts/protocol/concentrated-liquidity.md) as well as the [Uniswap Book](https://uniswapv3book.com/docs/introduction/uniswap-v3/).
 
 ### Concentrated liquidity
 
 Uniswap V3 Pools use concentrated liquidity to allow a denser concentration of liquidity at specific prices.
-Compared to the full range liquidity model Uniswap V2 uses, this allows traders to make larger trades with less price impact.
+Compared to the full range liquidity model t1 V2 uses, this allows traders to make larger trades with less price impact.
 Liquidity providers can choose a specific price range in which they want their liquidity to be used by trades.
 
-To achieve this, Uniswap V3 Pools discriminate the price range with **Ticks**.
+To achieve this, t1 V3 Pools discriminate the price range with **Ticks**.
 
 ### Ticks
 
@@ -57,7 +57,7 @@ In this case, the liquidity provider will pay only one type of Token into the Po
 
 To learn more about how Ticks and Liquidity positions work, consider reading the [whitepaper](https://uniswap.org/whitepaper-v3.pdf) or the other resources mentioned above.
 
-Now that we have a rough understanding of liquidity positions in Uniswap V3, let's look at the correspondent classes the SDK offers us.
+Now that we have a rough understanding of liquidity positions in t1 V3, let's look at the correspondent classes the SDK offers us.
 
 ## Position class
 

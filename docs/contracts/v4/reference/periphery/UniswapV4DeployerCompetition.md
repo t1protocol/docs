@@ -1,10 +1,10 @@
-# UniswapV4DeployerCompetition
+# t1V4DeployerCompetition
 [Git Source](https://github.com/uniswap/v4-periphery/blob/3f295d8435e4f776ea2daeb96ce1bc6d63f33fc7/src/UniswapV4DeployerCompetition.sol) - Generated with [forge doc](https://book.getfoundry.sh/reference/forge/forge-doc)
 
 **Inherits:**
 [IUniswapV4DeployerCompetition](contracts/v4/reference/periphery/interfaces/IUniswapV4DeployerCompetition.md)
 
-A contract to crowdsource a salt for the best Uniswap V4 address
+A contract to crowdsource a salt for the best t1 V4 address
 
 
 ## State Variables
@@ -96,7 +96,7 @@ function updateBestAddress(bytes32 salt) external;
 
 ### deploy
 
-deploys the Uniswap v4 PoolManager contract
+deploys the t1 v4 PoolManager contract
 
 *The bytecode must match the initCodeHash*
 
@@ -108,7 +108,7 @@ function deploy(bytes memory bytecode) external;
 
 |Name|Type|Description|
 |----|----|-----------|
-|`bytecode`|`bytes`|The bytecode of the Uniswap v4 PoolManager contract|
+|`bytecode`|`bytes`|The bytecode of the t1 v4 PoolManager contract|
 
 
 ### bestAddress

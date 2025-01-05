@@ -8,7 +8,7 @@ The `UniversalRouter` is an ETH, ERC20, and NFT swap router, that can aggregate 
 
 The flexible command style allows us to provide users with:
 
-- Splitting and interleaving of Uniswap trades
+- Splitting and interleaving of t1 trades
 - Purchases of NFTs across 8 marketplaces
 - Partial fills of trades
 - Wrapping and Unwrapping of ETH

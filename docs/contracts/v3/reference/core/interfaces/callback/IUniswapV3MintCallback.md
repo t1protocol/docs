@@ -15,7 +15,7 @@ Any contract that calls IUniswapV3PoolActions#mint must implement this interface
 Called to `msg.sender` after minting liquidity to a position from IUniswapV3Pool#mint.
 
 In the implementation you must pay the pool tokens owed for the minted liquidity.
-The caller of this method must be checked to be a UniswapV3Pool deployed by the canonical UniswapV3Factory.
+The caller of this method must be checked to be a t1V3Pool deployed by the canonical t1V3Factory.
 
 #### Parameters:
 
