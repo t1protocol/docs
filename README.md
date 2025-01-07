@@ -7,14 +7,21 @@ This web application contains all documentation for t1. It was forked from the [
 ### t1 documentation currently has one section:
 - Concepts - General t1 information or concepts useful for using t1
 
-### Each item in a section should include the following:
-- *Overview*
-- *Guides*
-- *Technical Reference*
+### TODO:
+ - Add essential t1 contract docs, including technical method descriptions via `forge doc --serve`
+ - Add more research entries in [Research](./docs/concepts/research.md)
+ - Add all relevant glossary words and definitions in [Glossary](./docs/concepts/glossary.md)
+ - Replace Lorem Ipsum with actual content in [Protocol](./docs/concepts/protocol)
+ - Replace links to **Have you ever had a dream** in [index.tsx](./src/pages/index.tsx) with links to codebases (?)
+ - Add Litepaper (or a link to it) in the NavBar
+ - Set up the domain https://docs.t1protocol.com
+ - Deploy these docs to the world wide web
+ - Create a job to automatically re-deploy the docs to the world wide web when merge into `main` branch
+
+ **NB**: Once the link is fixed or the Lorem Ipsum is replaced with real content, remove the `˙` at the end of the title
 
 ## Adding Documentation
 
-> **After deploying your change, please make sure you [update the search indices](#how-to-update-search-indices-with-algolia) if a new file was added as part of the change**
 ### Overview
 A product overview should address points such as:
 
@@ -113,18 +120,6 @@ You might have to use the `--skipErrorChecking` flag to the `typedoc` command fo
 
 See https://www.npmjs.com/package/typedoc-plugin-markdown for details.
 
-# How to Update search indices with algolia
-
-- Create an .env file with `APPLICATION_ID` and the `API_KEY` (write access). 
-If you don't have those, one for the Engineering Managers should be able to help you.
-- Edit config.json file if needed:
-    - Start url from updated website
-    - Sitemap url from updated website: eg for docs: https://docs.uniswap.org/sitemap.xml
-    - Use "v3-docs" as the index name
-- [Install](https://www.docker.com/products/docker-desktop/) and start running Docker Desktop
-- Install jq `brew install jq`
-- Run `docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper`
-
 ## Installation
 
 ```console
@@ -152,7 +147,3 @@ yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-
-## Deployment
-The application automatically deployed to production using [Vercel](https://vercel.com/uniswap/docs) upon merge into **main**.
