@@ -5,8 +5,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl'
 import styled from '@emotion/styled'
 import Discord from '@site/static/img/discord.svg'
 import GitHub from '@site/static/img/github.svg'
-import Npm from '@site/static/img/npm.svg'
-import UGP from '@site/static/img/UGP.png'
 import Layout from '@theme/Layout'
 import ThemedImage from '@theme/ThemedImage'
 import { TraceEvent } from '@uniswap/analytics'
@@ -17,9 +15,7 @@ import {
   SharedEventName,
 } from '@uniswap/analytics-events'
 import React from 'react'
-import { ArrowUpRight as LinkIcon, BookOpen, HelpCircle, Info, MessageCircle } from 'react-feather'
-
-import SearchBarWithAnalytics from '../theme/SearchBar'
+import { ArrowUpRight as LinkIcon, BookOpen, HelpCircle, Info } from 'react-feather'
 
 export const actions = [
   {
@@ -29,13 +25,13 @@ export const actions = [
     text: `Learn about the core concepts of the 𝚝𝟷 Protocol.`,
   },
   {
-    title: 'Integrate with 𝚝𝟷',
+    title: 'Integrate with 𝚝𝟷˙',
     icon: HelpCircle,
     to: '',
-    text: `Learn how to integrate with 𝚝𝟷.`,
+    text: `Learn about what use cases that are uniquely possible on 𝚝𝟷.`,
   },
   {
-    title: 'The 𝚝𝟷 smart contracts',
+    title: 'The 𝚝𝟷 smart contracts˙',
     icon: BookOpen,
     to: '',
     text: `Learn about the architecture of 𝚝𝟷 smart contracts.`,
@@ -44,27 +40,27 @@ export const actions = [
 
 export const developerLinks = [
   {
-    title: 't1-reth (placeholder for monorepo)',
-    href: 'https://github.com/t1protocol/reth',
+    title: 't1 monorepo˙',
+    href: 'https://www.youtube.com/watch?v=G7RgN9ijwE4',
     icon: GitHub,
   },
 ]
 
 export const dAppGuides = [
   {
-    title: 'xChain',
+    title: 'xChain˙',
     text: 'Initiate real-time cross-chain transactions',
-    to: '',
+    to: 'https://www.youtube.com/watch?v=G7RgN9ijwE4',
   },
   {
-    title: 'T-DEX',
+    title: 'T-DEX˙',
     text: 'Swap tokens on 𝚝𝟷 without needing to bridge',
-    to: '',
+    to: 'https://www.youtube.com/watch?v=G7RgN9ijwE4',
   },
 ]
 export const smartContractGuides = [
   {
-    title: 'Setup your environment',
+    title: 'Setup your environment˙',
     text: 'Prepare your local environment by installing the required dependencies',
     to: '',
   },
@@ -256,9 +252,6 @@ export default function Home() {
             }}
           >
             <h1 style={{ fontWeight: 600 }}> Welcome to 𝚝𝟷 Docs</h1>
-            <HideMedium>
-              <SearchBarWithAnalytics />
-            </HideMedium>
           </div>
           <StyledTitleImage
             sources={{
@@ -359,52 +352,7 @@ export default function Home() {
           </div>
         </TwoRow>
         <hr />
-        <TwoRow
-          style={{
-            gap: '48px',
-            alignItems: 'center',
-          }}
-        >
-          <StyledImage
-            style={{ maxHeight: '400px' }}
-            sources={{
-              light: useBaseUrl('/img/t1-rollup.png'),
-              dark: useBaseUrl('/img/t1-rollup.png'),
-            }}
-          />
-          <div>
-            <h2>Developer Links</h2>
-            {developerLinks.map((action) => (
-              <TraceEvent
-                key={action.href}
-                element={action.href}
-                name={SharedEventName.PAGE_CLICKED}
-                events={[BrowserEvent.onClick]}
-                section={SectionName.DEVELOPER_LINKS}
-              >
-                <Link key={action.href} to={action.href}>
-                  <Card key={action.href} style={{ marginBottom: '0.5rem' }}>
-                    <LinkRow>
-                      <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <IconWrapper>
-                          <StyledIcon>
-                            <action.icon style={{ width: '24px' }} />
-                          </StyledIcon>
-                        </IconWrapper>
-                        {action.title}
-                      </div>
-                      <LinkIconWrapper>
-                        <LinkIcon />
-                      </LinkIconWrapper>
-                    </LinkRow>
-                  </Card>
-                </Link>
-              </TraceEvent>
-            ))}
-          </div>
-        </TwoRow>
-        <hr />
-        <Row>
+        <TwoRow>
           <TraceEvent
             events={[BrowserEvent.onClick]}
             element={ElementName.DISCORD}
@@ -439,7 +387,7 @@ export default function Home() {
               </CenterCard>
             </Link>
           </TraceEvent>
-        </Row>
+        </TwoRow>
       </Container>
     </Layout>
   )

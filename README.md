@@ -1,15 +1,11 @@
 # t1 Documentation
 
-This web application contains all documentation for t1 products. It is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
-
+This web application contains all documentation for t1. It was forked from the [Uniswap Docs](https://github.com/Uniswap/docs), which is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 # Project Layout
 
-### t1 documentation is broken down into four sections:
-- Concepts - General t1 information or concepts useful for using t1 products, such as *Liquidity* and *Fees*
-- Contracts - t1 smart contracts such as the V3 Contracts or *Permit2*
-- SDKs - t1 integrations such as the *v3-sdk* and the *Swap Widget*
-- APIs - The t1 APIs such the *Subgraph API*
+### t1 documentation currently has one section:
+- Concepts - General t1 information or concepts useful for using t1
 
 ### Each item in a section should include the following:
 - *Overview*

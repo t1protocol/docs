@@ -4,7 +4,10 @@ title: Research
 sidebar_position: 4
 ---
 
-# The Rollup Fragmentation Problem
+# Research
+The rollup landscape is changing rapidly, and we at 𝚝𝟷 strive to stay at the bleeding edge. Our research focuses on improving composability and 
+
+## The Rollup Fragmentation Problem
 
 Authors: Can Kisagun, CEO & Co-founder of 𝚝𝟷
 

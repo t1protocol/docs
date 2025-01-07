@@ -1,6 +1,6 @@
 ---
 id: tee
-title: TEE
+title: TEE˙
 sidebar_position: 1
 ---
 

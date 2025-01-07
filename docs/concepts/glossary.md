@@ -1,6 +1,6 @@
 ---
 id: glossary
-title: Glossary
+title: Glossary˙
 sidebar_position: 6
 ---
 

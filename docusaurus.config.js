@@ -11,8 +11,9 @@ module.exports = {
     // From node
     nodeEnv: process.env.NODE_ENV,
   },
-  title: 'Uniswap',
+  title: '𝚝𝟷',
   tagline: 'Documentation and Guides',
+  // TODO - update when we publish a URL
   url: 'https://docs.uniswap.org',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -25,11 +26,7 @@ module.exports = {
     prism: {
       additionalLanguages: ['solidity'],
     },
-    algolia: {
-      apiKey: '32465e2ab6f7554ff014e64c0d92171c',
-      indexName: 'v3-docs',
-      appId: 'S0IDD0YGLZ',
-    },
+    algolia: null,
     navbar: {
       title: '𝚝𝟷 Docs',
       items: [
@@ -40,13 +37,8 @@ module.exports = {
           className: 'V3_active',
         },
         {
-          label: 'Whitepaper',
-          to: 'https://www.t1protocol.com/',
-          position: 'right',
-          className: 'persistent',
-        },
-        {
-          href: 'https://github.com/t1protocol/docs',
+          // TODO(docs): Publish docs repo and make public at this URL
+          href: 'https://github.com/t1protocol/',
           label: 'GitHub',
           position: 'right',
           className: 'persistent',
@@ -61,25 +53,7 @@ module.exports = {
           items: [
             {
               label: 'How it works',
-              href: 'https://www.t1protocol.com/',
-            },
-          ],
-        },
-        {
-          title: 'Github',
-          items: [
-            {
-              label: 'core',
-              href: 'https://github.com/t1protocol',
-            },
-          ],
-        },
-        {
-          title: 'Ecosystem',
-          items: [
-            {
-              label: 'Home',
-              href: 'https://www.t1protocol.com/',
+              href: 'https://www.t1protocol.com/#how-it-works',
             },
           ],
         },
@@ -125,7 +99,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          editUrl: 'https://github.com/uniswap/uniswap-docs/tree/main/',
+          editUrl: 'https://github.com/t1protocol/docs/tree/main/',
           includeCurrentVersion: true,
         },
         blog: {

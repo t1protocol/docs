@@ -1,6 +1,6 @@
 ---
 id: rtp
-title: Real-Time Proving
+title: Real-Time Proving˙
 sidebar_position: 2
 ---
 
