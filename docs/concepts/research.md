@@ -1,11 +1,11 @@
 ---
 id: research
 title: Research
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Research
-The rollup landscape is changing rapidly, and we at 𝚝𝟷 strive to stay at the bleeding edge. Our research focuses on improving composability and 
+The rollup landscape is changing rapidly, and we at 𝚝𝟷 strive to stay at the bleeding edge. Our research focuses on improving scalable composability among and between blockchains and rollups.
 
 ## The Rollup Fragmentation Problem
 
