@@ -154,16 +154,6 @@ const ShadowCard = styled(Card)`
   /* background-color: var(--ifm-color-emphasis-0); */
 `
 
-const WideCard = styled(ShadowCard)`
-  max-height: auto;
-
-  @media (max-width: 960px) {
-    margin: 0 2rem;
-    max-height: fit-content;
-    width: fit-content;
-  }
-`
-
 const IconWrapper = styled.div`
   width: 32px;
   height: 32px;
@@ -223,12 +213,6 @@ const StyledTitleImage = styled(StyledImage)`
   position: absolute;
   opacity: 0.2;
   mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent);
-`
-
-const HideMedium = styled.div`
-  @media (max-width: 960px) {
-    display: none;
-  }
 `
 
 const StyledIcon = styled.div`
