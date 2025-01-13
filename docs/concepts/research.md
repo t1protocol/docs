@@ -23,7 +23,7 @@ Authors: Can Kisagun, CEO & Co-founder of 𝚝𝟷
 Ethereum best embodies the ethos and values that inspire us about the future of blockchain technology. It has the most decentralized community—a place where the brightest minds gather and innovation thrives. However, the best technology doesn’t always win.
 We believe that for Ethereum to provide the best user and developer experience, the rollup fragmentation problem must be solved. The vision of a unified Ethereum ecosystem truly excites us. We started 𝚝𝟷 earlier this year to make this vision a reality.
 
-- [Introducing **𝚝𝟷:**](https://t1protocol.substack.com/p/introducing-t1-unifying-ethereums-ecosystem)
+- [Introducing **𝚝𝟷**](https://t1protocol.substack.com/p/introducing-t1-unifying-ethereums-ecosystem)
 
 ## How to run Reth in Intel TDX
 
