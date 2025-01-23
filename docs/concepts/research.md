@@ -27,7 +27,7 @@ We believe that for Ethereum to provide the best user and developer experience, 
 
 ## How to run Reth in Intel TDX
 
-Authors: 𝚝𝟷's KSS 
+Authors: KSS, Founding Engineer at 𝚝𝟷
 
 > Trusted Execution Environments (TEE) are hardly a novelty. They are currently one of the most established methods of performing verifiable computation server-side. As crazy as it sounds, SGX was introduced by Intel nearly a decade ago. The wider blockchain community took its time to realize how great of a pairing TEEs and blockchains are, and harness that potential by taking the best of on-chain security and off-chain performance.
 There were some good reasons to be cautious about Intel SGX with its poor developer experience, lack of crucial features and numerous exploits (https://sgx.fail/, anyone?). In the end, with the release of Intel TDX in 2023 and great RnD teams such as Flashbots and Automata paving the path, many L2 solutions decided to adopt TEEs as a crucial extension of their tech.
