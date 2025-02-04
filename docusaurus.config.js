@@ -22,7 +22,7 @@ module.exports = {
   organizationName: '𝚝𝟷', // Usually your GitHub org/user name.
   projectName: '𝚝𝟷-docs', // Usually your repo name.
   themeConfig: {
-    image: 'img/twitter_card_bg.jpg',
+    image: 'img/t1-rollup.png',
     prism: {
       additionalLanguages: ['solidity'],
     },
@@ -33,6 +33,12 @@ module.exports = {
         {
           to: '/concepts/overview',
           label: 'Concepts',
+          position: 'left',
+          className: 'V3_active',
+        },
+        {
+          to: '/bridge/overview',
+          label: 'Bridge',
           position: 'left',
           className: 'V3_active',
         },
