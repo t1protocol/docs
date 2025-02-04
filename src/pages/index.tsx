@@ -15,54 +15,49 @@ import {
   SharedEventName,
 } from '@uniswap/analytics-events'
 import React from 'react'
-import { ArrowUpRight as LinkIcon, BookOpen, HelpCircle, Info } from 'react-feather'
+import { ArrowUpRight as LinkIcon, BookOpen, Info, Link as Chain } from 'react-feather'
 
 export const actions = [
   {
     title: 'What is 𝚝𝟷',
     icon: Info,
     to: '/concepts/overview',
-    text: `Learn about the core concepts of the 𝚝𝟷 Protocol.`,
+    text: `Get familiar with the core concepts of the 𝚝𝟷 Protocol.`,
   },
   {
-    title: 'Integrate with 𝚝𝟷˙',
-    icon: HelpCircle,
-    to: '',
-    text: `Learn about what use cases that are uniquely possible on 𝚝𝟷.`,
+    title: 'Bridge to 𝚝𝟷 devnet',
+    icon: Chain,
+    to: 'https://bridge.devnet.t1protocol.com/',
+    text: `Deposit funds to start interacting with apps on 𝚝𝟷 devnet.`,
   },
   {
-    title: 'The 𝚝𝟷 smart contracts˙',
+    title: 'The 𝚝𝟷 smart contracts',
     icon: BookOpen,
-    to: '',
+    to: 'https://github.com/t1protocol/t1/tree/canary/contracts',
     text: `Learn about the architecture of 𝚝𝟷 smart contracts.`,
   },
 ]
 
 export const developerLinks = [
   {
-    title: 't1 monorepo˙',
-    href: 'https://www.youtube.com/watch?v=G7RgN9ijwE4',
+    title: 't1 monorepo',
+    href: 'https://github.com/t1protocol/t1',
     icon: GitHub,
   },
 ]
 
 export const dAppGuides = [
   {
-    title: 'xChain˙',
-    text: 'Initiate real-time cross-chain transactions',
-    to: 'https://www.youtube.com/watch?v=G7RgN9ijwE4',
-  },
-  {
-    title: 'T-DEX˙',
+    title: 'T-DEX',
     text: 'Swap tokens on 𝚝𝟷 without needing to bridge',
-    to: 'https://www.youtube.com/watch?v=G7RgN9ijwE4',
+    to: 'https://d33ynhssf8imk5.cloudfront.net/',
   },
 ]
 export const smartContractGuides = [
   {
-    title: 'Setup your environment˙',
-    text: 'Prepare your local environment by installing the required dependencies',
-    to: '',
+    title: 'Setup your environment',
+    text: 'Prepare your local environment for interacting with 𝚝𝟷',
+    to: 'https://devnet.t1protocol.com/',
   },
 ]
 
@@ -277,8 +272,8 @@ export default function Home() {
           }}
         >
           <div>
-            <h2>Integrate your dApp</h2>
-            <p>Explore these guided tutorials to get started integrating with 𝚝𝟷 in your dApp.</p>
+            <h2>Explore dApps</h2>
+            <p>See what&apos;s possible with 𝚝𝟷.</p>
             <div>
               {dAppGuides.map((action) => (
                 <TraceEvent
@@ -307,7 +302,7 @@ export default function Home() {
           </div>
           <div>
             <h2>Integrate your smart contracts</h2>
-            <p>Explore these guided tutorials to get started integrating with 𝚝𝟷 in your smart contracts.</p>
+            <p>Get started integrating with 𝚝𝟷 in your smart contracts.</p>
             <div>
               {smartContractGuides.map((action) => (
                 <TraceEvent

@@ -9,16 +9,16 @@ This web application contains all documentation for t1. It was forked from the [
 
 ### TODO:
  - Add essential t1 contract docs, including technical method descriptions via `forge doc --serve`
- - Add more research entries in [Research](./docs/concepts/research.md)
- - Add all relevant glossary words and definitions in [Glossary](./docs/concepts/glossary.md)
- - Replace Lorem Ipsum with actual content in [Protocol](./docs/concepts/protocol)
- - Replace links to **Have you ever had a dream** in [index.tsx](./src/pages/index.tsx) with links to codebases (?)
+ - ~~Add more research entries in [Research](./docs/concepts/research.md)~~
+ - ~~Add all relevant glossary words and definitions in [Glossary](./docs/concepts/glossary.md)~~
+ - ~~Replace Lorem Ipsum with actual content in [Protocol](./docs/concepts/protocol)~~
+ - ~~Replace links to **Have you ever had a dream** in [index.tsx](./src/pages/index.tsx) with links to codebases (?)~~
  - Add Litepaper (or a link to it) in the NavBar
- - Set up the domain https://docs.t1protocol.com
- - Deploy these docs to the world wide web
- - Create a job to automatically re-deploy the docs to the world wide web when merge into `main` branch
-
- **NB**: Once the link is fixed or the Lorem Ipsum is replaced with real content, remove the `˙` at the end of the title
+ - ~~Set up the domain https://docs.t1protocol.com~~
+ - ~~Deploy these docs to the world wide web~~
+ - ~~Create a job to automatically re-deploy the docs to the world wide web when merge into `main` branch~~
+ - ~~Once the link is fixed or the Lorem Ipsum is replaced with real content, remove the `˙` at the end of the title~~
+ - Ensure that all linked Github repos are public before sharing link
 
 ## Adding Documentation
 
