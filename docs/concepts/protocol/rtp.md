@@ -1,7 +1,7 @@
 ---
 id: rtp
 title: Real-Time Proving
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 Real-time proving (RTP) enables immediate validation of computations, allowing systems to verify correct execution with minimal latency. This capability is particularly impactful in in blockchain ecosystems such as Ethereum, where the proliferation of layer 2 rollups has led to liquidity fragmentation and overall user experience degredation. RTP enhances composability by allowing chains and rollups to securely and efficiently interact with one another in near real-time, facilitating cross-chain operations such as asset transfers, contract calls, and state updates.
