@@ -27,7 +27,7 @@ export const actions = [
   {
     title: 'Bridge to 𝚝𝟷 devnet',
     icon: Chain,
-    to: 'https://bridge.devnet.t1protocol.com/',
+    to: 'https://devnet.t1protocol.com/bridge',
     text: `Deposit funds to start interacting with apps on 𝚝𝟷 devnet.`,
   },
   {
@@ -50,7 +50,7 @@ export const dAppGuides = [
   {
     title: 'T-DEX',
     text: 'Swap tokens on 𝚝𝟷 without needing to bridge',
-    to: 'https://d33ynhssf8imk5.cloudfront.net/',
+    to: 'https://t-dex.v006.t1protocol.com/',
   },
 ]
 export const smartContractGuides = [
