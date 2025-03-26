@@ -24,3 +24,5 @@ Executors are a network of TEE-enabled nodes tasked with executing state changes
 
 ## ExEx
 [Execution Extensions](https://www.paradigm.xyz/2024/05/reth-exex) (or ExExes, for short) allow developers to build their own infrastructure that relies on Reth as a base for driving the 𝚝𝟷 chain forward.
+## One Block DTW (or DTW for short)
+Deposit from L1 to t1, trade on t1 and Withdraw from t1 to L1, which happens in one L1 block. This is a feature unique to t1.
