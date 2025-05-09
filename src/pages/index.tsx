@@ -27,7 +27,7 @@ export const actions = [
   {
     title: '𝚝𝟷 devnet portal',
     icon: Chain,
-    to: 'https://devnet.t1protocol.com/bridge',
+    to: 'https://devnet.t1protocol.com/',
     text: `Play with 𝚝𝟷 devnet.`,
   },
   {
