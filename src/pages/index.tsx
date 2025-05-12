@@ -25,10 +25,10 @@ export const actions = [
     text: `Get familiar with the core concepts of the 𝚝𝟷 Protocol.`,
   },
   {
-    title: 'Bridge to 𝚝𝟷 devnet',
+    title: '𝚝𝟷 devnet portal',
     icon: Chain,
-    to: 'https://devnet.t1protocol.com/bridge',
-    text: `Deposit funds to start interacting with apps on 𝚝𝟷 devnet.`,
+    to: 'https://devnet.t1protocol.com/',
+    text: `Play with 𝚝𝟷 devnet.`,
   },
   {
     title: 'The 𝚝𝟷 smart contracts',
@@ -48,15 +48,20 @@ export const developerLinks = [
 
 export const dAppGuides = [
   {
+    title: '𝚝𝟷 canonical bridge',
+    text: 'Deposit funds to start interacting with apps on 𝚝𝟷 devnet.',
+    to: 'https://devnet.t1protocol.com/bridge/',
+  },
+  {
     title: 'T-DEX',
-    text: 'Swap tokens on 𝚝𝟷 without needing to bridge',
-    to: 'https://t-dex.v006.t1protocol.com/',
+    text: 'Swap tokens on 𝚝𝟷 without needing to bridge.',
+    to: 'https://t-dex.devnet.t1protocol.com/',
   },
 ]
 export const smartContractGuides = [
   {
     title: 'Setup your environment',
-    text: 'Prepare your local environment for interacting with 𝚝𝟷',
+    text: 'Prepare your local environment for interacting with 𝚝𝟷.',
     to: 'https://devnet.t1protocol.com/',
   },
 ]
