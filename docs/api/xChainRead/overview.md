@@ -91,7 +91,7 @@ The `requestRead` function is used to request a cross-chain read. It takes a `Re
 
 ### 3. Handle Proof Response
 
-Once the read request is processed, the result will be posted to the [API](./api-reference). You can fetch the proof from the API and verify it with your contract. The `verifyProofOfRead` function is used to verify the proof. It takes a `bytes` calldata as input, which contains the encoded proof of read. If the proof is valid, the function will return the request ID and the result of the target function. If the proof is invalid, the function will revert.
+Once the read request is processed, the result will be posted to the [API](./api-reference). You can fetch the proof from the API and verify it with your contract. The `verifyProofOfRead` function is used to verify the proof. It takes a `bytes` calldata as input, which can be fetched via the `handle_read_result_with_proof_calldata` field from the API. If the proof is valid, the function will return the request ID and the result of the target function. If the proof is invalid, the function will revert.
 
 ## Next Steps
 
