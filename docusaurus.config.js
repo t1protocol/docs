@@ -37,6 +37,12 @@ module.exports = {
           className: 'V3_active',
         },
         {
+          to: '/api/xChainRead/overview',
+          label: 'API',
+          position: 'left',
+          className: 'V3_active',
+        },
+        {
           // TODO(docs): Publish docs repo and make public at this URL
           href: 'https://github.com/t1protocol/',
           label: 'GitHub',
