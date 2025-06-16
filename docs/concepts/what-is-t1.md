@@ -4,4 +4,9 @@ title: 𝚝𝟷 Overview
 sidebar_position: 1
 ---
 
-𝚝𝟷 is a rollup designed to fix fragmentation and other composability challenges in scaling Ethereum. By leveraging AVS-secured Trusted Execution Environments, 𝚝𝟷 introduces real-time proofs (RTP) that prove the integrity of 𝚝𝟷 execution to Ethereum in less than 12 seconds. RTP enables instant settlement on Ethereum and therefore composability across different rollups. 𝚝𝟷’s mission is to unify Ethereum and the rollup ecosystem to provide a superior UX.
+t1 is an EVM-based cross-chain application infrastructure that introduces Real-Time Proving (RTP) and programmability to address fragmentation and composability challenges in scaling Ethereum: 
+
+- Real-time proving: Using Trusted Execution Environments (TEEs), 𝚝𝟷 proves its execution integrity to Ethereum and partner rollups in under 12 seconds. By running partner rollup nodes within its infrastructure, 𝚝𝟷 aggregates and proves their state to Ethereum in 1-2 L1 blocks—enabling instant settlement between Ethereum and any partner rollup.
+- Programmability: t1 smart contracts are able to read from and write to Ethereum and partner rollups
+
+The result: t1 provides the missing infrastructure for seamless cross-chain applications and liquidity movement—today.
