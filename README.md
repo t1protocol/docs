@@ -4,8 +4,9 @@ This web application contains all documentation for t1. It was forked from the [
 
 # Project Layout
 
-### t1 documentation currently has one section:
+### t1 documentation currently has two sections:
 - Concepts - General t1 information or concepts useful for using t1
+- API - xChainRead API documentation
 
 ### TODO:
  - Add essential t1 contract docs, including technical method descriptions via `forge doc --serve`
@@ -18,7 +19,7 @@ This web application contains all documentation for t1. It was forked from the [
  - ~~Deploy these docs to the world wide web~~
  - ~~Create a job to automatically re-deploy the docs to the world wide web when merge into `main` branch~~
  - ~~Once the link is fixed or the Lorem Ipsum is replaced with real content, remove the `˙` at the end of the title~~
- - Ensure that all linked Github repos are public before sharing link
+ - ~~Ensure that all linked Github repos are public before sharing link~~
 
 ## Adding Documentation
 
