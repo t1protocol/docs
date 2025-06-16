@@ -28,7 +28,7 @@ export const actions = [
     title: '𝚝𝟷 devnet portal',
     icon: Chain,
     to: 'https://devnet.t1protocol.com/',
-    text: `Play with 𝚝𝟷 devnet.`,
+    text: `Experience real time cross-chain interactions with 𝚝𝟷.`,
   },
   {
     title: 'The 𝚝𝟷 smart contracts',
@@ -52,17 +52,12 @@ export const dAppGuides = [
     text: 'Deposit funds to start interacting with apps on 𝚝𝟷 devnet.',
     to: 'https://devnet.t1protocol.com/bridge/',
   },
-  {
-    title: 'T-DEX',
-    text: 'Swap tokens on 𝚝𝟷 without needing to bridge.',
-    to: 'https://t-dex.devnet.t1protocol.com/',
-  },
 ]
 export const smartContractGuides = [
   {
-    title: 'Setup your environment',
-    text: 'Prepare your local environment for interacting with 𝚝𝟷.',
-    to: 'https://devnet.t1protocol.com/',
+    title: 'xChainRead',
+    text: 'Read data from other chains and prove the results back to your contract.',
+    to: '/api/xChainRead/overview',
   },
 ]
 
