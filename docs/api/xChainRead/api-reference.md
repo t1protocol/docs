@@ -14,7 +14,7 @@ Retrieve proof data for cross-chain read requests.
 **URL**: https://api.v05.t1protocol.com/api/read-proofs
 
 **Parameters**:
-- `address` (string, required): Your contract address
+- `address` (string, required): Address of the EOA that triggered the Proof of Read request
 - `direction` (string, optional): L1_TO_L2 or L2_TO_L1
 - `page` (number, optional): Page number
 - `page_size` (number, optional): Results per page
