@@ -25,7 +25,7 @@ The settler contract implementation is `T1ERC7683.sol`.
 
 🔴 5 - Solver calls t1 offchain API to get the merkle proof data
 
-🔴 6 - Solver call settlement function on source chain settler contract and get repaid
+🔴 6 - Solver calls settlement function on source chain settler contract and get repaid
 
 ## Implementation
 
