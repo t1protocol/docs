@@ -1,19 +1,20 @@
 ---
-
 id: api-reference
 title: API Reference
 sidebar_label: API Reference
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # API Reference
 
 ### Get Read Proofs
+
 Retrieve proof data for cross-chain read requests.
 
 **URL**: https://api.v05.t1protocol.com/api/read-proofs
 
 **Parameters**:
+
 - `address` (string, required): Address of the EOA that triggered the Proof of Read request
 - `direction` (string, optional): L1_TO_L2 or L2_TO_L1
 - `page` (number, optional): Page number
@@ -21,7 +22,6 @@ Retrieve proof data for cross-chain read requests.
 
 **Example**:
 https://api.v05.t1protocol.com/api/read-proofs?address=0x81B5e00e15fb3ee055aB5e616Ccb52fA935D3534&direction=L1_TO_L2&page=1&page_size=100
-
 
 **Response Format**:
 
@@ -35,7 +35,7 @@ https://api.v05.t1protocol.com/api/read-proofs?address=0x81B5e00e15fb3ee055aB5e6
   "direction": "L1_TO_L2", // Arbitrum Sepolia to Base Sepolia
   "claim_info": {
     "from": "0x81B5e00e15fb3ee055aB5e616Ccb52fA935D3534",
-    "to": "0xf96B8CcB029E0932fe36da0CeDd2b035E2c1695d", 
+    "to": "0xf96B8CcB029E0932fe36da0CeDd2b035E2c1695d",
     "value": "0",
     "nonce": "4",
     "message": "0xe11680cd0000000000000000000000000000000000000000000000000000000000014a34000000000000000000000000f96b8ccb029e0932fe36da0cedd2b035e2c1695d374f3efe8b19f4937fadee47d33f93d66a6dd62f5141d8efa41bf5de64f6e53a00000000000000000000000000000000000000000000000000000000000000a000000000000000000000000081b5e00e15fb3ee055ab5e616ccb52fa935d35340000000000000000000000000000000000000000000000000000000000000024ebd45ba21b50198add4a3fd45e9b53bf0a37bd0859d912cfdde54efefe31a0a0fc203b1f00000000000000000000000000000000000000000000000000000000",
@@ -52,16 +52,16 @@ https://api.v05.t1protocol.com/api/read-proofs?address=0x81B5e00e15fb3ee055aB5e6
 
 ### Key Fields
 
-| Field | Description |
-|-------|-------------|
-| `source_tx_hash` | Transaction hash that initiated the read request |
-| `message_type` | Message type (4 = xChainRead) |  
-| `block_number` | Block number when request was submitted |
-| `request_id` | Unique identifier for the read request |
-| `x_chain_read_result` | Raw ABI-encoded result from target function |
-| `handle_read_result_with_proof_calldata` | **Ready-to-use calldata for your contract** |
-| `proof.batch_index` | Batch containing this read result |
-| `proof.merkle_proof` | Cryptographic proof for verification |
+| Field                                    | Description                                      |
+| ---------------------------------------- | ------------------------------------------------ |
+| `source_tx_hash`                         | Transaction hash that initiated the read request |
+| `message_type`                           | Message type (4 = xChainRead)                    |
+| `block_number`                           | Block number when request was submitted          |
+| `request_id`                             | Unique identifier for the read request           |
+| `x_chain_read_result`                    | Raw ABI-encoded result from target function      |
+| `handle_read_result_with_proof_calldata` | **Ready-to-use calldata for your contract**      |
+| `proof.batch_index`                      | Batch containing this read result                |
+| `proof.merkle_proof`                     | Cryptographic proof for verification             |
 
 :::tip
 The `handle_read_result_with_proof_calldata` field contains pre-encoded calldata that you can directly submit to your contract's `handleReadResultWithProof` function.
@@ -85,9 +85,9 @@ interface T1XChainReader {
     function requestRead(
         ReadRequest calldata request
     ) external payable returns (bytes32 requestId);
-    
+
     function verifyProofOfRead(
-        bytes calldata encodedProofOfRead  
+        bytes calldata encodedProofOfRead
     ) external view returns (bytes32 requestId, bytes memory result);
 }
 ```
@@ -112,6 +112,7 @@ event ProofOfReadRootCommitted(uint256 batchIndex);
 ### Proof Encoding Format
 
 Proofs use the following ABI encoding:
+
 ```solidity
 abi.encode(
     uint256 batchIndex,    // index of the batch posted by the prover
