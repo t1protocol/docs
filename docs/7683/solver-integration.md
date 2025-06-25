@@ -17,7 +17,7 @@ Here is the full workflow from intent open to settlement (t1 specific steps with
 
 2 - Solver listens for open event on source chain settler contract and fill on destination chain settler contract
 
-🔴 3 - Solver call a verify function on source chain settler contract
+🔴 3 - Solver calls a verify function on source chain settler contract
 
 🔴 4 - Solver listen for new Proof of Read commitment event on source chain XChainReader contract
 
