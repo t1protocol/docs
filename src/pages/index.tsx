@@ -367,7 +367,7 @@ export default function Home() {
             <div style={{ fontSize: '24px', fontWeight: 500, marginBottom: '0.5rem' }}>
               Integrate Your Smart Contracts
             </div>
-            <p style={{ marginBottom: '1rem' }}>Build with t1's cross-chain capabilities</p>
+            <p style={{ marginBottom: '1rem' }}>Build with t1&apos;s cross-chain capabilities</p>
 
             <div
               style={{
@@ -406,7 +406,7 @@ export default function Home() {
           {/* Explore dApps Section */}
           <DappsContainer>
             <div style={{ fontSize: '24px', fontWeight: 500, marginBottom: '0.5rem' }}>Explore dApps</div>
-            <p style={{ marginBottom: '1rem' }}>See what's possible with t1</p>
+            <p style={{ marginBottom: '1rem' }}>See what&apos;s possible with t1</p>
 
             <div
               style={{
