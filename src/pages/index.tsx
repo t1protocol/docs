@@ -302,7 +302,7 @@ export default function Home() {
           </div>
           <div>
             <h2>Integrate your smart contracts</h2>
-            <p>Get started integrating with 𝚝𝟷's Proof of Read in your smart contracts.</p>
+            <p>Get started integrating with 𝚝𝟷&apos;s Proof of Read in your smart contracts.</p>
             <div>
               {smartContractGuides.map((action) => (
                 <TraceEvent
