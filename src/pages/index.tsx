@@ -71,9 +71,7 @@ export const smartContractGuides = [
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-
   margin: 0 4.5rem;
-
 
   @media (max-width: 960px) {
     flex-direction: column;
@@ -165,7 +163,6 @@ const ShadowCard = styled(Card)`
   flex: 1 1 200px; /* Grow, shrink, min-width */
   box-sizing: border-box;
   background: #ffffff10;
-
 `
 
 const IconWrapper = styled.div`
