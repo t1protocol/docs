@@ -25,9 +25,9 @@ export const actions = [
     text: `Get familiar with the core concepts of the 𝚝𝟷 Protocol.`,
   },
   {
-    title: '𝚝𝟷 devnet portal',
+    title: '𝚝𝟷 testnet portal',
     icon: Chain,
-    to: 'https://devnet.t1protocol.com/',
+    to: 'https://testnet.t1protocol.com/',
     text: `Experience real time cross-chain interactions with 𝚝𝟷.`,
   },
   {
@@ -48,9 +48,9 @@ export const developerLinks = [
 
 export const dAppGuides = [
   {
-    title: '𝚝𝟷 canonical bridge',
-    text: 'Deposit funds to start interacting with apps on 𝚝𝟷 devnet.',
-    to: 'https://devnet.t1protocol.com/bridge/',
+    title: '𝚝𝟷 RTP intent bridge',
+    text: 'Deposit funds to start interacting with apps on 𝚝𝟷 testnet.',
+    to: 'https://testnet.t1protocol.com/bridge/?bridgeType=INTENT',
   },
 ]
 export const smartContractGuides = [
@@ -302,7 +302,7 @@ export default function Home() {
           </div>
           <div>
             <h2>Integrate your smart contracts</h2>
-            <p>Get started integrating with 𝚝𝟷 in your smart contracts.</p>
+            <p>Get started integrating with 𝚝𝟷&apos;s Proof of Read in your smart contracts.</p>
             <div>
               {smartContractGuides.map((action) => (
                 <TraceEvent
