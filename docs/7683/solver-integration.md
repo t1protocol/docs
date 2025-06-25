@@ -21,7 +21,7 @@ The settler contract implementation is `T1ERC7683.sol`.
 
 🔴 3 - Solver calls a verify function on source chain settler contract
 
-🔴 4 - Solver listen for new Proof of Read commitment event on source chain XChainReader contract
+🔴 4 - Solver listens for new Proof of Read commitment event on source chain XChainReader contract
 
 🔴 5 - Solver call t1 offchain API to get the merkle proof data
 
