@@ -11,9 +11,11 @@ Solvers need to require a so called Proof of Read, and then use a merkle proof t
 
 ## Workflow
 
-Here is the full workflow from intent open to settlement (t1 specific steps with 🔴) :
+Here is the full workflow from intent open to settlement (t1 specific steps with 🔴).
 
-1 - Intent is opened on source chain settler contract (whether on chain by user or gasslessly by solver)
+The settler contract implementation is `T1ERC7683.sol`.
+
+1 - Intent is opened on source chain settler contract whether on chain by user or gasslessly by solver
 
 2 - Solver listens for open event on source chain settler contract and fill on destination chain settler contract
 
