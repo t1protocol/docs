@@ -11,16 +11,15 @@ module.exports = {
     // From node
     nodeEnv: process.env.NODE_ENV,
   },
-  title: '𝚝𝟷',
+  title: 't1',
   tagline: 'Documentation and Guides',
-  // TODO - update when we publish a URL
-  url: 'https://docs.uniswap.org',
+  url: 'https://docs.t1protocol.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'ignore',
   favicon: 'img/favicon.ico',
-  organizationName: '𝚝𝟷', // Usually your GitHub org/user name.
-  projectName: '𝚝𝟷-docs', // Usually your repo name.
+  organizationName: 't1', // Usually your GitHub org/user name.
+  projectName: 't1-docs', // Usually your repo name.
   themeConfig: {
     image: 'img/t1-rollup.png',
     prism: {
@@ -28,20 +27,27 @@ module.exports = {
     },
     algolia: null,
     navbar: {
-      title: '𝚝𝟷 Docs',
+      title: 't1 Docs',
       items: [
         {
-          to: '/concepts/overview',
+          to: '/concepts/protocol/rtp',
           label: 'Concepts',
           position: 'left',
           className: 'V3_active',
         },
         {
-          to: '/api/xChainRead/overview',
+          to: '/integration/7683/xChainRead',
+          label: 'Integration',
+          position: 'left',
+          className: 'V3_active',
+        },
+        {
+          to: '/api/xChainRead/api-reference',
           label: 'API',
           position: 'left',
           className: 'V3_active',
         },
+
         {
           // TODO(docs): Publish docs repo and make public at this URL
           href: 'https://github.com/t1protocol/',
@@ -71,7 +77,7 @@ module.exports = {
               href: 'https://discord.com/invite/nbvyXZHgke',
             },
             {
-              label: 'Twitter',
+              label: 'X',
               href: 'https://x.com/t1protocol',
             },
             {
@@ -93,7 +99,7 @@ module.exports = {
 
       // Should we use the prefers-color-scheme media-query,
       // using user system preferences, instead of the hardcoded defaultMode
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
   },
   presets: [

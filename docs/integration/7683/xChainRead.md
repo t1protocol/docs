@@ -1,7 +1,7 @@
 ---
-id: overview
+id: xChainRead
 title: xChainRead Overview
-sidebar_label: Overview
+sidebar_label: xChainRead
 sidebar_position: 1
 ---
 
@@ -27,6 +27,7 @@ t1 runs full nodes of partner rollups inside TEEs, ensuring verifiable execution
 ### 1. Deploy Your Contract
 
 t1 currently supports the following chains:
+
 - Arbitrum Sepolia
 - Base Sepolia
 
@@ -38,17 +39,17 @@ import "./T1XChainReader.sol";
 contract IntentSettler {
     T1XChainReader public xChainRead;
     mapping(bytes32 => bytes32) public readRequestToOrderId;
-    
+
     constructor(address _xChainReader) {
         xChainRead = T1XChainReader(_xChainReader);
     }
 
     function requestVerification(bytes32 orderId) external payable {
         bytes memory callData = abi.encodeWithSignature(
-            "getFilledOrderStatus(bytes32)", 
+            "getFilledOrderStatus(bytes32)",
             orderId
         );
-        
+
         bytes32 requestId = xChainRead.requestRead({
             destinationDomain: 84532, // Base Sepolia
             targetContract: 0xf96B8CcB029E0932fe36da0CeDd2b035E2c1695d,
@@ -57,19 +58,19 @@ contract IntentSettler {
             callData: callData,
             requester: msg.sender
         });
-        
+
         readRequestToOrderId[requestId] = orderId;
     }
 
     function handleReadResultWithProof(bytes calldata encodedProofOfRead) external {
-        (bytes32 requestId, bytes memory result) = 
+        (bytes32 requestId, bytes memory result) =
             xChainRead.verifyProofOfRead(encodedProofOfRead);
-        
+
         bytes32 orderId = readRequestToOrderId[requestId];
         require(orderId != bytes32(0), "Invalid request");
-        
+
         delete readRequestToOrderId[requestId];
-        
+
         // Process verified result
         bool isSettled = (result.length != 0);
         if (isSettled) {
@@ -91,8 +92,8 @@ The `requestRead` function is used to request a cross-chain read. It takes a `Re
 
 ### 3. Handle Proof Response
 
-Once the read request is processed, the result will be posted to the [API](./api-reference). You can fetch the proof from the API and verify it with your contract. The `verifyProofOfRead` function is used to verify the proof. It takes a `bytes` calldata as input, which can be fetched via the `handle_read_result_with_proof_calldata` field from the API. If the proof is valid, the function will return the request ID and the result of the target function. If the proof is invalid, the function will revert.
+Once the read request is processed, the result will be posted to the [API](../../api/xChainRead/api-reference). You can fetch the proof from the API and verify it with your contract. The `verifyProofOfRead` function is used to verify the proof. It takes a `bytes` calldata as input, which can be fetched via the `handle_read_result_with_proof_calldata` field from the API. If the proof is valid, the function will return the request ID and the result of the target function. If the proof is invalid, the function will revert.
 
 ## Next Steps
 
-- [API Reference](./api-reference) - Detailed API documentation
+- [API Reference](../../api/xChainRead/api-reference) - Detailed API documentation
