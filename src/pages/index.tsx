@@ -15,7 +15,6 @@ import {
   DocsSectionName as SectionName,
   SharedEventName,
 } from '@uniswap/analytics-events'
-import React from 'react'
 import { ArrowUpRight as LinkIcon, BookOpen, Info, Link as Chain } from 'react-feather'
 
 export const actions = [
