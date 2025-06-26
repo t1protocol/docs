@@ -5,7 +5,7 @@ require('dotenv').config()
 module.exports = {
   customFields: {
     // Analytics proxy URL
-    analyticsProxyUrl: process.env.REACT_APP_AMPLITUDE_PROXY_URL,
+    // analyticsProxyUrl: process.env.REACT_APP_AMPLITUDE_PROXY_URL,
     // Determines if staging env
     stagingEnv: process.env.REACT_APP_STAGING,
     // From node
@@ -36,18 +36,11 @@ module.exports = {
           className: 'V3_active',
         },
         {
-          to: '/integration/7683/xChainRead',
+          to: '/integration/xChainRead/overview',
           label: 'Integration',
           position: 'left',
           className: 'V3_active',
         },
-        {
-          to: '/api/xChainRead/api-reference',
-          label: 'API',
-          position: 'left',
-          className: 'V3_active',
-        },
-
         {
           // TODO(docs): Publish docs repo and make public at this URL
           href: 'https://github.com/t1protocol/',

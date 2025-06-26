@@ -1,8 +1,8 @@
 ---
 id: frontend
-title: Frontend Integration
-sidebar_label: Frontend Integration
-sidebar_position: 2
+title: ERC 7683 Frontend Integration
+sidebar_label: ERC 7683 Frontend Integration
+sidebar_position: 3
 ---
 
 # Frontend Integration for 7683 Intent Bridging
