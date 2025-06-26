@@ -9,6 +9,7 @@ import X from '@site/static/img/x.svg'
 import Layout from '@theme/Layout'
 import ThemedImage from '@theme/ThemedImage'
 import { TraceEvent } from '@uniswap/analytics'
+import React from 'react'
 import {
   BrowserEvent,
   DocsHomepageElementName as ElementName,
