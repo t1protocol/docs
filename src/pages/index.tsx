@@ -64,7 +64,7 @@ export const smartContractGuides = [
   {
     title: 'ERC 7683 Cross Chain Intents',
     text: 'Read data from other chains and prove the results back to your contract.',
-    to: '/integration/7683/xChainRead',
+    to: '/integration/xChainRead/overview',
   },
 ]
 
