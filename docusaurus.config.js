@@ -5,22 +5,21 @@ require('dotenv').config()
 module.exports = {
   customFields: {
     // Analytics proxy URL
-    analyticsProxyUrl: process.env.REACT_APP_AMPLITUDE_PROXY_URL,
+    // analyticsProxyUrl: process.env.REACT_APP_AMPLITUDE_PROXY_URL,
     // Determines if staging env
     stagingEnv: process.env.REACT_APP_STAGING,
     // From node
     nodeEnv: process.env.NODE_ENV,
   },
-  title: '𝚝𝟷',
+  title: 't1',
   tagline: 'Documentation and Guides',
-  // TODO - update when we publish a URL
-  url: 'https://docs.uniswap.org',
+  url: 'https://docs.t1protocol.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'ignore',
   favicon: 'img/favicon.ico',
-  organizationName: '𝚝𝟷', // Usually your GitHub org/user name.
-  projectName: '𝚝𝟷-docs', // Usually your repo name.
+  organizationName: 't1', // Usually your GitHub org/user name.
+  projectName: 't1-docs', // Usually your repo name.
   themeConfig: {
     image: 'img/t1-rollup.png',
     prism: {
@@ -28,17 +27,17 @@ module.exports = {
     },
     algolia: null,
     navbar: {
-      title: '𝚝𝟷 Docs',
+      title: 't1 Docs',
       items: [
         {
-          to: '/concepts/overview',
+          to: '/concepts/protocol/rtp',
           label: 'Concepts',
           position: 'left',
           className: 'V3_active',
         },
         {
-          to: '/api/xChainRead/overview',
-          label: 'API',
+          to: '/integration/xChainRead/overview',
+          label: 'Integration',
           position: 'left',
           className: 'V3_active',
         },
@@ -71,7 +70,7 @@ module.exports = {
               href: 'https://discord.com/invite/nbvyXZHgke',
             },
             {
-              label: 'Twitter',
+              label: 'X',
               href: 'https://x.com/t1protocol',
             },
             {
@@ -93,7 +92,7 @@ module.exports = {
 
       // Should we use the prefers-color-scheme media-query,
       // using user system preferences, instead of the hardcoded defaultMode
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
   },
   presets: [

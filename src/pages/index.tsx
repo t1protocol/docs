@@ -5,6 +5,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl'
 import styled from '@emotion/styled'
 import Discord from '@site/static/img/discord.svg'
 import GitHub from '@site/static/img/github.svg'
+import X from '@site/static/img/x.svg'
 import Layout from '@theme/Layout'
 import ThemedImage from '@theme/ThemedImage'
 import { TraceEvent } from '@uniswap/analytics'
@@ -19,28 +20,28 @@ import { ArrowUpRight as LinkIcon, BookOpen, Info, Link as Chain } from 'react-f
 
 export const actions = [
   {
-    title: 'What is 𝚝𝟷',
+    title: 'Learn More',
     icon: Info,
-    to: '/concepts/overview',
-    text: `Get familiar with the core concepts of the 𝚝𝟷 Protocol.`,
+    to: '/concepts/protocol/rtp',
+    text: `Get familiar with the core concepts of the t1 Protocol.`,
   },
   {
-    title: '𝚝𝟷 devnet portal',
+    title: 't1 Testnet Portal',
     icon: Chain,
-    to: 'https://devnet.t1protocol.com/',
-    text: `Experience real time cross-chain interactions with 𝚝𝟷.`,
+    to: 'https://testnet.t1protocol.com/',
+    text: `Experience real time cross-chain interactions with t1.`,
   },
   {
-    title: 'The 𝚝𝟷 smart contracts',
+    title: 't1 Smart Contracts',
     icon: BookOpen,
     to: 'https://github.com/t1protocol/t1/tree/canary/contracts',
-    text: `Learn about the architecture of 𝚝𝟷 smart contracts.`,
+    text: `Learn about the architecture of t1 smart contracts.`,
   },
 ]
 
 export const developerLinks = [
   {
-    title: 't1 monorepo',
+    title: 't1 Monorepo',
     href: 'https://github.com/t1protocol/t1',
     icon: GitHub,
   },
@@ -48,64 +49,85 @@ export const developerLinks = [
 
 export const dAppGuides = [
   {
-    title: '𝚝𝟷 canonical bridge',
-    text: 'Deposit funds to start interacting with apps on 𝚝𝟷 devnet.',
-    to: 'https://devnet.t1protocol.com/bridge/',
+    title: 't1 RTP Intent Bridge',
+    text: 'Deposit funds to start interacting with apps on t1 testnet.',
+    to: 'https://testnet.t1protocol.com/bridge/?bridgeType=INTENT',
+  },
+  {
+    title: 'More products coming soon',
+    text: 'Stay tuned for additional dApps built on t1.',
+    to: '#',
+    disabled: true,
   },
 ]
 export const smartContractGuides = [
   {
-    title: 'xChainRead',
+    title: 'ERC 7683 Cross Chain Intents',
     text: 'Read data from other chains and prove the results back to your contract.',
-    to: '/api/xChainRead/overview',
+    to: '/integration/xChainRead/overview',
   },
 ]
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 0 4.5rem;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 2rem;
+  }
+
+  @media (max-width: 640px) {
+    margin: 0 1rem;
+  }
+`
+
+const InnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
+  max-width: 1100px;
 `
 
 const Row = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 1rem 0;
-  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
 
-  @media (max-width: 960px) {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-    max-width: 100%;
-    margin: 0 1rem;
+  /* Tablet (2 columns) */
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    gap: 16px;
   }
   @media (max-width: 640px) {
-    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 `
 
-const TwoRow = styled(Row)`
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 48px;
+const RowCentered = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
 
-  @media (max-width: 960px) {
-    grid-template-columns: 1fr;
+  /* Tablet (2 columns) */
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    gap: 16px;
   }
   @media (max-width: 640px) {
-    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 `
 
 const Card = styled.div`
   display: flex;
   max-height: 250px;
-  min-width: 350px;
   padding: 1rem;
   flex-direction: column;
-  justify-content: center;
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 20px;
@@ -141,12 +163,11 @@ const CenterCard = styled(Card)`
   }
 `
 
+/* Card adjustments for Flexbox */
 const ShadowCard = styled(Card)`
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
-  background-color: #ffffff10;
-  backdrop-filter: blur(10px);
-  min-height: 200px;
-  /* background-color: var(--ifm-color-emphasis-0); */
+  flex: 1 1 200px; /* Grow, shrink, min-width */
+  box-sizing: border-box;
+  background: #ffffff10;
 `
 
 const IconWrapper = styled.div`
@@ -211,162 +232,288 @@ const StyledTitleImage = styled(StyledImage)`
 `
 
 const StyledIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   svg {
     fill: var(--ifm-font-color-base);
   }
 `
 
+const DescriptionSection = styled.div`
+  max-width: 1100px;
+  margin: 0 auto 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+  line-height: 1.6;
+`
+
+const DescriptionText = styled.p`
+  margin-bottom: 1.5rem;
+  text-align: left;
+`
+
+const DescriptionList = styled.ul`
+  text-align: left;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+`
+
+const DescriptionListItem = styled.li`
+  margin-bottom: 0.5rem;
+`
+
+const DappsContainer = styled.div`
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 640px) {
+    margin: 2rem 1rem 0 1rem;
+  }
+`
+
+const ExploreContainer = styled.div`
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 640px) {
+    margin: 2rem 1rem 0 1rem;
+  }
+`
+
+const LinksContainer = styled.div`
+  margin: 2rem 0 3rem 0;
+
+  @media (max-width: 640px) {
+    margin: 0 0 3rem 0;
+  }
+`
+
 export default function Home() {
   return (
-    <Layout title={`t1 Docs`} description="Technical Documentation For The 𝚝𝟷 Protocol">
+    <Layout title={`t1 Docs`} description="Technical Documentation For The t1 Protocol">
+      <StyledTitleImage
+        sources={{
+          light: useBaseUrl('/img/t1-cover-no-text.png'),
+          dark: useBaseUrl('/img/t1-cover-no-text.png'),
+        }}
+      />
       <Container>
-        <DocsHeader>
-          <div
-            style={{
-              padding: '4rem 0  ',
-              textAlign: 'center',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            <h1 style={{ fontWeight: 600 }}> Welcome to 𝚝𝟷 Docs</h1>
-          </div>
-          <StyledTitleImage
-            sources={{
-              light: useBaseUrl('/img/t1-cover-no-text.png'),
-              dark: useBaseUrl('/img/t1-cover-no-text.png'),
-            }}
-          />
-          <Row>
-            {actions.map((action) => (
-              <TraceEvent
-                key={action.to}
-                element={action.to}
-                events={[BrowserEvent.onClick]}
-                name={SharedEventName.PAGE_CLICKED}
-                section={SectionName.WELCOME_LINKS}
+        <InnerContainer>
+          <DocsHeader>
+            <div
+              style={{
+                padding: '4rem 1rem 2rem 1rem',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              <div style={{ fontWeight: 600, fontSize: '2.5rem' }}> Welcome to t1 Docs</div>
+            </div>
+            <DescriptionSection>
+              <DescriptionText>
+                t1 is an EVM-based cross-chain application infrastructure that introduces Real-time proving (RTP) and
+                programmability to address fragmentation and composability challenges in scaling Ethereum:
+              </DescriptionText>
+
+              <DescriptionList>
+                <DescriptionListItem>
+                  <strong>Real-time proving:</strong> Using Trusted Execution Environments (TEEs), t1 proves its
+                  execution integrity to Ethereum and partner rollups in under 12 seconds. By running partner rollup
+                  nodes within its infrastructure, t1 aggregates and proves their state to Ethereum in 1-2 L1
+                  blocks—enabling instant settlement between Ethereum and any partner rollup.
+                </DescriptionListItem>
+                <DescriptionListItem>
+                  <strong>Programmability:</strong> t1 smart contracts are able to read from and write to Ethereum and
+                  partner rollups. (coming soon)
+                </DescriptionListItem>
+              </DescriptionList>
+
+              <DescriptionText>
+                t1 provides the missing infrastructure for seamless cross-chain applications and liquidity
+                movement—today.
+              </DescriptionText>
+            </DescriptionSection>
+
+            <Row>
+              {actions.map((action) => (
+                <TraceEvent
+                  key={action.to}
+                  element={action.to}
+                  events={[BrowserEvent.onClick]}
+                  name={SharedEventName.PAGE_CLICKED}
+                  section={SectionName.WELCOME_LINKS}
+                >
+                  <Link style={{ textDecoration: 'none' }} to={action.to}>
+                    <ShadowCard key={action.title}>
+                      <TopSection>
+                        <IconWrapper>
+                          <action.icon style={{ width: '24px' }} />
+                        </IconWrapper>
+                        <LinkIconWrapper>
+                          <LinkIcon />
+                        </LinkIconWrapper>
+                      </TopSection>
+                      <h3 style={{ marginBottom: '.75rem', fontWeight: 500 }}>{action.title}</h3>
+                      <p style={{ marginBottom: '0.5rem', fontWeight: 300 }}>{action.text}</p>
+                    </ShadowCard>
+                  </Link>
+                </TraceEvent>
+              ))}
+            </Row>
+          </DocsHeader>
+          <>
+            {/* Smart Contracts Section */}
+            <ExploreContainer>
+              <div style={{ fontSize: '24px', fontWeight: 500, marginBottom: '0.5rem' }}>
+                Integrate Your Smart Contracts
+              </div>
+              <p style={{ marginBottom: '1rem' }}>Build with t1&apos;s cross-chain capabilities</p>
+
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                  gap: '24px',
+                  alignItems: 'stretch',
+                }}
               >
-                <Link style={{ textDecoration: 'none' }} to={action.to}>
-                  <ShadowCard key={action.title}>
-                    <TopSection>
-                      <IconWrapper>
-                        <action.icon style={{ width: '24px' }} />
-                      </IconWrapper>
-                      <LinkIconWrapper>
-                        <LinkIcon />
-                      </LinkIconWrapper>
-                    </TopSection>
-                    <h3 style={{ marginBottom: '.75rem', fontWeight: 500 }}>{action.title}</h3>
-                    <p style={{ marginBottom: '0.5rem', fontWeight: 300 }}>{action.text}</p>
-                  </ShadowCard>
+                {smartContractGuides.map((action) => (
+                  <TraceEvent
+                    key={action.to}
+                    element={action.to}
+                    events={[BrowserEvent.onClick]}
+                    name={SharedEventName.PAGE_CLICKED}
+                    section={SectionName.SMART_CONTRACT_LINKS}
+                  >
+                    <Link style={{ textDecoration: 'none', height: '100%' }} key={action.title} to={action.to}>
+                      <Card style={{ height: '100%' }}>
+                        <LinkRow>
+                          <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <h3 style={{ marginBottom: '0rem' }}>{action.title}</h3>
+                          </div>
+                          <LinkIconWrapper>
+                            <LinkIcon />
+                          </LinkIconWrapper>
+                        </LinkRow>
+                        <p style={{ marginBottom: '0rem', fontWeight: 300 }}>{action.text}</p>
+                      </Card>
+                    </Link>
+                  </TraceEvent>
+                ))}
+              </div>
+            </ExploreContainer>
+
+            {/* Explore dApps Section */}
+            <DappsContainer>
+              <div style={{ fontSize: '24px', fontWeight: 500, marginBottom: '0.5rem' }}>Explore dApps</div>
+              <p style={{ marginBottom: '1rem' }}>See what&apos;s possible with t1</p>
+
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                  gap: '24px',
+                  alignItems: 'stretch',
+                }}
+              >
+                {dAppGuides.map((action) => (
+                  <TraceEvent
+                    key={action.title}
+                    element={action.to}
+                    events={[BrowserEvent.onClick]}
+                    name={SharedEventName.PAGE_CLICKED}
+                    section={SectionName.DAPP_LINKS}
+                  >
+                    <Link style={{ textDecoration: 'none', height: '100%' }} key={action.title} to={action.to}>
+                      <Card
+                        style={{
+                          height: '100%',
+                          opacity: action.disabled ? 0.6 : 1,
+                          cursor: action.disabled ? 'not-allowed' : 'pointer',
+                        }}
+                      >
+                        <LinkRow>
+                          <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <h3 style={{ marginBottom: '0rem' }}>{action.title}</h3>
+                          </div>
+                          {!action.disabled && (
+                            <LinkIconWrapper>
+                              <LinkIcon />
+                            </LinkIconWrapper>
+                          )}
+                        </LinkRow>
+                        <p style={{ marginBottom: '0rem', fontWeight: 300 }}>{action.text}</p>
+                      </Card>
+                    </Link>
+                  </TraceEvent>
+                ))}
+              </div>
+            </DappsContainer>
+          </>
+          <hr />
+          <LinksContainer>
+            <RowCentered>
+              <TraceEvent
+                events={[BrowserEvent.onClick]}
+                section={SectionName.BOTTOM_MENU_LINKS}
+                element={ElementName.X}
+                name={SharedEventName.PAGE_CLICKED}
+              >
+                <Link style={{ textDecoration: 'none' }} href={'https://x.com/t1protocol'}>
+                  <CenterCard>
+                    <StyledIcon>
+                      <X style={{ width: '40px', height: '40px' }} />
+                    </StyledIcon>
+                    <div>
+                      <h3>X</h3>
+                      <p>Stay up to date on X.</p>
+                    </div>
+                  </CenterCard>
                 </Link>
               </TraceEvent>
-            ))}
-          </Row>
-        </DocsHeader>
-        <TwoRow
-          style={{
-            gap: '56px',
-            marginTop: '4rem',
-          }}
-        >
-          <div>
-            <h2>Explore dApps</h2>
-            <p>See what&apos;s possible with 𝚝𝟷.</p>
-            <div>
-              {dAppGuides.map((action) => (
-                <TraceEvent
-                  key={action.to}
-                  element={action.to}
-                  events={[BrowserEvent.onClick]}
-                  name={SharedEventName.PAGE_CLICKED}
-                  section={SectionName.DAPP_LINKS}
-                >
-                  <Link style={{ textDecoration: 'none' }} key={action.title} to={action.to}>
-                    <Card key={action.title} style={{ marginBottom: '1rem' }}>
-                      <LinkRow>
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                          <h3 style={{ marginBottom: '0rem' }}>{action.title}</h3>
-                        </div>
-                        <LinkIconWrapper>
-                          <LinkIcon />
-                        </LinkIconWrapper>
-                      </LinkRow>
-                      <p style={{ marginBottom: '0rem', fontWeight: 300 }}>{action.text}</p>
-                    </Card>
-                  </Link>
-                </TraceEvent>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h2>Integrate your smart contracts</h2>
-            <p>Get started integrating with 𝚝𝟷 in your smart contracts.</p>
-            <div>
-              {smartContractGuides.map((action) => (
-                <TraceEvent
-                  key={action.to}
-                  element={action.to}
-                  events={[BrowserEvent.onClick]}
-                  name={SharedEventName.PAGE_CLICKED}
-                  section={SectionName.SMART_CONTRACT_LINKS}
-                >
-                  <Link style={{ textDecoration: 'none' }} key={action.title} to={action.to}>
-                    <Card key={action.title} style={{ marginBottom: '1rem' }}>
-                      <LinkRow>
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                          <h3 style={{ marginBottom: '0rem' }}>{action.title}</h3>
-                        </div>
-                        <LinkIconWrapper>
-                          <LinkIcon />
-                        </LinkIconWrapper>
-                      </LinkRow>
-                      <p style={{ marginBottom: '0rem', fontWeight: 300 }}>{action.text}</p>
-                    </Card>
-                  </Link>
-                </TraceEvent>
-              ))}
-            </div>
-          </div>
-        </TwoRow>
-        <hr />
-        <TwoRow>
-          <TraceEvent
-            events={[BrowserEvent.onClick]}
-            element={ElementName.DISCORD}
-            section={SectionName.BOTTOM_MENU_LINKS}
-            name={SharedEventName.PAGE_CLICKED}
-          >
-            <Link style={{ textDecoration: 'none' }} href={'https://discord.com/invite/nbvyXZHgke'}>
-              <CenterCard>
-                <Discord style={{ width: '48px', height: '48px' }} />
-                <div>
-                  <h3>Discord</h3>
-                  <p>Join our Developer Community.</p>
-                </div>
-              </CenterCard>
-            </Link>
-          </TraceEvent>
-          <TraceEvent
-            events={[BrowserEvent.onClick]}
-            section={SectionName.BOTTOM_MENU_LINKS}
-            element={ElementName.GITHUB}
-            name={SharedEventName.PAGE_CLICKED}
-          >
-            <Link style={{ textDecoration: 'none' }} href={'https://github.com/t1protocol'}>
-              <CenterCard>
-                <StyledIcon>
-                  <GitHub style={{ width: '48px', height: '48px' }} />
-                </StyledIcon>
-                <div>
-                  <h3>GitHub</h3>
-                  <p>View all 𝚝𝟷 repositories.</p>
-                </div>
-              </CenterCard>
-            </Link>
-          </TraceEvent>
-        </TwoRow>
+              <TraceEvent
+                events={[BrowserEvent.onClick]}
+                element={ElementName.DISCORD}
+                section={SectionName.BOTTOM_MENU_LINKS}
+                name={SharedEventName.PAGE_CLICKED}
+              >
+                <Link style={{ textDecoration: 'none' }} href={'https://discord.com/invite/nbvyXZHgke'}>
+                  <CenterCard>
+                    <Discord style={{ width: '48px', height: '48px' }} />
+                    <div>
+                      <h3>Discord</h3>
+                      <p>Join our Developer Community.</p>
+                    </div>
+                  </CenterCard>
+                </Link>
+              </TraceEvent>
+              <TraceEvent
+                events={[BrowserEvent.onClick]}
+                section={SectionName.BOTTOM_MENU_LINKS}
+                element={ElementName.GITHUB}
+                name={SharedEventName.PAGE_CLICKED}
+              >
+                <Link style={{ textDecoration: 'none' }} href={'https://github.com/t1protocol'}>
+                  <CenterCard>
+                    <StyledIcon>
+                      <GitHub style={{ width: '40px', height: '40px' }} />
+                    </StyledIcon>
+                    <div>
+                      <h3>GitHub</h3>
+                      <p>View all t1 repositories.</p>
+                    </div>
+                  </CenterCard>
+                </Link>
+              </TraceEvent>
+            </RowCentered>
+          </LinksContainer>
+        </InnerContainer>
       </Container>
     </Layout>
   )

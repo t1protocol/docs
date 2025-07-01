@@ -348,9 +348,11 @@ html[data-theme='dark'] .DocSearch {
   --docsearch-searchbox-background: rgba(0, 0, 0, 0.2);
   /* Footer */
   --docsearch-footer-background: var(--ifm-background-surface-color);
-  --docsearch-key-gradient: linear-gradient(-26.5deg,
-      var(--ifm-color-emphasis-200) 0%,
-      var(--ifm-color-emphasis-100) 100%);
+  --docsearch-key-gradient: linear-gradient(
+    -26.5deg,
+    var(--ifm-color-emphasis-200) 0%,
+    var(--ifm-color-emphasis-100) 100%
+  );
 
   --docsearch-searchbox-shadow: inset 0 0 0 2px var(--ifm-color-emphasis-200);
 }
