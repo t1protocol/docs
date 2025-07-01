@@ -1,3 +1,10 @@
+---
+id: 7683-solver
+title: Solver integration
+sidebar_label: Solver integration
+sidebar_position: 4
+---
+
 # t1 intents protocol: solver integration
 
 Our intent protocol implements the ERC 7683 specification.
