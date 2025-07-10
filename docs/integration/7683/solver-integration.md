@@ -86,14 +86,21 @@ Endpoint: `/api/read-proofs`
 Method: `GET`
 
 **Query Parameters:**
+
 | Parameter | Type | Optional | Description | Value suggested |
+
 |-----------|------|----------|-------------|---------|
+
 | `address` | string | No | Address that called `verifySettlement` | - |
+
 | `direction` | string | Yes | Direction of the read: `"L1_TO_L2"` \| `"L2_TO_L1"` | - |
+
 | `page` | number | Yes | Page number to fetch | `1` |
+
 | `page_size` | number | Yes | Items per page | `100` |
 
 **Example Request:**
+
 ```bash
 curl "https://api.v05.t1protocol.com/api/read-proofs?address=0x123...&direction=L1_TO_L2&page=1&page_size=100"
 ```
