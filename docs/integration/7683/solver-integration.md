@@ -2,7 +2,7 @@
 id: 7683-solver
 title: Solver integration
 sidebar_label: Solver integration
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 # t1 intents protocol: solver integration
