@@ -63,7 +63,7 @@ interface VerifiedProofReturn {
 const XCHAINREADER_ABI = [
   'function verifyProofOfRead(bytes encodedProofOfRead) external view returns (bytes32, bytes)',
 ];
-const API_BASE_URL = 'https://api.v05.t1protocol.com/api';
+const API_BASE_URL = 'https://api.v06.t1protocol.com/api';
 const ARB_RPC_URL = 'https://arbitrum-sepolia-rpc.publicnode.com';
 const BASE_RPC_URL = 'https://base-sepolia-rpc.publicnode.com';
 const ARB_XCHAINREADER_ADDRESS = '0x42d389A9007e446b92C0ce7bd8F42Ea10292881B';

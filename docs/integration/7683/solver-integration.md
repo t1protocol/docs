@@ -79,7 +79,7 @@ Location: offchain
 
 Timing: once a new `ProofOfReadRootCommitted` event has been emitted
 
-Base URL: `https://api.v05.t1protocol.com`
+Base URL: `https://api.v06.t1protocol.com`
 
 Endpoint: `/api/read-proofs`
 
@@ -95,7 +95,7 @@ Method: `GET`
 
 **Example Request:**
 ```bash
-curl "https://api.v05.t1protocol.com/api/read-proofs?address=0x123...&direction=ARB_TO_BASE&page=1&page_size=100"
+curl "https://api.v06.t1protocol.com/api/read-proofs?address=0x123...&direction=ARB_TO_BASE&page=1&page_size=100"
 ```
 
 The HTTP call will return the following structure as a response :

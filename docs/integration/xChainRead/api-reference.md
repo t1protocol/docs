@@ -11,7 +11,7 @@ sidebar_position: 2
 
 Retrieve proof data for cross-chain read requests.
 
-**URL**: https://api.v05.t1protocol.com/api/read-proofs
+**URL**: https://api.v06.t1protocol.com/api/read-proofs
 
 **Parameters**:
 
@@ -21,7 +21,7 @@ Retrieve proof data for cross-chain read requests.
 - `page_size` (number, optional): Results per page
 
 **Example**:
-https://api.v05.t1protocol.com/api/read-proofs?address=0x81B5e00e15fb3ee055aB5e616Ccb52fA935D3534&direction=ARB_TO_BASE&page=1&page_size=100
+https://api.v06.t1protocol.com/api/read-proofs?address=0x81B5e00e15fb3ee055aB5e616Ccb52fA935D3534&direction=ARB_TO_BASE&page=1&page_size=100
 
 **Response Format**:
 
