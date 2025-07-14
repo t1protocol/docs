@@ -19,8 +19,8 @@
 import { ethers } from 'ethers';
 
 enum Direction {
-  ARB_TO_BASE = 'L1_TO_L2',
-  BASE_TO_ARB = 'L2_TO_L1',
+  ARB_TO_BASE = 'ARB_TO_BASE',
+  BASE_TO_ARB = 'BASE_TO_ARB',
 }
 
 interface ClaimInfo {

@@ -89,13 +89,13 @@ Method: `GET`
 | Parameter | Type | Optional | Description | Value suggested |
 |-----------|------|----------|-------------|---------|
 | `address` | string | No | Address that called `verifySettlement` | - |
-| `direction` | string | Yes | Direction of the read: `"L1_TO_L2"` \| `"L2_TO_L1"` | - |
+| `direction` | string | Yes | Direction of the read: `"ARB_TO_BASE"` \| `"BASE_TO_ARB"` | - |
 | `page` | number | Yes | Page number to fetch | `1` |
 | `page_size` | number | Yes | Items per page | `100` |
 
 **Example Request:**
 ```bash
-curl "https://api.v05.t1protocol.com/api/read-proofs?address=0x123...&direction=L1_TO_L2&page=1&page_size=100"
+curl "https://api.v05.t1protocol.com/api/read-proofs?address=0x123...&direction=ARB_TO_BASE&page=1&page_size=100"
 ```
 
 The HTTP call will return the following structure as a response :
@@ -119,8 +119,8 @@ interface Result {
 }
 
 enum Direction {
-  L1_TO_L2 = 'L1_TO_L2',
-  L2_TO_L1 = 'L2_TO_L1',
+  ARB_TO_BASE = 'ARB_TO_BASE',
+  BASE_TO_ARB = 'BASE_TO_ARB',
 }
 
 interface ClaimInfo {

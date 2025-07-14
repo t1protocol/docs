@@ -16,12 +16,12 @@ Retrieve proof data for cross-chain read requests.
 **Parameters**:
 
 - `address` (string, required): Address of the EOA that triggered the Proof of Read request
-- `direction` (string, optional): L1_TO_L2 or L2_TO_L1
+- `direction` (string, optional): ARB_TO_BASE or BASE_TO_ARB
 - `page` (number, optional): Page number
 - `page_size` (number, optional): Results per page
 
 **Example**:
-https://api.v05.t1protocol.com/api/read-proofs?address=0x81B5e00e15fb3ee055aB5e616Ccb52fA935D3534&direction=L1_TO_L2&page=1&page_size=100
+https://api.v05.t1protocol.com/api/read-proofs?address=0x81B5e00e15fb3ee055aB5e616Ccb52fA935D3534&direction=ARB_TO_BASE&page=1&page_size=100
 
 **Response Format**:
 
@@ -32,7 +32,7 @@ https://api.v05.t1protocol.com/api/read-proofs?address=0x81B5e00e15fb3ee055aB5e6
   "block_number": 163780939,
   "message_hash": "0x94cdea443c0f6034de6bdf781ce159055546c0e42632db5215558c392088ee8f",
   "tx_sender": "0x42d389A9007e446b92C0ce7bd8F42Ea10292881B",
-  "direction": "L1_TO_L2", // Arbitrum Sepolia to Base Sepolia
+  "direction": "ARB_TO_BASE", // Arbitrum Sepolia to Base Sepolia
   "claim_info": {
     "from": "0x81B5e00e15fb3ee055aB5e616Ccb52fA935D3534",
     "to": "0xf96B8CcB029E0932fe36da0CeDd2b035E2c1695d",
