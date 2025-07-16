@@ -4,7 +4,7 @@ title: Research
 sidebar_position: 2
 ---
 
-# Research
+## Research
 
 The rollup landscape is changing rapidly, and we at t1 strive to stay at the bleeding edge. Our research focuses on improving scalable composability among and between blockchains and rollups.
 
