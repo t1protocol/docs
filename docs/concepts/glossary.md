@@ -30,7 +30,7 @@ RTP is the ability to prove state transitions in a rollup within one base layer 
 
 ## Sequencer
 
-Sequencers are a highly decentralized set of nodes tasked with blindly finalizing the ordering of encrypted transactions in a 𝚝𝟷 block. Since Sequencers only order transactions rather than executing them, we can achieve high decentralization and censorship resistance. Sequencers create Sequencing Consensus. [More](https://www.notion.so/t1protocol/Litepaper-9a2cc4d321ce4a08a4905aa809fb436e?source=copy_link#107231194dc380e7a4b2e58c1682a6cd)
+Sequencers are a highly decentralized set of nodes tasked with blindly finalizing the ordering of encrypted transactions in a t1 block. Since Sequencers only order transactions rather than executing them, we can achieve high decentralization and censorship resistance. Sequencers create Sequencing Consensus. [More](https://www.notion.so/t1protocol/Litepaper-9a2cc4d321ce4a08a4905aa809fb436e?source=copy_link#107231194dc380e7a4b2e58c1682a6cd)
 
 ## Executor
 
