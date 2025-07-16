@@ -62,7 +62,7 @@ export const dAppGuides = [
 ]
 export const smartContractGuides = [
   {
-    title: 'Cross Chain Intents',
+    title: 'Cross-chain Reads',
     text: 'Read data from other chains and prove the results back to your contract. This primitive is useful in ERC7683 enabled cross-chain intents and swaps.',
     to: '/integration/xChainRead/overview',
   },
