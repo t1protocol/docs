@@ -30,7 +30,7 @@ module.exports = {
       title: 't1 Docs',
       items: [
         {
-          to: '/concepts/protocol/rtp',
+          to: '/concepts/protocol/introduction',
           label: 'Concepts',
           position: 'left',
           className: 'V3_active',
