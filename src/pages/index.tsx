@@ -22,7 +22,7 @@ export const actions = [
   {
     title: 'Learn More',
     icon: Info,
-    to: '/concepts/protocol/rtp',
+    to: '/concepts/protocol/introduction',
     text: `Get familiar with the core concepts of the t1 Protocol.`,
   },
   {
@@ -62,8 +62,8 @@ export const dAppGuides = [
 ]
 export const smartContractGuides = [
   {
-    title: 'ERC 7683 Cross Chain Intents',
-    text: 'Read data from other chains and prove the results back to your contract.',
+    title: 'Cross-chain Reads',
+    text: 'Read data from other chains and prove the results back to your contract. This primitive is useful in ERC7683 enabled cross-chain intents and swaps.',
     to: '/integration/xChainRead/overview',
   },
 ]

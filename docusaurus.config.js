@@ -30,7 +30,7 @@ module.exports = {
       title: 't1 Docs',
       items: [
         {
-          to: '/concepts/protocol/rtp',
+          to: '/concepts/protocol/introduction',
           label: 'Concepts',
           position: 'left',
           className: 'V3_active',
@@ -107,13 +107,6 @@ module.exports = {
           editUrl: 'https://github.com/t1protocol/docs/tree/main/',
           includeCurrentVersion: true,
         },
-        blog: {
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
-          path: 'blog/',
-          blogTitle: 'Engineering Blog',
-          blogSidebarCount: 0,
-        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
           customCss2: require.resolve('./src/css/colors.css'),
@@ -129,78 +122,5 @@ module.exports = {
       crossorigin: 'anonymous',
     },
   ],
-  plugins: [
-    ['@saucelabs/theme-github-codeblock', {}],
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          // 1/9/23 V3 SDK Guide Redirects
-          {
-            to: '/sdk/v3/guides/background',
-            from: '/sdk/v3/guides/quick-start',
-          },
-          {
-            to: '/sdk/v3/guides/swaps/quoting',
-            from: ['/sdk/v3/guides/creating-a-pool', '/sdk/v3/guides/fetching-prices'],
-          },
-          {
-            to: '/sdk/v3/guides/swaps/trading',
-            from: '/sdk/v3/guides/creating-a-trade',
-          },
-          {
-            to: '/sdk/v3/guides/swaps/routing',
-            from: '/sdk/v3/guides/auto-router',
-          },
-          {
-            to: '/sdk/v3/guides/liquidity/modifying-position',
-            from: ['/sdk/v3/guides/liquidity/adding', '/sdk/v3/guides/liquidity/removing'],
-          },
-        ],
-        createRedirects(existingPath) {
-          // V3 Redirects
-          if (existingPath.includes('/concepts/overview')) {
-            return [existingPath.replace('/concepts/overview', '/protocol/introduction')]
-          }
-          if (existingPath.includes('/contracts/v3/reference')) {
-            return [existingPath.replace('/contracts/v3/reference', '/protocol/reference')]
-          }
-          if (existingPath.includes('/contracts/v3/guides')) {
-            return [existingPath.replace('/contracts/v3/guides', '/protocol/guides')]
-          }
-          // V2 Redirects
-          if (existingPath.includes('/contracts/v2/reference')) {
-            return [existingPath.replace('/contracts/v2/reference', '/protocol/V2/reference')]
-          }
-          if (existingPath.includes('/contracts/v2/guides')) {
-            return [existingPath.replace('/contracts/v2/guides', '/protocol/V2/guides')]
-          }
-          // Permit2 Redirects
-          if (existingPath.includes('/contracts/permit2')) {
-            return [existingPath.replace('/contracts/permit2', '/protocol/permit2')]
-          }
-          // v3-sdk Redirects
-          if (existingPath.includes('/sdk/v3/overview')) {
-            return [existingPath.replace('/sdk/v3/overview', '/sdk/introduction')]
-          }
-          if (existingPath.includes('/sdk/v3/guides')) {
-            return [existingPath.replace('/sdk/v3/guides', '/sdk/guides')]
-          }
-          // swap-widgets Redirects
-          if (existingPath.includes('/sdk/swap-widget/overview')) {
-            return [existingPath.replace('/sdk/swap-widget/overview', '/sdk/widgets/swap-widget')]
-          }
-          if (existingPath.includes('/sdk/swap-widget/reference/v2')) {
-            return [existingPath.replace('/sdk/swap-widget/reference/v2', '/sdk/widgets/swap-widget/api')]
-          }
-          if (existingPath.includes('/concepts')) {
-            return [existingPath.replace('/concepts', '/protocol/concepts')]
-          }
-
-          // Return a falsy value: no redirect created
-          return undefined
-        },
-      },
-    ],
-  ],
+  plugins: [['@saucelabs/theme-github-codeblock', {}]],
 }
