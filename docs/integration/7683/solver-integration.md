@@ -9,35 +9,142 @@ sidebar_position: 1
 
 Our intent protocol implements the ERC 7683 specification.
 
-The workflow is the same for intents opening, filling and settlement.
+The workflow is mostly the same than in other implementations : intents are opened, filled and settled.
 
-There is only a difference in the process for settlement of solvers on origin chain.
+But it has 2 specificities : the auction system and the settlement mechanism.
 
-Solvers need to require a so called Proof of Read, and then use a merkle proof to get repaid.
+## The auction
+
+Our intent protocol uses an offchain auction system where solvers have to login.
+
+Solvers then stream their prices to our backend.
+
+When an intent is opened, they might get the chance to fill it if they offer the best price.
+
+Winner gets notified off chain and can then fill and settle with the data we provide.
+
+## The settlement
+
+There is a difference in the process for settlement of solvers on source chain.
+
+We use our Proof of Read system to verify the intent has correctly been filled on destination chain.
+
+Thus, solvers need to require such a Proof of Read, and then use a merkle proof to get repaid.
 
 ## Workflow
 
-Here is the full workflow from intent open to settlement (t1 specific steps with 🔴).
+Here is the full workflow from intent open to settlement.
 
 The settler contract implementation is `T1ERC7683.sol`.
 
-1 - Intent is opened on source chain settler contract whether on chain by user or gasslessly by solver
+1 - Solver logins to t1 backend and stream its prices for token/chain pairs supported over websocket connection.
 
-2 - Solver listens for open event on source chain settler contract and fill on destination chain settler contract
+2 - Intent is opened on source chain settler contract whether on chain by user or gasslessly by t1. The intent data contains a `minAmountOut` value that is basically a lower price limit to cover slippage.
 
-🔴 3 - Solver calls a verify function on source chain settler contract
+3 - t1 catches the open event on source chain settler contract and runs an auction to compute what is the best price available.
 
-🔴 4 - Solver listens for new Proof of Read commitment event on source chain XChainReader contract
+4 - Considering the best price is at least the `minAmountOut`, t1 commits the winning bid `amountOut` and solver's settlement receiver address on source settler contracts, and notifies winner solver it can fill over the websocket connection (with relevant data).
 
-🔴 5 - Solver calls t1 offchain API to get the merkle proof data
+5 - Solver fills on destination chain settler contract in respect of the pricing it commited to.
 
-🔴 6 - Solver calls settlement function on source chain settler contract and get repaid
+6 - Solver calls a verify function on source chain settler contract that will create the Proof of Read that will check the fill on destination settler contract.
 
-## Implementation
+7 - Solver listens for new Proof of Read commitment event on source chain XChainReader contract.
 
-Here is how you integrate from step 3.
+8 - Solver calls t1 offchain API to get the merkle proof data for the Proof of Read.
 
-### 3 - Solver call a verify function on source chain settler contract
+9 - Solver calls settlement function on source chain settler contract by providing the merkle proof, and get repaid if the fill settlement receiver address and amountOut verified by Proof of Read match with the commited winning bid.
+
+## Integrating the auction
+
+Here is how you can integrate from step 1 to 5.
+
+### 1 - Solver logins to t1 backend and stream its prices
+
+Connect to `wss://localhost:{port}` by providing a `username` data field.
+
+```typescript
+  const socket = new WebSocket(`ws://localhost:{port}/`, {
+    headers: { Authorization: "username" }
+  });
+  ```
+
+Then stream you price list in the following format to the socket.
+
+Best frequency is 1s.
+
+```typescript
+ type PriceListItem = {
+    direction: Direction;
+    intervals: Interval[];
+    srcTokenAddresses: string[];
+    dstTokenAddress: string[];
+    solverAddress: string;
+}
+
+ enum Direction {
+    "Base_USDC->Arbitrum_USDC",
+    "Base_USDC->Arbitrum_WETH",
+    "Arbitrum_USDC->Base_USDC",
+    "Arbitrum_WETH->Base_USDC",
+}
+
+enum Token {
+    Base_USDC = "Base_USDC",
+    Base_WETH = "Base_WETH",
+    Arbitrum_USDC = "Arbitrum_USDC",
+    Arbitrum_WETH = "Arbitrum_WETH",
+}
+
+ type Interval = {
+    range: {
+        min: bigint; // must be an integer representing full tokens
+        max: bigint; // must be an integer representing full tokens
+    };
+    rangeUnit: Token;
+    price: bigint; // must be an integer representing the smallest denomination of the token
+    priceUnit: Token;
+};
+
+  socket.send(JSON.stringify(priceList));
+
+```
+
+
+### 4 - t1 notifies winner solver it can fill
+
+When an intent is opened and you win to auction, t1 backend will notify you over websocket the following way.
+
+You will receive a JSON stringify version of the following data on your socket connection.
+
+```typescript
+interface AuctionResult {
+    winner: string;
+    price: bigint;
+    orderId: string;
+    resolvedOrder: string;
+}
+```
+
+### 5 - Solver fills on destination chain
+
+You can then use the received data to call the `fill` function on destination settler.
+
+
+```solidity
+/// @param originData orderData contained in resolvedOrder > fillInstructions > originData
+/// @param fillerData Data provided by the filler to inform the amount they want to fill and the address they
+/// want to receive the source chain settle on.
+/// Formatted as: abi.encode(uint256 amountOut, address settlementReceiver)
+function fill(bytes32 orderId, bytes calldata originData, bytes calldata fillerData) external payable;
+```
+
+
+## Settlement integration
+
+Here is how you can integrate from step 6 to 9.
+
+### 6 - Solver calls a verify function on source chain settler contract
 
 Location: source chain
 
@@ -59,7 +166,7 @@ Timing: should be called once intent is filled on destination chain
         returns (bytes32 requestId);
 ```
 
-### 4 - Solver listen for new Proof of Read commitment event on source chain XChainReader contract
+### 7 - Solver listens for new Proof of Read commitment event on source chain XChainReader contract
 
 Location: source chain
 
@@ -72,7 +179,7 @@ Timing: should be listened to once `verifySettlement` has been called
     event ProofOfReadRootCommitted(uint256 batchIndex);
 ```
 
-### 5 - Solver call t1 offchain API to get the merkle proof data
+### 8 - Solver calls t1 offchain API to get the merkle proof data
 
 Location: offchain
 
@@ -150,7 +257,7 @@ Solver will then get the value in `claim_info.handle_read_result_with_proof_call
 
 See more: https://docs.t1protocol.com/api/xChainRead/overview
 
-### 6 - Solver call settlement function on source chain settler contract and get repaid
+### 9 - Solver calls settlement function on source chain settler contract and get repaid
 
 Location: source chain
 
