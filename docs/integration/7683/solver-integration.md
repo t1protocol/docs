@@ -75,7 +75,7 @@ Connect to `wss://api.v07.t1protocol.com` by providing following authentication 
   });
   ```
 - `"X-Auth-Blob".username` is any string that you would like your Solver to be identified by
-- `"X-Auth-Blob".nonce` is a unique nonce tied to your login attempt. you can acquire be calling `https://t1.api.url/api/currentNonce?username=your-username` . This nonce is needed for security of your login - should any part intercept your signature, they are not able to use it to login.
+- `"X-Auth-Blob".nonce` is a unique nonce tied to your login attempt. you can acquire be calling `https://api.v07.t1protocol.com/api/currentNonce?username=your-username` . This nonce is needed for security of your login - should any part intercept your signature, they are not able to use it to login.
 - `"X-Auth-Signature"` is a signature of a stringified `"X-Auth-Blob"` . Make sure to use the private key that will also be used to fill intents!
 
 Then stream your price list in the following format to the socket.
