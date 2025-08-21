@@ -43,7 +43,7 @@ The settler contract implementation is `T1ERC7683.sol`.
 
 3 - t1 catches the open event on source chain settler contract and runs an auction to compute what is the best price available.
 
-4 - Considering the best price is at least the `minAmountOut`, t1 notifies winner solver it can fill over the websocket connection (with relevant data, which includes winning bid `amountOut` and solver's settlement receiver address and signature of a trusted party on that data).
+4 - Considering the best price is at least the `minAmountOut`, t1 notifies winner solver it can fill over the websocket connection (with relevant data, which includes winning bid `amountOut` and solver's filler address and signature of a trusted party on that data).
 
 5 - Solver fills on destination chain settler contract in respect of the pricing it commited to. While solving he uses the t1 trusted party signature asseting that he is the auction winner. This signature is verified by the settler contract (`T1ERC7683.sol`) .
 
