@@ -142,16 +142,6 @@ interface AuctionResult {
 }
 ```
 
-A EIP-712 signature tied to every `AuctionResult` is created as follows:
-
-```solidity
-// DOMAIN SEPARATOR can be fetched on contract by calling `domainSeparator()` method
-bytes32 FILL_AUTHORIZATION_TYPEHASH = keccak256("FillAuthorization(bytes32 orderId,address filler,uint256 amountOut)");
-
-bytes32 structHash = keccak256(abi.encode(FILL_AUTHORIZATION_TYPEHASH, orderId, solverAddress, amountOut));
-bytes32 digest = ECDSA.toTypedDataHash(DOMAIN_SEPARATOR, structHash);
-```
-
 A sample message could look like this:
 ```
 [0xa3e5e908868e2d881e70c304c18636a2f43e933f] won auction on chain [84532] : {"type":"winning-bid","settlementReceiverAddress":"0xa3e5e908868e2d881e70c304c18636a2f43e933f","amountOut":"97","orderId":"0x7498f9b0ac58664036824d927a04b36b85f2ec219e18889686badc30e0eece75","signature":"0x33dea4f2cec07b0ff373bbf2450056073abda4a301f27965c3d17f233ccd81a33be819c24d8004a3a28d1c709ac7370f6e8b649f58c59ae9e4faf1977e02bbb91b"}
