@@ -1,21 +1,21 @@
 ---
-id: frontend-integration
-title: Frontend Integration
-sidebar_label: Frontend Integration
+id: aggregator-integration
+title: Aggregator Integration
+sidebar_label: Aggregator Integration
 sidebar_position: 2
 ---
 
-# Frontend Integration for ERC 7683 Intent Bridging
+# Aggragator Integration for t1 Intent Bridging
 
-This guide explains how to integrate the 7683 intent bridging mechanism into your frontend application. It covers encoding the order data, estimating gas, and executing the bridge transaction.
+This guide explains how to integrate the t1 intent bridging mechanism into your frontend application. It covers encoding the order data, estimating gas, and executing the bridge transaction.
 
 ## Overview
 
-The 7683 Intent Bridge enables cross-chain token transfers through an intent-based system. Users express their intent to bridge tokens, and fillers compete to fulfill these intents, providing better execution and potentially better rates.
+The t1 Intent Bridge facilitates cross-chain token transfers using a Trusted Execution Environment (TEE) based proving system. Users express their intent to bridge tokens, and fillers compete to fulfill these intents. TEE-based xChainRead enables solvers to get repaid in less than 10 seconds, improving capital efficiency for solvers and providing better execution and rates for users.
 
 ## How it works
 
-The 7683 Intent Bridge operates through a standardized intent protocol:
+The t1 Intent Bridge operates through a standardized intent protocol that is based on ERC-7683 standard:
 
 1. **Intent Creation**: Users create an intent specifying source and destination tokens, amounts, and execution parameters
 2. **Order Encoding**: The intent is encoded according to ERC-7683 standards with proper ABI encoding
