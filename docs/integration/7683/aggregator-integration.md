@@ -48,6 +48,7 @@ curl --location 'https://{baseUrl}/preauction' \
   }'
 ```
 
+
 **Request Parameters:**
 
 - `id`: randomly generated v4 uuid
@@ -173,6 +174,7 @@ export const ORDER_DATA_TYPE_HASH = ethers.utils.keccak256(ethers.utils.toUtf8By
 Here's the complete implementation for executing an intent bridge:
 
 ```typescript
+
 // Define TokenInfo type
 interface TokenInfo {
   address: string
@@ -229,7 +231,7 @@ export const executeIntentBridge = async (
         orderDataType: ORDER_DATA_TYPE_HASH,
         orderData: encodedOrderData,
       },
-      // only if you are transferring native ETH, else remove line 233-235
+      // only if you are transferring native ETH, else remove this block
       {
         value: amountInAfterConversion.toBigInt(),
       },
