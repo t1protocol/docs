@@ -40,13 +40,23 @@ curl --location 'https://{baseUrl}/preauction' \
   --header 'Content-Type: application/json' \
   --data '{
     "id": "uuid",
-    "srcTokenAddress": "string",
-    "dstTokenAddress": "string",
+    "srcTokenAddress": "0x...",
+    "dstTokenAddress": "0x...",
     "srcChainId": 1,
     "dstChainId": 137,
     "amountIn": "1000000000000000000"
   }'
 ```
+
+
+**Request Parameters:**
+
+- `id`: randomly generated v4 uuid
+- `srcTokenAddress`: input token address
+- `dstTokenAddress`: output token address
+- `srcChainId`: input chain id
+- `dstChainId`: output chain id
+- `amountIn`: input amount in units
 
 Your response should look like this:
 
@@ -164,14 +174,22 @@ export const ORDER_DATA_TYPE_HASH = ethers.utils.keccak256(ethers.utils.toUtf8By
 Here's the complete implementation for executing an intent bridge:
 
 ```typescript
+
+// Define TokenInfo type
+interface TokenInfo {
+  address: string
+  decimal: number
+}
+
 export const executeIntentBridge = async (
   walletProvider: providers.ExternalProvider,
   walletAddress: string,
-  tokenInAddress: string,
-  tokenOutAddress: string,
+  tokenIn: TokenInfo,
+  tokenOut: TokenInfo,
   fromChainId: number,
   toChainId: number,
   amount: string,
+  amountOut: string, // Get this from the /preauction API response
 ) => {
   const provider = new ethers.providers.Web3Provider(walletProvider, 'any')
   const signer = provider.getSigner()
@@ -183,22 +201,23 @@ export const executeIntentBridge = async (
   )
 
   try {
-    const amountAfterConversion = ethers.utils.parseUnits(amount, 18)
+    const amountInAfterConversion = ethers.utils.parseUnits(amount, tokenIn.decimal)
+    const amountOutAfterConversion = ethers.utils.parseUnits(amountOut, tokenOut.decimal)
 
     // Construct order data
     const orderData: IntentOrderData = {
       sender: walletAddress,
       recipient: walletAddress,
-      inputToken: tokenInAddress,
-      outputToken: tokenOutAddress,
-      amountIn: Number(amountAfterConversion).toString(),
-      minAmountOut: Number(amountAfterConversion).toString(), // Get minAmountOut from our /preauction API
+      inputToken: tokenIn.address,
+      outputToken: tokenOut.address,
+      amountIn: Number(amountInAfterConversion).toString(),
+      minAmountOut: Number(amountOutAfterConversion).toString(), // Get minAmountOut from our /preauction API
       senderNonce: Math.floor(Math.random() * 1e15),
       originDomain: fromChainId,
       destinationDomain: toChainId,
       destinationSettler: process.env.DESTINATION_CHAIN_7683_CONTRACT_ADDRESS!,
       fillDeadline: Math.floor(Date.now() / 1000) + 24 * 60 * 60, // 24 hour deadline
-      closedAuction: true,
+      closedAuction: true, // this will always be true if you are using our closed auction api
       data: '0x',
     }
 
@@ -212,8 +231,9 @@ export const executeIntentBridge = async (
         orderDataType: ORDER_DATA_TYPE_HASH,
         orderData: encodedOrderData,
       },
+      // only if you are transferring native ETH, else remove this block
       {
-        value: amountAfterConversion.toBigInt(),
+        value: amountInAfterConversion.toBigInt(),
       },
     )
     await executeIntentBridgeResult.wait()
