@@ -5,7 +5,7 @@ sidebar_label: Aggregator Integration
 sidebar_position: 2
 ---
 
-# Aggragator Integration for t1 Intent Bridging
+# Aggregator Integration for t1 Intent Bridging
 
 This guide explains how to integrate the t1 intent bridging mechanism into your frontend application. It covers encoding the order data, estimating gas, and executing the bridge transaction.
 
@@ -25,35 +25,74 @@ The t1 Intent Bridge operates through a standardized intent protocol that is bas
 
 ## Integration Overview
 
-The main components of frontend integration are:
+The main components of aggregator integration are:
 
+- Querying `minAmountOut` from API
 - Encoding intent order data in a Solidity-compatible format.
 - Executing the bridge intent with custom parameters.
 
-## Encoding Order Data
+### 1. Querying minAmountOut via API
+
+To obtain a pre-auction bid, query the POST `${baseUrl}/preauction` API:
+
+```bash
+curl --location 'https://{baseUrl}/preauction' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "id": "uuid",
+    "srcTokenAddress": "string",
+    "dstTokenAddress": "string",
+    "srcChainId": 1,
+    "dstChainId": 137,
+    "amountIn": "1000000000000000000"
+  }'
+```
+
+Your response should look like this:
+
+```typescript
+interface Quote {
+  id: string
+  request: {
+    srcChainId: number
+    dstChainId: number
+    srcTokenAddress: string
+    dstTokenAddress: string
+    amountIn: number
+  }
+  amountOut: string
+  solverAddress: string
+  timestamp: number
+}
+```
+
+We can obtain the `amountOut` and use it as `minAmountOut` in our intent.
+
+### 2. Encoding Order Data
 
 To prepare the order data for execution, use the `encodeIntentOrderData` function. This ensures the `bytes` format is correctly aligned for the 7683 contract.
 
-### IntentOrderData Type Definition
+#### IntentOrderData Type Definition
 
-```ts
+```typescript
 export type IntentOrderData = {
   sender: string // padded address
   recipient: string // padded address
   inputToken: string // padded address
   outputToken: string // padded address
   amountIn: string
-  amountOut: string
+  minAmountOut: string
   senderNonce: number
   originDomain: number
   destinationDomain: number
   destinationSettler: string // padded address
   fillDeadline: number
+  closedAuction: boolean
   data: string // hex string like "0x"
 }
 ```
 
-```ts
+```typescript
 export function encodeIntentOrderData(orderData: IntentOrderData): string {
   const abiCoder = ethers.utils.defaultAbiCoder
   const toBytes32 = (addr: string) => ethers.utils.hexZeroPad(addr, 32)
@@ -71,6 +110,7 @@ export function encodeIntentOrderData(orderData: IntentOrderData): string {
       'uint32',
       'bytes32',
       'uint32',
+      'boolean',
       'bytes',
     ],
     [
@@ -79,14 +119,15 @@ export function encodeIntentOrderData(orderData: IntentOrderData): string {
       toBytes32(orderData.inputToken),
       toBytes32(orderData.outputToken),
       orderData.amountIn,
-      orderData.amountOut,
+      orderData.minAmountOut,
       orderData.senderNonce,
       orderData.originDomain,
       orderData.destinationDomain,
       toBytes32(orderData.destinationSettler),
       orderData.fillDeadline,
+      orderData.closedAuction,
       orderData.data,
-    ]
+    ],
   )
 
   const dynamicOffsetPrefix = '0x0000000000000000000000000000000000000000000000000000000000000020'
@@ -94,7 +135,7 @@ export function encodeIntentOrderData(orderData: IntentOrderData): string {
 }
 ```
 
-### 2. Order Data Type Hash
+### 3. Order Data Type Hash
 
 Define the EIP-712 type string and hash for the order data:
 
@@ -106,18 +147,19 @@ export const ORDER_DATA_TYPE_STRING =
   'bytes32 inputToken,' +
   'bytes32 outputToken,' +
   'uint256 amountIn,' +
-  'uint256 amountOut,' +
+  'uint256 minAmountOut,' +
   'uint256 senderNonce,' +
   'uint32 originDomain,' +
   'uint32 destinationDomain,' +
   'bytes32 destinationSettler,' +
   'uint32 fillDeadline,' +
+  'bool closedAuction,' +
   'bytes data)'
 
 export const ORDER_DATA_TYPE_HASH = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(ORDER_DATA_TYPE_STRING))
 ```
 
-### 3. Executing Intent Bridge
+### 4. Executing Intent Bridge
 
 Here's the complete implementation for executing an intent bridge:
 
@@ -125,17 +167,19 @@ Here's the complete implementation for executing an intent bridge:
 export const executeIntentBridge = async (
   walletProvider: providers.ExternalProvider,
   walletAddress: string,
+  tokenInAddress: string,
+  tokenOutAddress: string,
   fromChainId: number,
   toChainId: number,
-  amount: string
+  amount: string,
 ) => {
   const provider = new ethers.providers.Web3Provider(walletProvider, 'any')
   const signer = provider.getSigner()
 
   const originChainContract = new ethers.Contract(
-    process.env.ORIGIN_CHAIN_7683_CONTRACT_ADDRESS,
+    process.env.ORIGIN_CHAIN_7683_CONTRACT_ADDRESS!,
     ORIGIN_CHAIN_7683_ABI,
-    signer
+    signer,
   )
 
   try {
@@ -145,15 +189,16 @@ export const executeIntentBridge = async (
     const orderData: IntentOrderData = {
       sender: walletAddress,
       recipient: walletAddress,
-      inputToken: '0x0000000000000000000000000000000000000000', // Native ETH
-      outputToken: '0x0000000000000000000000000000000000000000', // Native ETH
+      inputToken: tokenInAddress,
+      outputToken: tokenOutAddress,
       amountIn: Number(amountAfterConversion).toString(),
-      amountOut: Number(amountAfterConversion).toString(), // Adjust amountOut based on the filler's fee
+      minAmountOut: Number(amountAfterConversion).toString(), // Get minAmountOut from our /preauction API
       senderNonce: Math.floor(Math.random() * 1e15),
       originDomain: fromChainId,
       destinationDomain: toChainId,
-      destinationSettler: process.env.DESTINATION_CHAIN_7683_CONTRACT_ADDRESS,
+      destinationSettler: process.env.DESTINATION_CHAIN_7683_CONTRACT_ADDRESS!,
       fillDeadline: Math.floor(Date.now() / 1000) + 24 * 60 * 60, // 24 hour deadline
+      closedAuction: true,
       data: '0x',
     }
 
@@ -169,7 +214,7 @@ export const executeIntentBridge = async (
       },
       {
         value: amountAfterConversion.toBigInt(),
-      }
+      },
     )
     await executeIntentBridgeResult.wait()
   } catch (e) {
@@ -178,7 +223,7 @@ export const executeIntentBridge = async (
 }
 ```
 
-### Security Considerations
+## Security Considerations
 
 - **Nonce Management**: Each intent uses a unique random nonce to prevent replay attacks
 - **Deadline Protection**: 24-hour deadline prevents indefinite pending states
