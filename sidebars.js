@@ -11,7 +11,7 @@ const sidebars = {
     {
       type: 'category',
       label: '7683',
-      items: ['integration/7683/solver-integration', 'integration/7683/frontend-integration'],
+      items: ['integration/7683/solver-integration', 'integration/7683/aggregator-integration'],
     },
   ],
 }
