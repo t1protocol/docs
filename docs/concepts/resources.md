@@ -6,9 +6,8 @@ sidebar_position: 3
 
 ## t1 Litepaper
 
-View the t1 Litepaper [**here**](https://docs.t1protocol.com/t1-litepaper.pdf)
+Read the [**t1 Litepaper**](https://docs.t1protocol.com/t1-litepaper.pdf)
 
-## TEE Litepaper
+## TEE Architecture
 
-View the TEE Litepaper [**here**](https://docs.t1protocol.com/tee-litepaper.pdf)
-
+Read about t1's [**TEE Architecture and Remote Attestation**](https://docs.t1protocol.com/t1-tee-architecture.pdf)
