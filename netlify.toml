@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/tee-litepaper.pdf"
+  to = "/concepts/resources/"
+  status = 301
+  force = true
