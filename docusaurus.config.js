@@ -122,5 +122,20 @@ module.exports = {
       crossorigin: 'anonymous',
     },
   ],
-  plugins: [['@saucelabs/theme-github-codeblock', {}]],
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          // Redirect from multiple old paths to the new path
+          {
+            to: '/concepts/resources/',
+            from: ['/tee-litepaper.pdf'],
+          },
+        ],
+      },
+    ],
+    '@saucelabs/theme-github-codeblock',
+    {},
+  ],
 }
