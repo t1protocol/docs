@@ -8,7 +8,7 @@ This web application contains all documentation for t1. It was forked from the [
 - Concepts - General t1 information or concepts useful for using t1
 - API - xChainRead API documentation
 
-### TODO:
+### TODOs:
  - Add essential t1 contract docs, including technical method descriptions via `forge doc --serve`
  - ~~Add more research entries in [Research](./docs/concepts/research.md)~~
  - ~~Add all relevant glossary words and definitions in [Glossary](./docs/concepts/glossary.md)~~
