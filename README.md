@@ -1,6 +1,6 @@
 # t1 Documentation
 
-This web application contains all documentation for t1. It was forked from the [Uniswap Docs](https://github.com/Uniswap/docs), which is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+This web application contains all documentation for t1. It was forked from the [Uniswap Docs](https://github.com/Uniswap/docs), and upgraded to use [Docusaurus 3](https://v3.docusaurus.io/), a modern static website generator.
 
 # Project Layout
 
