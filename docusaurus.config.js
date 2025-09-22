@@ -127,8 +127,8 @@ module.exports = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
+          remarkPlugins: [[math, {}]],
+          rehypePlugins: [[katex, { strict: false }]],
           editUrl: 'https://github.com/t1protocol/docs/tree/main/',
           includeCurrentVersion: true,
         },
