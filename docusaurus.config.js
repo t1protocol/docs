@@ -1,5 +1,7 @@
-const math = require('remark-math')
-const katex = require('rehype-katex')
+const remarkMath = require('remark-math')
+const rehypeKatex = require('rehype-katex')
+const math = remarkMath.default || remarkMath
+const katex = rehypeKatex.default || rehypeKatex
 require('dotenv').config()
 
 module.exports = {
@@ -127,7 +129,7 @@ module.exports = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [[math, {}]],
+          remarkPlugins: [math],
           rehypePlugins: [[katex, { strict: false }]],
           editUrl: 'https://github.com/t1protocol/docs/tree/main/',
           includeCurrentVersion: true,
