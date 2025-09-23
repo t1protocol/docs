@@ -148,5 +148,19 @@ module.exports = {
       crossorigin: 'anonymous',
     },
   ],
-  plugins: [],
+  plugins: [
+    function disableCSSMinimization(_context, _options) {
+      return {
+        name: 'disable-css-minimization',
+        configureWebpack(config, isServer) {
+          if (!isServer) {
+            // Disable CSS minimization to avoid broken styles
+            config.optimization.minimizer = config.optimization.minimizer.filter(
+              (minimizer) => minimizer.constructor.name !== 'CssMinimizerPlugin'
+            )
+          }
+        },
+      }
+    },
+  ],
 }
