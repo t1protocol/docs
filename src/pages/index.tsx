@@ -8,15 +8,16 @@ import GitHub from '@site/static/img/github.svg'
 import X from '@site/static/img/x.svg'
 import Layout from '@theme/Layout'
 import ThemedImage from '@theme/ThemedImage'
-import { TraceEvent } from '@uniswap/analytics'
-import {
-  BrowserEvent,
-  DocsHomepageElementName as ElementName,
-  DocsSectionName as SectionName,
-  SharedEventName,
-} from '@uniswap/analytics-events'
-import React from 'react'
+import React, { ComponentType, SVGProps } from 'react'
 import { ArrowUpRight as LinkIcon, BookOpen, Info, Link as Chain } from 'react-feather'
+
+// Type assertions for SVG imports
+const DiscordIcon = Discord as ComponentType<SVGProps<SVGSVGElement>>
+const GitHubIcon = GitHub as ComponentType<SVGProps<SVGSVGElement>>
+const XIcon = X as ComponentType<SVGProps<SVGSVGElement>>
+
+// Type assertion for SafeLink component to resolve React type conflicts
+const SafeLink = Link as any
 
 export const actions = [
   {
@@ -39,7 +40,7 @@ export const actions = [
   },
 ]
 
-export const developerLinks = [
+export const developerSafeLinks = [
   {
     title: 't1 Monorepo',
     href: 'https://github.com/t1protocol/t1',
@@ -193,7 +194,7 @@ const TopSection = styled.div`
   margin-bottom: 1rem;
 `
 
-const LinkRow = styled.div`
+const SafeLinkRow = styled.div`
   width: 100%;
   align-items: center;
   justify-content: space-between;
@@ -284,7 +285,7 @@ const ExploreContainer = styled.div`
   }
 `
 
-const LinksContainer = styled.div`
+const SafeLinksContainer = styled.div`
   margin: 2rem 0 3rem 0;
 
   @media (max-width: 640px) {
@@ -342,28 +343,20 @@ export default function Home() {
 
             <Row>
               {actions.map((action) => (
-                <TraceEvent
-                  key={action.to}
-                  element={action.to}
-                  events={[BrowserEvent.onClick]}
-                  name={SharedEventName.PAGE_CLICKED}
-                  section={SectionName.WELCOME_LINKS}
-                >
-                  <Link style={{ textDecoration: 'none' }} to={action.to}>
-                    <ShadowCard key={action.title}>
-                      <TopSection>
-                        <IconWrapper>
-                          <action.icon style={{ width: '24px' }} />
-                        </IconWrapper>
-                        <LinkIconWrapper>
-                          <LinkIcon />
-                        </LinkIconWrapper>
-                      </TopSection>
-                      <h3 style={{ marginBottom: '.75rem', fontWeight: 500 }}>{action.title}</h3>
-                      <p style={{ marginBottom: '0.5rem', fontWeight: 300 }}>{action.text}</p>
-                    </ShadowCard>
-                  </Link>
-                </TraceEvent>
+                <SafeLink key={action.to} style={{ textDecoration: 'none' }} to={action.to}>
+                  <ShadowCard key={action.title}>
+                    <TopSection>
+                      <IconWrapper>
+                        <action.icon style={{ width: '24px' }} />
+                      </IconWrapper>
+                      <LinkIconWrapper>
+                        <LinkIcon />
+                      </LinkIconWrapper>
+                    </TopSection>
+                    <h3 style={{ marginBottom: '.75rem', fontWeight: 500 }}>{action.title}</h3>
+                    <p style={{ marginBottom: '0.5rem', fontWeight: 300 }}>{action.text}</p>
+                  </ShadowCard>
+                </SafeLink>
               ))}
             </Row>
           </DocsHeader>
@@ -384,27 +377,19 @@ export default function Home() {
                 }}
               >
                 {smartContractGuides.map((action) => (
-                  <TraceEvent
-                    key={action.to}
-                    element={action.to}
-                    events={[BrowserEvent.onClick]}
-                    name={SharedEventName.PAGE_CLICKED}
-                    section={SectionName.SMART_CONTRACT_LINKS}
-                  >
-                    <Link style={{ textDecoration: 'none', height: '100%' }} key={action.title} to={action.to}>
-                      <Card style={{ height: '100%' }}>
-                        <LinkRow>
-                          <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <h3 style={{ marginBottom: '0rem' }}>{action.title}</h3>
-                          </div>
-                          <LinkIconWrapper>
-                            <LinkIcon />
-                          </LinkIconWrapper>
-                        </LinkRow>
-                        <p style={{ marginBottom: '0rem', fontWeight: 300 }}>{action.text}</p>
-                      </Card>
-                    </Link>
-                  </TraceEvent>
+                  <SafeLink key={action.to} style={{ textDecoration: 'none', height: '100%' }} to={action.to}>
+                    <Card style={{ height: '100%' }}>
+                      <SafeLinkRow>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                          <h3 style={{ marginBottom: '0rem' }}>{action.title}</h3>
+                        </div>
+                        <LinkIconWrapper>
+                          <LinkIcon />
+                        </LinkIconWrapper>
+                      </SafeLinkRow>
+                      <p style={{ marginBottom: '0rem', fontWeight: 300 }}>{action.text}</p>
+                    </Card>
+                  </SafeLink>
                 ))}
               </div>
             </ExploreContainer>
@@ -423,96 +408,67 @@ export default function Home() {
                 }}
               >
                 {dAppGuides.map((action) => (
-                  <TraceEvent
-                    key={action.title}
-                    element={action.to}
-                    events={[BrowserEvent.onClick]}
-                    name={SharedEventName.PAGE_CLICKED}
-                    section={SectionName.DAPP_LINKS}
-                  >
-                    <Link style={{ textDecoration: 'none', height: '100%' }} key={action.title} to={action.to}>
-                      <Card
-                        style={{
-                          height: '100%',
-                          opacity: action.disabled ? 0.6 : 1,
-                          cursor: action.disabled ? 'not-allowed' : 'pointer',
-                        }}
-                      >
-                        <LinkRow>
-                          <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <h3 style={{ marginBottom: '0rem' }}>{action.title}</h3>
-                          </div>
-                          {!action.disabled && (
-                            <LinkIconWrapper>
-                              <LinkIcon />
-                            </LinkIconWrapper>
-                          )}
-                        </LinkRow>
-                        <p style={{ marginBottom: '0rem', fontWeight: 300 }}>{action.text}</p>
-                      </Card>
-                    </Link>
-                  </TraceEvent>
+                  <SafeLink key={action.title} style={{ textDecoration: 'none', height: '100%' }} to={action.to}>
+                    <Card
+                      style={{
+                        height: '100%',
+                        opacity: action.disabled ? 0.6 : 1,
+                        cursor: action.disabled ? 'not-allowed' : 'pointer',
+                      }}
+                    >
+                      <SafeLinkRow>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                          <h3 style={{ marginBottom: '0rem' }}>{action.title}</h3>
+                        </div>
+                        {!action.disabled && (
+                          <LinkIconWrapper>
+                            <LinkIcon />
+                          </LinkIconWrapper>
+                        )}
+                      </SafeLinkRow>
+                      <p style={{ marginBottom: '0rem', fontWeight: 300 }}>{action.text}</p>
+                    </Card>
+                  </SafeLink>
                 ))}
               </div>
             </DappsContainer>
           </>
           <hr />
-          <LinksContainer>
+          <SafeLinksContainer>
             <RowCentered>
-              <TraceEvent
-                events={[BrowserEvent.onClick]}
-                section={SectionName.BOTTOM_MENU_LINKS}
-                element={ElementName.X}
-                name={SharedEventName.PAGE_CLICKED}
-              >
-                <Link style={{ textDecoration: 'none' }} href={'https://x.com/t1protocol'}>
-                  <CenterCard>
-                    <StyledIcon>
-                      <X style={{ width: '40px', height: '40px' }} />
-                    </StyledIcon>
-                    <div>
-                      <h3>X</h3>
-                      <p>Stay up to date on X.</p>
-                    </div>
-                  </CenterCard>
-                </Link>
-              </TraceEvent>
-              <TraceEvent
-                events={[BrowserEvent.onClick]}
-                element={ElementName.DISCORD}
-                section={SectionName.BOTTOM_MENU_LINKS}
-                name={SharedEventName.PAGE_CLICKED}
-              >
-                <Link style={{ textDecoration: 'none' }} href={'https://discord.com/invite/nbvyXZHgke'}>
-                  <CenterCard>
-                    <Discord style={{ width: '48px', height: '48px' }} />
-                    <div>
-                      <h3>Discord</h3>
-                      <p>Join our Developer Community.</p>
-                    </div>
-                  </CenterCard>
-                </Link>
-              </TraceEvent>
-              <TraceEvent
-                events={[BrowserEvent.onClick]}
-                section={SectionName.BOTTOM_MENU_LINKS}
-                element={ElementName.GITHUB}
-                name={SharedEventName.PAGE_CLICKED}
-              >
-                <Link style={{ textDecoration: 'none' }} href={'https://github.com/t1protocol'}>
-                  <CenterCard>
-                    <StyledIcon>
-                      <GitHub style={{ width: '40px', height: '40px' }} />
-                    </StyledIcon>
-                    <div>
-                      <h3>GitHub</h3>
-                      <p>View all t1 repositories.</p>
-                    </div>
-                  </CenterCard>
-                </Link>
-              </TraceEvent>
+              <SafeLink style={{ textDecoration: 'none' }} href={'https://x.com/t1protocol'}>
+                <CenterCard>
+                  <StyledIcon>
+                    <XIcon style={{ width: '40px', height: '40px' }} />
+                  </StyledIcon>
+                  <div>
+                    <h3>X</h3>
+                    <p>Stay up to date on X.</p>
+                  </div>
+                </CenterCard>
+              </SafeLink>
+              <SafeLink style={{ textDecoration: 'none' }} href={'https://discord.com/invite/nbvyXZHgke'}>
+                <CenterCard>
+                  <DiscordIcon style={{ width: '48px', height: '48px' }} />
+                  <div>
+                    <h3>Discord</h3>
+                    <p>Join our Developer Community.</p>
+                  </div>
+                </CenterCard>
+              </SafeLink>
+              <SafeLink style={{ textDecoration: 'none' }} href={'https://github.com/t1protocol'}>
+                <CenterCard>
+                  <StyledIcon>
+                    <GitHubIcon style={{ width: '40px', height: '40px' }} />
+                  </StyledIcon>
+                  <div>
+                    <h3>GitHub</h3>
+                    <p>View all t1 repositories.</p>
+                  </div>
+                </CenterCard>
+              </SafeLink>
             </RowCentered>
-          </LinksContainer>
+          </SafeLinksContainer>
         </InnerContainer>
       </Container>
     </Layout>

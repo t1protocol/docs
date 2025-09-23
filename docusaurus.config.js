@@ -1,14 +1,16 @@
-const math = require('remark-math')
-const katex = require('rehype-katex')
+const remarkMath = require('remark-math')
+const rehypeKatex = require('rehype-katex')
+const math = remarkMath.default || remarkMath
+const katex = rehypeKatex.default || rehypeKatex
 require('dotenv').config()
 
 module.exports = {
+  themes: ['@docusaurus/theme-mermaid'],
+  markdown: {
+    mermaid: true,
+  },
   customFields: {
-    // Analytics proxy URL
-    // analyticsProxyUrl: process.env.REACT_APP_AMPLITUDE_PROXY_URL,
-    // Determines if staging env
     stagingEnv: process.env.REACT_APP_STAGING,
-    // From node
     nodeEnv: process.env.NODE_ENV,
   },
   title: 't1',
@@ -16,16 +18,25 @@ module.exports = {
   url: 'https://docs.t1protocol.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'ignore',
+  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 't1', // Usually your GitHub org/user name.
-  projectName: 't1-docs', // Usually your repo name.
+  organizationName: 't1protocol',
+  projectName: 't1-docs',
   themeConfig: {
     image: 'img/t1-rollup.png',
     prism: {
       additionalLanguages: ['solidity'],
     },
-    algolia: null,
+    mermaid: {
+      theme: { light: 'neutral', dark: 'dark' },
+    },
+    // not using search for now
+    // algolia: {
+    //   appId: 'PLACEHOLDER',
+    //   apiKey: 'PLACEHOLDER',
+    //   indexName: 't1-docs',
+    //   contextualSearch: true,
+    // },
     navbar: {
       title: 't1 Docs',
       items: [
@@ -42,7 +53,6 @@ module.exports = {
           className: 'V3_active',
         },
         {
-          // TODO(docs): Publish docs repo and make public at this URL
           href: 'https://github.com/t1protocol/',
           label: 'GitHub',
           position: 'right',
@@ -54,11 +64,28 @@ module.exports = {
       // style: "dark",
       links: [
         {
-          title: 'Developers',
+          title: 'Documentation',
           items: [
             {
-              label: 'How it works',
-              href: 'https://www.t1protocol.com/#how-it-works',
+              label: 'Concepts',
+              to: '/concepts/protocol/introduction',
+            },
+            {
+              label: 'Integration',
+              to: '/integration/xChainRead/overview',
+            },
+          ],
+        },
+        {
+          title: 'Resources',
+          items: [
+            {
+              label: 'Website',
+              href: 'https://www.t1protocol.com',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/t1protocol',
             },
           ],
         },
@@ -70,7 +97,7 @@ module.exports = {
               href: 'https://discord.com/invite/nbvyXZHgke',
             },
             {
-              label: 'X',
+              label: 'X (Twitter)',
               href: 'https://x.com/t1protocol',
             },
             {
@@ -80,7 +107,7 @@ module.exports = {
           ],
         },
       ],
-      // copyright: `unlicensed`,
+      copyright: `© ${new Date().getFullYear()} t1 Protocol. Built with Docusaurus.`,
     },
     colorMode: {
       // "light" | "dark"
@@ -103,13 +130,12 @@ module.exports = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [math],
-          rehypePlugins: [katex],
+          rehypePlugins: [[katex, { strict: false }]],
           editUrl: 'https://github.com/t1protocol/docs/tree/main/',
           includeCurrentVersion: true,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-          customCss2: require.resolve('./src/css/colors.css'),
+          customCss: [require.resolve('./src/css/custom.css'), require.resolve('./src/css/colors.css')],
         },
       },
     ],
@@ -122,5 +148,5 @@ module.exports = {
       crossorigin: 'anonymous',
     },
   ],
-  plugins: [['@saucelabs/theme-github-codeblock', {}]],
+  plugins: [],
 }
