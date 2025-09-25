@@ -155,9 +155,11 @@ const config = {
         configureWebpack(config, isServer) {
           if (!isServer) {
             // Disable CSS minimization to avoid broken styles
-            config.optimization.minimizer = config.optimization.minimizer.filter(
-              (minimizer) => minimizer.constructor.name !== 'CssMinimizerPlugin'
-            )
+            if (config.optimization?.minimizer) {
+              config.optimization.minimizer = config.optimization.minimizer.filter(
+                (minimizer) => minimizer.constructor.name !== 'CssMinimizerPlugin'
+              )
+            }
           }
         },
       }
