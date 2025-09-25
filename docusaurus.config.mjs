@@ -1,10 +1,10 @@
-const remarkMath = require('remark-math')
-const rehypeKatex = require('rehype-katex')
-const math = remarkMath.default || remarkMath
-const katex = rehypeKatex.default || rehypeKatex
-require('dotenv').config()
+import dotenv from 'dotenv'
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
 
-module.exports = {
+dotenv.config()
+
+const config = {
   themes: ['@docusaurus/theme-mermaid'],
   markdown: {
     mermaid: true,
@@ -128,14 +128,14 @@ module.exports = {
       {
         docs: {
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [math],
-          rehypePlugins: [[katex, { strict: false }]],
+          sidebarPath: './sidebars.js',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [[rehypeKatex, { strict: false }]],
           editUrl: 'https://github.com/t1protocol/docs/tree/main/',
           includeCurrentVersion: true,
         },
         theme: {
-          customCss: [require.resolve('./src/css/custom.css'), require.resolve('./src/css/colors.css')],
+          customCss: ['./src/css/custom.css', './src/css/colors.css'],
         },
       },
     ],
@@ -155,9 +155,11 @@ module.exports = {
         configureWebpack(config, isServer) {
           if (!isServer) {
             // Disable CSS minimization to avoid broken styles
-            config.optimization.minimizer = config.optimization.minimizer.filter(
-              (minimizer) => minimizer.constructor.name !== 'CssMinimizerPlugin'
-            )
+            if (config.optimization?.minimizer) {
+              config.optimization.minimizer = config.optimization.minimizer.filter(
+                (minimizer) => minimizer.constructor.name !== 'CssMinimizerPlugin'
+              )
+            }
           }
         },
       }
@@ -170,3 +172,5 @@ module.exports = {
     ],
   ],
 }
+
+export default config
