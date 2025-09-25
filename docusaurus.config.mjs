@@ -64,11 +64,15 @@ const config = {
       // style: "dark",
       links: [
         {
-          title: 'Developers',
+          title: 'Documentation',
           items: [
             {
-              label: 'How it works',
-              href: 'https://www.t1protocol.com/#how-it-works',
+              label: 'Concepts',
+              to: '/concepts/protocol/introduction',
+            },
+            {
+              label: 'Integration',
+              to: '/integration/xChainRead/overview',
             },
           ],
         },
