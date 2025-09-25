@@ -17,8 +17,8 @@ Thanks for giving a little extra love to our docs site! Below are some basic gui
 Set up your fork with the following terminal commands, or an alteration of them to suit your environment:
 
 ```
-cd uniswap-docs
-git remote add upstream https://github.com/Uniswap/uniswap-docs.git
+cd docs
+git remote add upstream https://github.com/t1protocol/docs.git
 git fetch upstream
 git pull --rebase upstream main
 git checkout -b "my-contribution"

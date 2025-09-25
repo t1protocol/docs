@@ -1,6 +1,6 @@
 # t1 Documentation
 
-This web application contains all documentation for t1. It was forked from the [Uniswap Docs](https://github.com/Uniswap/docs), which is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+This web application contains all documentation for t1. It was forked from the [Uniswap Docs](https://github.com/Uniswap/docs), and upgraded to use [Docusaurus 3](https://v3.docusaurus.io/), a modern static website generator.
 
 # Project Layout
 
@@ -8,7 +8,7 @@ This web application contains all documentation for t1. It was forked from the [
 - Concepts - General t1 information or concepts useful for using t1
 - API - xChainRead API documentation
 
-### TODO:
+### TODOs:
  - Add essential t1 contract docs, including technical method descriptions via `forge doc --serve`
  - ~~Add more research entries in [Research](./docs/concepts/research.md)~~
  - ~~Add all relevant glossary words and definitions in [Glossary](./docs/concepts/glossary.md)~~

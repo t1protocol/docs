@@ -5,11 +5,15 @@
  * LICENSE file in the root directory of this source tree.
  */
 import Link from '@docusaurus/Link'
+import { useActivePlugin, useActiveVersion, useDocVersionSuggestions } from '@docusaurus/plugin-content-docs/lib/client'
 import { useDocsPreferredVersion } from '@docusaurus/theme-common'
 import Translate from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import { useActivePlugin, useActiveVersion, useDocVersionSuggestions } from '@theme/hooks/useDocs'
 import React from 'react'
+
+// Type assertions for React type compatibility
+const SafeLink = Link as any
+const SafeTranslate = Translate as any
 
 type VersionLabelProps = {
   siteTitle?: string
@@ -20,7 +24,7 @@ type VersionLabelProps = {
 
 function UnreleasedVersionLabel({ siteTitle, versionLabel }: VersionLabelProps) {
   return (
-    <Translate
+    <SafeTranslate
       id="theme.docs.versions.unreleasedVersionLabel"
       description="The label used to tell the user that he's browsing an unreleased doc version"
       values={{
@@ -28,14 +32,14 @@ function UnreleasedVersionLabel({ siteTitle, versionLabel }: VersionLabelProps) 
         versionLabel: <strong>{versionLabel}</strong>,
       }}
     >
-      {'This is unreleased documentation for the Uniswap Protocol.'}
-    </Translate>
+      {'This is unreleased documentation for the t1 Protocol.'}
+    </SafeTranslate>
   )
 }
 
 function UnmaintainedVersionLabel({ siteTitle, versionLabel }: VersionLabelProps) {
   return (
-    <Translate
+    <SafeTranslate
       id="theme.docs.versions.unmaintainedVersionLabel"
       description="The label used to tell the user that they are browsing a prior version"
       values={{
@@ -46,37 +50,37 @@ function UnmaintainedVersionLabel({ siteTitle, versionLabel }: VersionLabelProps
       {
         'This is documentation for {siteTitle} {versionLabel}, a previously released version of the {siteTitle} protocol.'
       }
-    </Translate>
+    </SafeTranslate>
   )
 }
 
 function LatestVersionSuggestionLabel({ versionLabel, to, onClick }: VersionLabelProps) {
   return (
-    <Translate
+    <SafeTranslate
       id="theme.docs.versions.latestVersionSuggestionLabel"
       description="The label userd to tell the user that he's browsing an unmaintained doc version"
       values={{
         versionLabel,
         latestVersionLink: (
           <strong>
-            <Link to={to} onClick={onClick}>
-              <Translate
+            <SafeLink to={to} onClick={onClick}>
+              <SafeTranslate
                 id="theme.docs.versions.latestVersionLinkLabel"
                 description="The label used for the latest version suggestion link label"
               >
                 latest version
-              </Translate>
-            </Link>
+              </SafeTranslate>
+            </SafeLink>
           </strong>
         ),
       }}
     >
       {'For the most recent version, see {latestVersionLink} ({versionLabel}).'}
-    </Translate>
+    </SafeTranslate>
   )
 }
 
-const getVersionMainDoc = (version) => version.docs.find((doc) => doc.id === version.mainDocId)
+const getVersionMainDoc = (version: any) => version.docs.find((doc: any) => doc.id === version.mainDocId)
 
 function DocVersionSuggestions() {
   const {
@@ -85,7 +89,12 @@ function DocVersionSuggestions() {
   const { pluginId } = useActivePlugin({
     failfast: true,
   })
-  const { savePreferredVersionName } = useDocsPreferredVersion(pluginId)
+  const docsPreferred = useDocsPreferredVersion(pluginId) as any
+  const savePreferredVersionName =
+    docsPreferred?.savePreferredVersionName ||
+    (() => {
+      /* no-op */
+    })
   const activeVersion = useActiveVersion(pluginId)
   const { latestDocSuggestion, latestVersionSuggestion } = useDocVersionSuggestions(pluginId) // No suggestion to be made
 
