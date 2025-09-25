@@ -162,5 +162,11 @@ module.exports = {
         },
       }
     },
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-3RN3N09K6C', // Your GA4 measurement ID
+      },
+    ],
   ],
 }
