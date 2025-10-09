@@ -22,7 +22,7 @@ A _zero-knowledge (ZK) proof_ is a cryptographic protocol that enables one entit
 
 ## Reth
 
-[Reth](https://github.com/paradigmxyz/reth) (_Rust Ethereum_) is an Ethereum execution node implementation focused on being user-friendly, modular, and efficient. Reth is an execution client compatible with all Ethereum consensus client implementations that support the Engine API. As a full Ethereum node, Reth will allow users to sync the complete Ethereum blockchain from genesis and interact with it (and its historical state, if in archive mode) once synced.
+[_Reth_](https://github.com/paradigmxyz/reth) (aka _Rust Ethereum_) is an Ethereum execution node implementation focused on being user-friendly, modular, and efficient. Reth is an execution client compatible with all Ethereum consensus client implementations that support the Engine API. As a full Ethereum node, Reth will allow users to sync the complete Ethereum blockchain from genesis and interact with it (and its historical state, if in archive mode) once synced.
 
 ## Reth ExEx
 
