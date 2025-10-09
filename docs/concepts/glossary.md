@@ -6,15 +6,19 @@ sidebar_position: 4
 
 ## TEE
 
-Trusted Execution Environments (TEEs) are specialized hardware-based environments that isolate sensitive computations and data from the rest of the system, ensuring that data is processed correctly and privately. In particular, TEEs provide verifiable computation guarantees through a process called “Remote Attestation,” which proves to external parties that the TEE is running a specific, unmodified piece of software (bytecode) without any tampering. Verifiers can then use this attestation to confirm that a TEE’s output is trustworthy. Additionally, TEEs can preserve privacy by keeping sensitive data and execution logic concealed from the system operator and external observers. In other words, TEEs are secure hardware areas that protect sensitive data and computations from tampering or unauthorized access.
+Trusted Execution Environments ([TEEs](https://tee.fyi/)) are specialized hardware-based environments that isolate sensitive computations and data from the rest of the system, ensuring that data is processed correctly and (optionally) privately.
+
+In particular, TEEs provide verifiable computation guarantees through a process called “Remote Attestation” which proves to external verifying parties that the TEE in question is running a specific, unmodified piece of software (bytecode), without any tampering. Verifiers can then use this attestation and combine it with an understanding of what the bytecode is doing in order to confirm that a TEE’s output is indeed trustworthy.
+
+Optionally, TEEs can preserve privacy by keeping sensitive data and execution logic concealed from the broader system and external observers.
 
 ## ZKP
 
-A zero-knowledge (ZK) proof is a cryptographic protocol that enables one entity (the prover) to convince another one (the verifier) that a particular claim is true without disclosing any details about the claim itself. ZKPs used in blockchains are additionally succinct, meaning that the work required by the verifier to check the proof is substantially smaller than the work of re-running the computation required to reach the claim independently.
+A zero-knowledge (ZK) proof is a cryptographic protocol that enables one entity (the prover) to convince another one (the verifier) that a particular claim is true without disclosing any details about the claim itself. ZKPs used in blockchains are mostly used due to their succinctness property—meaning that the work required by the verifier to check the proof is substantially smaller than the work of re-running the computation required to reach the claim independently.
 
-## AVS
+## Autonomous Verifiable Services
 
-[AVS](https://app.eigenlayer.xyz/avs) is a term coined by EigenLayer that refers to services or applications built on top of the Ethereum blockchain and used for security and validation mechanisms. These services could include rollups, DA layers, interoperability protocols, etc. It allows Ethereum validators to use their staked assets to provide security to other applications built on EigenLayer.
+[AVS](https://app.eigenlayer.xyz/avs) is a term coined by EigenLayer that refers to services or applications built on top of the Ethereum blockchain, reusing it for security and validation mechanisms. These services could include rollups, DA layers, interoperability protocols etc. AVS effectively allows Ethereum validators to use their staked assets to provide security to other applications than just Ethereum itself.
 
 ## Reth
 
@@ -30,8 +34,8 @@ RTP is the ability to prove state transitions in a rollup within one base layer 
 
 ## Sequencer
 
-Sequencers are a highly decentralized set of nodes tasked with blindly finalizing the ordering of encrypted transactions in a t1 block. Since Sequencers only order transactions rather than executing them, we can achieve high decentralization and censorship resistance. Sequencers create Sequencing Consensus. [More](https://www.notion.so/t1protocol/Litepaper-9a2cc4d321ce4a08a4905aa809fb436e?source=copy_link#107231194dc380e7a4b2e58c1682a6cd)
+Sequencers are a highly decentralized set of nodes tasked with blindly finalizing the ordering of partially-encrypted transactions in a t1 block. Since Sequencers only order transactions rather than executing them (meaning lower hardware and network requirements, in particular no TEE requirement), t1 can achieve high decentralization and censorship resistance. Sequencers provide proofs of Sequencing Consensus. For details, check t1's [litepaper](/concepts/resources#t1-litepaper).
 
 ## Executor
 
-Executors are a network of TEE-enabled nodes tasked with executing state changes given the ordered sequences of transactions (i.e. bundles) determined by the Sequencers. Executors provide proofs of Execution Consensus. [More](https://www.notion.so/t1protocol/Litepaper-9a2cc4d321ce4a08a4905aa809fb436e?source=copy_link#107231194dc3807b9e31e2a937f8da67)
+Executors are a network of TEE-enabled nodes tasked with executing state changes given the ordered sequences of transaction bundles determined by the Sequencers. Executors provide proofs of Execution Consensus. For details, check t1's [litepaper](/concepts/resources#t1-litepaper).
