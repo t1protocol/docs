@@ -34,8 +34,8 @@ _Real-Time Proving_ is the ability to prove state transitions in a rollup within
 
 ## Sequencer
 
-_Sequencers_ are a highly decentralized set of nodes tasked with blindly finalizing the ordering of partially-encrypted transactions in a t1 block. Since Sequencers only order transactions rather than executing them (meaning lower hardware and network requirements, in particular no TEE requirement), t1 can achieve high decentralization and censorship resistance. Sequencers provide proofs of Sequencing Consensus. For details, check t1's [litepaper](/concepts/resources#t1-litepaper).
+_Sequencers_ are a highly decentralized set of nodes tasked with blindly finalizing the ordering of partially-encrypted transactions in a t1 block. Since Sequencers only order transactions rather than executing them (meaning lower hardware and network requirements, in particular no TEE requirement), t1 can achieve high decentralization and censorship resistance. Sequencers provide proofs of _Sequencing Consensus_. For details, check t1's [litepaper](/concepts/resources#t1-litepaper).
 
 ## Executor
 
-_Executors_ are a network of TEE-enabled nodes tasked with executing state changes given the ordered sequences of transaction bundles determined by the Sequencers. Executors provide proofs of Execution Consensus. For details, check t1's [litepaper](/concepts/resources#t1-litepaper).
+_Executors_ are a network of TEE-enabled nodes tasked with executing state changes given the ordered sequences of transaction bundles determined by the Sequencers. Executors provide proofs of _Execution Consensus_. For details, check t1's [litepaper](/concepts/resources#t1-litepaper).
