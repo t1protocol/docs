@@ -8,6 +8,6 @@ sidebar_position: 3
 
 Read the [**t1 Litepaper**](https://docs.t1protocol.com/t1-litepaper.pdf)
 
-## TEE Architecture
+## t1's TEE Architecture
 
 Read about t1's [**TEE Architecture and Remote Attestation**](https://docs.t1protocol.com/t1-tee-architecture.pdf)
