@@ -1,5 +1,11 @@
 [[redirects]]
-  from = "/tee-litepaper.pdf"
-  to = "/concepts/resources/"
-  status = 301
-  force = true
+from = "/tee-litepaper.pdf"
+to = "/concepts/resources/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/t1-litepaper.pdf"
+to = "/concepts/resources/"
+status = 301
+force = true
