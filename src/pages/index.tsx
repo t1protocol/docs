@@ -27,9 +27,9 @@ export const actions = [
     text: `Get familiar with the core concepts of the t1 Protocol.`,
   },
   {
-    title: 't1 Testnet Portal',
+    title: 't1 Beta Portal',
     icon: Chain,
-    to: 'https://testnet.t1protocol.com/',
+    to: 'https://beta.t1protocol.com/',
     text: `Experience real time cross-chain interactions with t1.`,
   },
   {
@@ -51,8 +51,8 @@ export const developerSafeLinks = [
 export const dAppGuides = [
   {
     title: 't1 RTP Intent Bridge',
-    text: 'Deposit funds to start interacting with apps on t1 testnet.',
-    to: 'https://testnet.t1protocol.com/bridge/?bridgeType=INTENT',
+    text: 'Deposit funds to start interacting with apps on t1 beta or testnet.',
+    to: 'https://beta.t1protocol.com/swap',
   },
   {
     title: 'More products coming soon',
