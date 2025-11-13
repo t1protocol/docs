@@ -61,10 +61,10 @@ Here is how you can integrate from step 1 to 5.
 
 ### 1 - Solver logins to t1 backend and streams its prices
 
-Connect to `wss://api.v07.t1protocol.com` by providing following authentication headers:
+Connect to `wss://sealedbid.api.t1protocol.com` by providing following authentication headers:
 
 ```typescript
-  const socket = new WebSocket(`wss://api.v07.t1protocol.com/`, {
+  const socket = new WebSocket(`wss://sealedbid.api.t1protocol.com/`, {
     headers: { 
       "X-Auth-Blob": { 
         username: 'your-username-for-t1-stats-recording-only',
@@ -75,7 +75,7 @@ Connect to `wss://api.v07.t1protocol.com` by providing following authentication 
   });
   ```
 - `"X-Auth-Blob".username` is any string that you would like your Solver to be identified by
-- `"X-Auth-Blob".nonce` is a unique nonce tied to your login attempt. you can acquire be calling `https://api.v07.t1protocol.com/api/currentNonce?username=your-username` . This nonce is needed for security of your login - should any part intercept your signature, they are not able to use it to login.
+- `"X-Auth-Blob".nonce` is a unique nonce tied to your login attempt. you can acquire be calling `https://sealedbid.api.t1protocol.com/api/currentNonce?username=your-username` . This nonce is needed for security of your login - should any part intercept your signature, they are not able to use it to login.
 - `"X-Auth-Signature"` is a signature of a stringified `"X-Auth-Blob"` . Make sure to use the private key that will also be used to fill intents!
 
 Then stream your price list in the following format to the socket.
@@ -215,7 +215,7 @@ Location: offchain
 
 Timing: once a new `ProofOfReadRootCommitted` event has been emitted
 
-Base URL: `https://api.v07.t1protocol.com`
+Base URL: `https://sealedbid.api.t1protocol.com`
 
 Endpoint: `/api/read-proofs`
 
@@ -233,7 +233,7 @@ Method: `GET`
 **Example Request:**
 
 ```bash
-curl "https://api.v07.t1protocol.com/api/read-proofs?address=0x123...&direction=ARB_TO_BASE&page=1&page_size=100"
+curl "https://proofofread.api.t1protocol.com/api/read-proofs?address=0x123...&direction=ARB_TO_BASE&page=1&page_size=100"
 ```
 
 The HTTP call will return the following structure as a response :

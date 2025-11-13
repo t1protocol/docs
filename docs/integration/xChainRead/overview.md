@@ -28,10 +28,10 @@ t1 runs full nodes of partner rollups inside TEEs, ensuring verifiable execution
 
 t1 currently supports the following chains:
 
-- Arbitrum Sepolia
-- Base Sepolia
+- Arbitrum
+- Base
 
-Let's use the following example to demonstrate how to use xChainRead. This example is a simplified version of the [T1ERC7683](https://github.com/t1protocol/t1/blob/canary/contracts/src/7683/T1ERC7683.sol) contract. It allows users to request a cross-chain read of the `getFilledOrderStatus` function of a 7683 contract on the Base Sepolia chain.
+Let's use the following example to demonstrate how to use xChainRead. This example is a simplified version of the [T1ERC7683](https://github.com/t1protocol/t1/blob/canary/contracts/src/7683/T1ERC7683.sol) contract. It allows users to request a cross-chain read of the `getFilledOrderStatus` function of a 7683 contract on the Base chain.
 
 ```solidity
 import "./T1XChainReader.sol";
@@ -51,7 +51,7 @@ contract IntentSettler {
         );
 
         bytes32 requestId = xChainRead.requestRead({
-            destinationDomain: 84532, // Base Sepolia
+            destinationDomain: 84532, // Base
             targetContract: 0xf96B8CcB029E0932fe36da0CeDd2b035E2c1695d,
             gasLimit: 200000,
             minBlock: 0,
