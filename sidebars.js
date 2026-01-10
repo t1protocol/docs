@@ -10,7 +10,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '7683',
+      label: 'ERC-7683',
       items: ['integration/7683/solver-integration', 'integration/7683/aggregator-integration'],
     },
   ],
