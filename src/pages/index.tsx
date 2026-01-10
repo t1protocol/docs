@@ -51,7 +51,7 @@ export const developerSafeLinks = [
 export const dAppGuides = [
   {
     title: 't1 RTP Intent Bridge',
-    text: 'Deposit funds to start interacting with apps on t1 beta or testnet.',
+    text: 'Real-Time Proving for fast solver repayment and tight spreads.',
     to: 'https://beta.t1protocol.com/swap',
   },
   {
@@ -396,8 +396,8 @@ export default function Home() {
 
             {/* Explore dApps Section */}
             <DappsContainer>
-              <div style={{ fontSize: '24px', fontWeight: 500, marginBottom: '0.5rem' }}>Explore dApps</div>
-              <p style={{ marginBottom: '1rem' }}>See what&apos;s possible with t1</p>
+              <div style={{ fontSize: '24px', fontWeight: 500, marginBottom: '0.5rem' }}>Explore Showcase dApps</div>
+              <p style={{ marginBottom: '1rem' }}>See what&apos;s possible with t1 infrastructure</p>
 
               <div
                 style={{

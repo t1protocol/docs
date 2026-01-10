@@ -97,7 +97,7 @@ const config = {
               href: 'https://discord.com/invite/nbvyXZHgke',
             },
             {
-              label: 'X (Twitter)',
+              label: 'Twitter',
               href: 'https://x.com/t1protocol',
             },
             {
@@ -107,7 +107,7 @@ const config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} t1 Protocol. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} by t1`,
     },
     colorMode: {
       // "light" | "dark"
