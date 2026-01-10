@@ -11,7 +11,7 @@ Our infrastructure allows developers to build composable appchains across the Et
 
 This allows for seamless cross-chain applications and shared liquidity.
 
-Developers can use TEE-applications and smart contracts on t1 to:
+Developers can use TEE applications and smart contracts on t1 to:
 
 1.  Use inputs from other rollups (as t1 runs partner rollup full nodes to read their state)
 2.  Write to applications on other rollups to update their state.
