@@ -10,7 +10,7 @@ t1 lets developers run their own Docker-packaged code as a dApp and benefit from
 
 _Warning: This is an early feature which is under heavy development and should not be used in production._
 
-Moreover, sharing liquidity between such dApps will be possible natively soon.
+Moreover, natively sharing liquidity between such dApps will be possible soon.
 
 ## How t1 Supports Docker
 
