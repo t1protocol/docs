@@ -18,6 +18,6 @@ Developers can use TEE applications and smart contracts on t1 to:
 
 These primitives can be used to enhance existing applications that are deployed on multiple chains or build a new generation of cross-chain applications.
 
-First, t1 runs full nodes of partner rollups inside its node infrastructure to read from partner rollups. This allows t1 to prove its or a partner rollup's state back to Ethereum in a single L1 block. Second, t1 uses expressive deposit contracts that can call contracts on all supported rollups and Ethereum. 
+In order to achieve this, t1 runs full nodes for other chains inside its TEE node in order to read from and write to Ethereum and partner rollups. Moreover, t1 uses expressive deposit contracts which can interact with dApps on all such supported chains. The secured TEE architecture allows t1 to prove the respective state transitions to other chains instantly.
 
 Combined, t1 cross-chain reads and writes provide the needed infrastructure for cross-chain applications and liquidity hubs. So far, apps had to deploy on multiple rollups, fragmenting liquidity and user experience. t1 enables cross-chain application workflows such as cross-chain vaults that automate the movement of user funds across different rollups to ensure that the user gets the highest yield in a non-custodial way. With t1, apps can deploy once and serve users anywhere.
