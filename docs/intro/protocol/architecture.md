@@ -29,18 +29,18 @@ _Note: Suppose, Alice had desired to withdraw funds, in step 2. She may now subm
 1. A user, Alice, deposits funds to a t1 bridge contract on Ethereum or on a _Partner Rollup_. Once the deposit is confirmed on the source chain, it gets processed by t1 and Alice gets her funds credited towards her aggregate t1 balance.
 
 2. Alice changes her wallet’s network to t1, creates a t1-native transaction (with some fields encrypted) to the shared rotating TEE pubkey), uses her wallet to sign it, and submits it to the network (i.e. the t1 mempool); this may or may not be a specially-treated withdrawal transaction (to Ethereum or a _Partner Rollup_).
-3. A t1 _Sequencer_ receives and gossips such a partially-blind transaction to other _Sequencers_ in the t1 _Sequencing network_.
+3. A t1 _Sequencer_ receives and gossips such a partially-blind transaction to other _Sequencers_ in the t1 _Sequencing Network_.
 
-4. After collecting transactions for one t1 slot (currently set to one second), the slot-leading _Sequencer_ proposes an ordering (a blind non-executed bundle). The rest of _Sequencers_ vote on it using Espresso HotShot, to form _Sequencing Consensus_. This bundle and a proof of _Sequencing Consensus_ is then passed on to the _Execution network_.
+4. After collecting transactions for one t1 slot (currently set to one second), the slot-leading _Sequencer_ proposes an ordering (a blind non-executed bundle). The rest of _Sequencers_ vote on it using Espresso HotShot, to form _Sequencing Consensus_. This bundle and a proof of _Sequencing Consensus_ is then passed on to the _Execution Network_.
 
 5. t1 _Executors_ validate the proof of _Sequencing Consensus_, decrypt the encrypted parts of the received bundle (if needed and due) using their TEE-derived shared rotating private key, and execute its now fully plaintext ordered transactions against the current state of the t1 blockchain. The slot-leading _Executor_ proposes a new trie root tuple _r_ of state trie root, withdrawals trie root, and proof-of-read trie root—and the rest of the _Executors_ vote on such new trie tuple _r_ to form _Execution Consensus_.
 
    - Note: _Executors_ use follower nodes also running in TEEs to read from and write to _Partner Rollups_ (whenever required by a t1 tx).
 
-6. The _Execution network_ posts t1’s new trie roots _r_ and all the corresponding consensus proofs to the Ethereum t1 _Canonical Bridge_ contract and the full compressed transactions to Ethereum blob DA.
+6. The _Execution Network_ posts t1’s new trie roots _r_ and all the corresponding consensus proofs to the Ethereum t1 _Canonical Bridge_ contract and the full compressed transactions to Ethereum blob DA.
 
    - In addition, t1 progressively incentivizes the generation and posting of _periodic ZKPs_ to the _Canonical Bridge_ on Ethereum to create _ZKP checkpoints_ resetting the value-at-risk counters and also speeding up the potential _on-demand ZKP_ creation when required. t1 dynamic gas pricing considers how much cryptoeconomic security budget is still available, to reach an equilibrium.
-   - In the rare event that new t1 transactions’ (as per all new trie root tuples) cumulative value since the last _ZKP checkpoint,_ despite the mechanisms above, would exceed the crypto-economic security budget provided by _Execution network_, also an _on-demand ZKP_ is required by the _Canonical Bridge_, pausing finalization until then; this would increase the withdrawal delay to hours under such extreme conditions.
+   - In the rare event that new t1 transactions’ (as per all new trie root tuples) cumulative value since the last _ZKP checkpoint,_ despite the mechanisms above, would exceed the crypto-economic security budget provided by _Execution Network_, also an _on-demand ZKP_ is required by the _Canonical Bridge_, pausing finalization until then; this would increase the withdrawal delay to hours under such extreme conditions.
 
 7. t1’s _Canonical Bridge_ contract on Ethereum checks the new submitted t1 trie root tuple _r_, _Sequencing Consensus,_ _Execution Consensus_ and transaction data availability for consistency. If successful, such _r_ is accepted. This then generally facilitates withdrawals from t1 to Ethereum with a single-Ethereum-block delay only (i.e. 6 seconds on average).
 
