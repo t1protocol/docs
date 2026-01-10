@@ -4,7 +4,7 @@ title: Introduction
 sidebar_position: 1
 ---
 
-The t1 infrastructure allows developers to build composable appchains across the Ethereum rollup ecosystem, enabling fragmenation-free, interoperable scaling. This is possible thanks to:
+Our infrastructure allows developers to build composable appchains across the Ethereum rollup ecosystem, enabling fragmenation-free, interoperable scaling. This is possible thanks to:
 
 - **Real-Time Proving**: Using Trusted Execution Environments (TEEs), t1 instantly proves its execution integrity to Ethereum and rollups.
 - **Programmability**: t1 dApps can host arbitrary logic and are able to read from as well as write to Ethereum and rollups.

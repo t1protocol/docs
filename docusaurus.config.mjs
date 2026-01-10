@@ -23,6 +23,12 @@ const config = {
   organizationName: 't1protocol',
   projectName: 't1-docs',
   themeConfig: {
+    docs: {
+      sidebar: {
+        hideable: false,
+        autoCollapseCategories: false,
+      },
+    },
     image: 'img/t1-rollup.png',
     prism: {
       additionalLanguages: ['solidity'],
@@ -47,7 +53,7 @@ const config = {
           className: 'V3_active',
         },
         {
-          to: '/integration/xChainRead/overview',
+          to: '/integration',
           label: 'Integration',
           position: 'left',
           className: 'V3_active',

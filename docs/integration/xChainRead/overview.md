@@ -1,13 +1,12 @@
 ---
-id: overview
 title: xChainRead Overview
-sidebar_label: Overview
+sidebar_label: xCR Overview
 sidebar_position: 1
 ---
 
-# xChainRead
+# xChainRead Overview
 
-xChainRead is a cross-chain verification primitive that enables smart contracts to securely call view functions on other t1-supported chains and prove the results back to an origin chain.
+xChainRead (xCR) is a cross-chain verification primitive that enables smart contracts to securely call view functions on other t1-supported chains and prove the results back to an origin chain.
 
 ## How It Works
 

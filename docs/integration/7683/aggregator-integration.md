@@ -1,5 +1,4 @@
 ---
-id: aggregator-integration
 title: Aggregator Integration
 sidebar_label: Aggregator Integration
 sidebar_position: 2

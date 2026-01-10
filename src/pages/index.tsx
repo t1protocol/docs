@@ -314,12 +314,12 @@ export default function Home() {
                 alignItems: 'center',
               }}
             >
-              <div style={{ fontWeight: 600, fontSize: '2.5rem' }}> Welcome to t1 Docs</div>
+              <div style={{ fontWeight: 600, fontSize: '2.5rem' }}> t1 Documentation</div>
             </div>
             <DescriptionSection>
               <DescriptionText>
-                The t1 infrastructure allows developers to build composable appchains across the Ethereum rollup
-                ecosystem, enabling fragmenation-free, interoperable scaling. This is possible thanks to:
+                Our infrastructure allows developers to build composable appchains across the Ethereum rollup ecosystem,
+                enabling fragmenation-free, interoperable scaling. This is possible thanks to:
               </DescriptionText>
 
               <DescriptionList>

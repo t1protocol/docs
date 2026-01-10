@@ -1,17 +1,16 @@
 ---
-id: solver-integration
-title: Solver Integration
-sidebar_label: Solver Integration
+title: ERC-7683 Solvers
+sidebar_label: ERC-7683 Solvers
 sidebar_position: 1
 ---
 
-# t1 Intents Protocol: Solver Integration
+# ERC-7683 Solver Integration
 
 Our intent protocol implements the ERC 7683 specification.
 
-The workflow is mostly the same than in other implementations : intents are opened, filled and settled.
+The workflow is mostly the same as in other implementations: intents are opened, filled and settled.
 
-But it has 2 specificities : the auction system and the settlement mechanism.
+But it has 2 specificities: the auction system and the settlement mechanism.
 
 ## The auction
 
