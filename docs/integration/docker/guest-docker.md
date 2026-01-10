@@ -1,9 +1,9 @@
 ---
-title: Guest Docker Image
-sidebar_label: Guest Docker Image
+title: Preparing Your Image
+sidebar_label: Preparing Your Image
 sidebar_position: 2
 ---
 
-# Preparing a Guest Docker Image
+# Preparing Your Image
 
 Use our template image (coming soon) to quick-start.
