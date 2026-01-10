@@ -41,8 +41,8 @@ const config = {
       title: 't1 Docs',
       items: [
         {
-          to: '/concepts/protocol/introduction',
-          label: 'Concepts',
+          to: '/intro/protocol/introduction',
+          label: 'Introduction',
           position: 'left',
           className: 'V3_active',
         },
@@ -67,8 +67,8 @@ const config = {
           title: 'Documentation',
           items: [
             {
-              label: 'Concepts',
-              to: '/concepts/protocol/introduction',
+              label: 'Introduction',
+              to: '/intro/protocol/introduction',
             },
             {
               label: 'Integration',
@@ -84,6 +84,10 @@ const config = {
               href: 'https://www.t1protocol.com',
             },
             {
+              label: 'Blog',
+              href: 'https://t1protocol.substack.com/',
+            },
+            {
               label: 'GitHub',
               href: 'https://github.com/t1protocol',
             },
@@ -93,16 +97,12 @@ const config = {
           title: 'Community',
           items: [
             {
-              label: 'Discord',
-              href: 'https://discord.com/invite/nbvyXZHgke',
-            },
-            {
               label: 'Twitter',
               href: 'https://x.com/t1protocol',
             },
             {
-              label: 'Blog',
-              href: 'https://t1protocol.substack.com/',
+              label: 'Discord',
+              href: 'https://discord.com/invite/nbvyXZHgke',
             },
           ],
         },

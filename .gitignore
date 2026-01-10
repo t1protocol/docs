@@ -33,3 +33,5 @@ package-lock.json
 
 # VSCode
 .vscode/
+# Local Netlify folder
+.netlify

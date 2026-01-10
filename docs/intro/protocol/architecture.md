@@ -4,7 +4,7 @@ title: Architecture
 sidebar_position: 4
 ---
 
-t1 is a TEE-enabled cross-chain application infrastructure that leverages defense-in-depth to achieve real-time proving. In the short-term (v1), we're building towards achieving RTP with TEE proofs. Longer term, t1 will become a permissionless and decentralized network that will complement TEE proofs with crypto-economic security and bespoke zero-knowledge proofs. You can read more about our long term architecture in our [litepaper](https://docs.t1protocol.com/concepts/resources).
+t1 is a TEE-enabled cross-chain application infrastructure that leverages defense-in-depth to achieve real-time proving. In the short-term (v1), we're building towards achieving RTP with TEE proofs. Longer term, t1 will become a permissionless and decentralized network that will complement TEE proofs with crypto-economic security and bespoke zero-knowledge proofs. You can read more about our long term architecture in our [litepaper](https://docs.t1protocol.com/intro/resources).
 
 ### Network Architecture v1
 

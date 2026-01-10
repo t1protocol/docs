@@ -23,7 +23,7 @@ export const actions = [
   {
     title: 'Learn More',
     icon: Info,
-    to: '/concepts/protocol/introduction',
+    to: '/intro/protocol/introduction',
     text: `Get familiar with the core concepts of the t1 Protocol.`,
   },
   {
@@ -57,14 +57,14 @@ export const dAppGuides = [
   {
     title: 'More products coming soon',
     text: 'Stay tuned for additional dApps built on t1.',
-    to: '#',
+    to: '',
     disabled: true,
   },
 ]
 export const smartContractGuides = [
   {
-    title: 'Cross-chain Reads',
-    text: 'Read data from other chains and prove the results back to your contract. This primitive is useful in ERC7683 enabled cross-chain intents and swaps.',
+    title: 'Cross-Chain Reads',
+    text: "Request data to be read from other chains and proven by t1 back to your chain. You'll then be able to use the result in your contract. This primitive is useful in ERC-7683-enabled cross-chain intents, among others.",
     to: '/integration/xChainRead/overview',
   },
 ]
@@ -318,27 +318,22 @@ export default function Home() {
             </div>
             <DescriptionSection>
               <DescriptionText>
-                t1 is an EVM-based cross-chain application infrastructure that introduces Real-time proving (RTP) and
-                programmability to address fragmentation and composability challenges in scaling Ethereum:
+                The t1 infrastructure allows developers to build composable appchains within the Ethereum rollup
+                ecosystem, enabling fragmenation-free, interoperable scaling. This is possible thanks to:
               </DescriptionText>
 
               <DescriptionList>
                 <DescriptionListItem>
-                  <strong>Real-time proving:</strong> Using Trusted Execution Environments (TEEs), t1 proves its
-                  execution integrity to Ethereum and partner rollups in under 12 seconds. By running partner rollup
-                  nodes within its infrastructure, t1 aggregates and proves their state to Ethereum in 1-2 L1
-                  blocks—enabling instant settlement between Ethereum and any partner rollup.
+                  <strong>Real-Time Proving:</strong> Using Trusted Execution Environments (TEEs), t1 instantly proves
+                  its execution integrity to Ethereum and rollups.
                 </DescriptionListItem>
                 <DescriptionListItem>
-                  <strong>Programmability:</strong> t1 smart contracts are able to read from and write to Ethereum and
-                  partner rollups. (coming soon)
+                  <strong>Programmability:</strong> t1 dApps can host arbitrary logic and are able to read from as well
+                  as write to Ethereum and rollups.
                 </DescriptionListItem>
               </DescriptionList>
 
-              <DescriptionText>
-                t1 provides the missing infrastructure for seamless cross-chain applications and liquidity
-                movement—today.
-              </DescriptionText>
+              <DescriptionText>This allows for seamless cross-chain applications and shared liquidity.</DescriptionText>
             </DescriptionSection>
 
             <Row>
@@ -442,8 +437,8 @@ export default function Home() {
                     <XIcon style={{ width: '40px', height: '40px' }} />
                   </StyledIcon>
                   <div>
-                    <h3>X</h3>
-                    <p>Stay up to date on X.</p>
+                    <h3>Twitter</h3>
+                    <p>Stay up to date on X</p>
                   </div>
                 </CenterCard>
               </SafeLink>
@@ -452,7 +447,7 @@ export default function Home() {
                   <DiscordIcon style={{ width: '48px', height: '48px' }} />
                   <div>
                     <h3>Discord</h3>
-                    <p>Join our Developer Community.</p>
+                    <p>Join our community</p>
                   </div>
                 </CenterCard>
               </SafeLink>
@@ -463,7 +458,7 @@ export default function Home() {
                   </StyledIcon>
                   <div>
                     <h3>GitHub</h3>
-                    <p>View all t1 repositories.</p>
+                    <p>View code repositories</p>
                   </div>
                 </CenterCard>
               </SafeLink>
