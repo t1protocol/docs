@@ -16,10 +16,6 @@ Optionally, TEEs can preserve privacy by keeping sensitive data and execution lo
 
 A _zero-knowledge (ZK) proof_ is a cryptographic protocol that enables one entity (the prover) to convince another one (the verifier) that a particular claim is true without disclosing any details about the claim itself. ZKPs used in blockchains are mostly used due to their succinctness property—meaning that the work required by the verifier to check the proof is substantially smaller than the work of re-running the computation required to reach the claim independently.
 
-## AVS
-
-[_Autonomous Verifiable Services_](https://app.eigenlayer.xyz/avs) is a term coined by EigenLayer that refers to services or applications built on top of the Ethereum blockchain, reusing it for security and validation mechanisms. These services could include rollups, DA layers, interoperability protocols etc. AVS effectively allows Ethereum validators to use their staked assets to provide security to other applications than just Ethereum itself.
-
 ## Reth
 
 [_Reth_](https://github.com/paradigmxyz/reth) (aka _Rust Ethereum_) is an Ethereum execution node implementation focused on being user-friendly, modular, and efficient. Reth is an execution client compatible with all Ethereum consensus client implementations that support the Engine API. As a full Ethereum node, Reth will allow users to sync the complete Ethereum blockchain from genesis and interact with it (and its historical state, if in archive mode) once synced.
