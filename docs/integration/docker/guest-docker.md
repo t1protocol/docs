@@ -6,4 +6,4 @@ sidebar_position: 2
 
 # Preparing Your Image
 
-Use our template image (coming soon) to quick-start.
+Use our template image to quick-start (coming soon)
