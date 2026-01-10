@@ -30,7 +30,7 @@ A _zero-knowledge (ZK) proof_ is a cryptographic protocol that enables one entit
 
 ## RTP
 
-_Real-Time Proving_ is the ability to prove state transitions in a rollup within one base layer block, which is 12 seconds for Ethereum L1. Real-time proving, for example, allows rollup deposits to be withdrawn immediately (real-time settlement).
+_Real-Time Proving_ is the ability to prove state transitions in a rollup within one base layer block, which is 12 seconds for Ethereum L1. For example, this allows previous rollup deposits to be withdrawn immediately (real-time settlement).
 
 ## Sequencer
 

@@ -318,7 +318,7 @@ export default function Home() {
             </div>
             <DescriptionSection>
               <DescriptionText>
-                The t1 infrastructure allows developers to build composable appchains within the Ethereum rollup
+                The t1 infrastructure allows developers to build composable appchains across the Ethereum rollup
                 ecosystem, enabling fragmenation-free, interoperable scaling. This is possible thanks to:
               </DescriptionText>
 
