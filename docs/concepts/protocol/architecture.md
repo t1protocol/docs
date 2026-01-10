@@ -4,7 +4,7 @@ title: Architecture
 sidebar_position: 4
 ---
 
-t1 is a TEE-enabled cross-chain application infrastructure that leverages defense-in-depth to achieve real-time proving. In the short-term (v1), we achieve RTP with TEE proofs. Longer term, t1 will become a permissionless and decentralized network that will complement TEE proofs with crypto-economic security and bespoke zero-knowledge proofs. You can read more about our long term architecture in our litepaper.
+t1 is a TEE-enabled cross-chain application infrastructure that leverages defense-in-depth to achieve real-time proving. In the short-term (v1), we achieve RTP with TEE proofs. Longer term, t1 will become a permissionless and decentralized network that will complement TEE proofs with crypto-economic security and bespoke zero-knowledge proofs. You can read more about our long term architecture in our [litepaper](https://docs.t1protocol.com/concepts/resources).
 
 ### Network Architecture v1
 
@@ -28,7 +28,7 @@ _Note: Suppose, Alice had desired to withdraw funds, in step 2. She may now subm
 
 1. A user, Alice, deposits funds to a t1 bridge contract on Ethereum or on a _Partner Rollup_. Once the deposit is confirmed on the source chain, it gets processed by t1 and Alice gets her funds credited towards her aggregate t1 balance.
 
-2. Alice changes her wallet’s network to t1, creates a t1-native transaction (with [some fields encrypted](https://www.notion.so/Litepaper-9a2cc4d321ce4a08a4905aa809fb436e?pvs=21) to the shared rotating TEE pubkey), uses her wallet to sign it, and submits it to the network (i.e. the t1 mempool); this may or may not be a specially-treated withdrawal transaction (to Ethereum or a _Partner Rollup_).
+2. Alice changes her wallet’s network to t1, creates a t1-native transaction (with some fields encrypted) to the shared rotating TEE pubkey), uses her wallet to sign it, and submits it to the network (i.e. the t1 mempool); this may or may not be a specially-treated withdrawal transaction (to Ethereum or a _Partner Rollup_).
 3. A t1 _Sequencer_ receives and gossips such a partially-blind transaction to other _Sequencers_ in the t1 _Sequencing AVS_ network.
 
 4. After collecting transactions for one t1 slot (currently set to one second), the slot-leading _Sequencer_ proposes an ordering (a blind non-executed bundle). The rest of _Sequencers_ vote on it using Espresso HotShot, to form _Sequencing Consensus_. This bundle and a proof of _Sequencing Consensus_ is then passed on to the _Execution AVS_ network.
