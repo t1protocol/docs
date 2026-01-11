@@ -10,7 +10,7 @@ t1 lets developers run their own Docker-packaged code as a dApp and benefit from
 
 _Warning: This is an early feature which is under heavy development and should not be used in production._
 
-Moreover, natively sharing liquidity between such dApps will be possible soon.
+Moreover, natively sharing liquidity and composing between such dApps will be possible soon. In the future, we'll also enable keeping the dApp logic (incl. source code) private-yet-verifiable, via a remotely-attested open-source enforcer.
 
 ## How t1 Supports Docker
 
@@ -20,7 +20,9 @@ A third-party developer is able to have t1 pull a `t1-dapp` Docker image prepare
 
 Therefore, such third-party dApp becomes co-located with `t1-core` and allowed to call its predefined methods via regular Docker-to-Docker communication.
 
-Moreover, `t1-dapp` is allowed to issue conventional web2-style API calls, e.g. to fetch CEX price feeds etc. However, in order to benefit from t1's secured TEE architecture, it is the responsibility of the dApp developer to ensure that their logic yields a deterministic output—only then can it be verified via re-execution.
+Moreover, a `t1-dapp` is allowed to issue conventional web2-style API calls, e.g. to fetch CEX price feeds etc. However, in order to benefit from t1's secured TEE architecture, it is the responsibility of the dApp developer to ensure that their logic yields a deterministic output—only then can it be verified via re-execution.
+
+proprietary code - no ra - controller pattern
 
 ## Endpoints Provided
 
