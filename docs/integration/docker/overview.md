@@ -18,7 +18,7 @@ A t1 TEE node is always running a `t1-core` Docker image which exposes dedicated
 
 A third-party developer is able to have t1 pull a `t1-dapp` Docker image prepared by them and run it within the same TEE.
 
-Therefore, such third-party dApp becomes co-located with `t1-core` and allowed to call its predefined methods via regular Docker-to-Docker communication.
+Therefore, such third-party dApp becomes co-located with `t1-core` and allowed to call its predefined methods via regular Docker-to-Docker communication between co-located containers.
 
 Moreover, a `t1-dapp` is allowed to issue conventional web2-style API calls, e.g. to fetch CEX price feeds etc. However, in order to benefit from t1's secured TEE architecture, it is the responsibility of the dApp developer to ensure that their logic yields a deterministic output—only then can it be verified via re-execution.
 
@@ -34,7 +34,7 @@ Once your `t1-dapp` is deployed to t1, it can call the following predefined meth
 - `sendTx(chainId, payload, callback)`
   - Instructs the TEE-controlled identity to request a transaction to be sent to a chain
   - Accepts a chain ID, a transaction payload, and a function to be called on `t1-dapp` after the transaction action
-- `requestCallbackOnTransaction(chainId, address, callback)`
+- `registerCallbackOnTransaction(chainId, address, callback)`
   - Attaches a function to be called on `t1-dapp` whenever a transaction is received somewhere, e.g. an ERC-20 burn
   - Accepts a chain ID, an address to watch, and a function to be called
 - `selfdestruct(fundsRecipient)`
