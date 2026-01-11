@@ -6,7 +6,7 @@ sidebar_position: 3
 
 # Sample `t1-dApp` Flow
 
-Consider [Yild]("https://yild.it"), a cross-chain yield optimization dApp. The flow in Docker terms is:
+Consider [Yild](https://yild.it), a cross-chain yield optimization dApp. The flow in Docker terms is:
 
 1. Yild's developer submits the Docker image with Yild's logic for t1 to pull and run, as a `t1-dapp` TEE-co-located with `t1-core`.
 2. The newly started Yild container proceeds to call `initIdentity(callbackOnDeposit)` on `t1-core`, where `callbackOnDeposit` is Yild's handler that will determine how to treat deposits (e.g. credit a user, supply to a new yield source, withdraw to a user).
