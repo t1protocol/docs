@@ -6,8 +6,8 @@ sidebar_position: 2
 
 # Sample `t1-dApp` Flow
 
-**[Yild](https://yild.it), is a non-custodial, automated cross-chain strategy protocol built on t1’s real-time proving infrastructure.**
-It enables developers to act as fund managers by deploying verifiable, on-chain–enforced investment strategies that execute across multiple chains without trust assumptions. By making strategies readable, provable, and enforced by code, Yild dramatically lowers the barrier to starting a hedge fund and empowers independent developers to raise capital without legal agreements, intermediaries, or existing relationships.
+**[Yild](https://yild.it) is a non-custodial, automated cross-chain strategy protocol built on t1’s real-time proving infrastructure.**
+It enables developers to act as fund managers by deploying verifiable, on-chain–enforced investment strategies that execute across multiple chains without additional trust assumptions. By making strategies readable, provable, and enforced by code, Yild dramatically lowers the barrier to starting a hedge fund and empowers independent developers to raise capital without legal agreements, intermediaries, or existing relationships.
 
 Let's consider the example of a cross-chain Yild arbitrage strategy, which reallocates funds across yield sources and chains, to explain the application flow in t1's Docker architecture:
 
