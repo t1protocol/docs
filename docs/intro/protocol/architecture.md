@@ -1,8 +1,14 @@
 ---
 id: architecture
-title: Architecture
-sidebar_position: 4
+title: Network Architecture
+sidebar_position: 8
 ---
+
+:::note
+
+This page describes t1's long-term design as a permissionless, decentralized network, as set out in the [Vision Litepaper](../resources.md). The credit protocol running today is built on the TEE infrastructure described in [Programmable Custody](./programmable-custody.md), [TEE](./tee.md), and [Real-Time Proving](./rtp.md), and does not depend on the network below having shipped.
+
+:::
 
 t1 is a TEE-enabled cross-chain application infrastructure that leverages defense-in-depth to achieve real-time proving. In the  near term (v1), we're building towards achieving RTP with TEE proofs. In the long term, t1 will become a permissionless and decentralized network that will complement TEE proofs with crypto-economic security and bespoke zero-knowledge proofs. You can read more about our long term architecture in our [litepaper](https://docs.t1protocol.com/intro/resources).
 

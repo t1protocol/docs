@@ -1,12 +1,12 @@
 ---
 id: research
 title: Research
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-## Research
+Our current work is on permissionless credit: how a loan policy can be enforced by a key rather than by collateral or by a contract, and what that makes possible for leverage on venues no smart contract can reach. [Programmable Custody](/intro/protocol/programmable-custody) is the shortest account of it.
 
-The rollup landscape is changing rapidly, and we at t1 strive to stay at the bleeding edge. Our research focuses on improving scalable composability among and between blockchains and rollups.
+The articles below are the earlier body of work on rollup fragmentation and real-time proving, the infrastructure the credit protocol is built on.
 
 ## **t1** is the cross-chain application infra to enable better web3 UX
 

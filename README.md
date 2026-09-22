@@ -6,8 +6,8 @@ This web application contains all documentation for t1. It was forked from the [
 
 ### t1 documentation currently has two sections:
 
-- Intro - General t1 information or concepts useful for using t1
-- Integrations - e.g. xChainRead API documentation
+- Intro - the credit protocol (programmable custody, margin accounts, the risk engine, lending pools), the TEE and Real-Time Proving infrastructure under it, the long-term network design, and the ecosystem
+- Integrations - how to offer leverage on a venue, how to provide lending liquidity, and the underlying primitives (xChainRead, ERC-7683, Docker dApps)
 
 ### TODOs:
 
