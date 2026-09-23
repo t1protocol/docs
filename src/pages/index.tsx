@@ -299,7 +299,7 @@ const SafeLinksContainer = styled.div`
 
 export default function Home() {
   return (
-    <Layout title={`t1 Docs`} description="Documentation for t1, the permissionless credit protocol for DeFi.">
+    <Layout description="Documentation for t1, the permissionless credit protocol for DeFi.">
       <StyledTitleImage
         sources={{
           light: useBaseUrl('/img/t1-cover-no-text.png'),
