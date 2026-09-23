@@ -29,4 +29,4 @@ The shape of the work depends on whether your venue settles on-chain or runs an 
 
 ## Get in touch
 
-There is no self-serve onboarding yet; venue integrations are done with us directly. Join the [Discord](https://discord.com/invite/qVEUA6jmGZ) or email [can@t1protocol.com](mailto:can@t1protocol.com).
+There is no self-serve onboarding yet; venue integrations are done with us directly. Join the [Discord](https://discord.gg/efGTM9q54s) or email [can@t1protocol.com](mailto:can@t1protocol.com).

@@ -448,7 +448,7 @@ export default function Home() {
                   </div>
                 </CenterCard>
               </SafeLink>
-              <SafeLink style={{ textDecoration: 'none' }} href={'https://discord.com/invite/qVEUA6jmGZ'}>
+              <SafeLink style={{ textDecoration: 'none' }} href={'https://discord.gg/efGTM9q54s'}>
                 <CenterCard>
                   <DiscordIcon style={{ width: '48px', height: '48px' }} />
                   <div>
