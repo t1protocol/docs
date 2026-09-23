@@ -25,4 +25,4 @@ What you are still exposed to is market risk: a position can gap through its liq
 
 ## Get in touch
 
-Pool creation and institutional deposits are handled with us directly. Join the [Discord](https://discord.com/invite/qVEUA6jmGZ) or email [can@t1protocol.com](mailto:can@t1protocol.com).
+Pool creation and institutional deposits are handled with us directly. Join the [Discord](https://discord.gg/efGTM9q54s) or email [can@t1protocol.com](mailto:can@t1protocol.com).
