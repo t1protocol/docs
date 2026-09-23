@@ -32,7 +32,7 @@ function UnreleasedVersionLabel({ siteTitle, versionLabel }: VersionLabelProps) 
         versionLabel: <strong>{versionLabel}</strong>,
       }}
     >
-      {'This is unreleased documentation for the t1 Protocol.'}
+      {'This is unreleased documentation for t1.'}
     </SafeTranslate>
   )
 }

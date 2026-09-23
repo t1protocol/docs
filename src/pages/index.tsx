@@ -24,7 +24,7 @@ export const actions = [
     title: 'Learn More',
     icon: Info,
     to: '/intro/protocol/introduction',
-    text: `Get familiar with the core concepts of the t1 Protocol.`,
+    text: `Get familiar with the core concepts of t1.`,
   },
   {
     title: 'Programmable Custody',
