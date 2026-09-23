@@ -14,7 +14,6 @@ RTP is what makes that knowledge trustworthy rather than merely asserted:
 
 - **Cross-venue collateral.** Positions held on separate venues resolve into one [margin account](./margin-accounts.md) because the reads behind them are proven, not reported.
 - **Risk decisions a lender can check.** The [risk engine](./risk-engine.md) acts on cross-chain state; proving that state is what lets a lender audit a liquidation rather than trust it.
-- **Settlement without a delay window.** Repayments and withdrawals do not have to wait out a seven-day challenge period or an hours-long proving queue, so capital returns to the pool at the speed the position closed.
 
 ## Beyond credit
 

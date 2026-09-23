@@ -23,7 +23,7 @@ They keep direction rights over the capital and never get withdrawal rights over
 The shape of the work depends on whether your venue settles on-chain or runs an off-chain orderbook, but the pieces are the same in both cases:
 
 1. **Agree the policy.** Which venues and assets the account may touch, the maximum position size, and the liquidation threshold. This is what your lenders are pricing, and it is bound into the account's key at creation.
-2. **Connect the venue.** t1's risk engine needs to read positions and prices from your venue, and the encumbered key needs to be able to place and cancel orders on it — both through your existing interfaces.
+2. **Connect the venue.** t1's risk engine needs to read positions and prices from your venue, and the encumbered key needs to be able to place and cancel orders on it.
 3. **Point your frontend at the account.** Your users deposit into their margin account and trade from it. The signature gate is transparent to them until it rejects something the policy forbids.
 4. **Source the liquidity.** Either bring your own lenders or draw on existing pools.
 

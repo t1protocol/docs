@@ -345,8 +345,7 @@ export default function Home() {
               </DescriptionList>
 
               <DescriptionText>
-                Together they put leverage on venues no smart contract can reach: prediction markets, off-chain
-                perpetual orderbooks, and memecoins.
+                Together they put leverage on venues no smart contract can reach: prediction markets and memecoins.
               </DescriptionText>
             </DescriptionSection>
 

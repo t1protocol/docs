@@ -22,7 +22,7 @@ The account t1 lends into: one per borrower, holding their own deposit plus the 
 
 ## Loan policy
 
-The rules an encumbered key enforces: the permitted venues and assets, the maximum position size, the liquidation threshold, and the interest terms. Set by the lender when a [lending pool](#lending-pool) is created, and immutable thereafter.
+The rules an encumbered key enforces: the permitted venues and assets, the maximum position size, and the liquidation threshold. Set by the lender when a [lending pool](#lending-pool) is created, and immutable thereafter. A pool's interest rate is a separate parameter and is not fixed this way.
 
 ## Signature gate
 

@@ -10,7 +10,7 @@ This page describes t1's long-term design as a permissionless, decentralized net
 
 :::
 
-t1 is a TEE-enabled cross-chain application infrastructure that leverages defense-in-depth to achieve real-time proving. In the  near term (v1), we're building towards achieving RTP with TEE proofs. In the long term, t1 will become a permissionless and decentralized network that will complement TEE proofs with crypto-economic security and bespoke zero-knowledge proofs. You can read more about our long term architecture in our [litepaper](https://docs.t1protocol.com/intro/resources).
+As a network, t1 is a TEE-enabled cross-chain application infrastructure that leverages defense-in-depth to achieve real-time proving. In the  near term (v1), we're building towards achieving RTP with TEE proofs. In the long term, t1 will become a permissionless and decentralized network that will complement TEE proofs with crypto-economic security and bespoke zero-knowledge proofs. You can read more about our long term architecture in our [litepaper](https://docs.t1protocol.com/intro/resources).
 
 ### Network Architecture v1
 

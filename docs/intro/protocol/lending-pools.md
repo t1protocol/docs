@@ -4,7 +4,7 @@ title: Lending Pools
 sidebar_position: 5
 ---
 
-A lending pool is where credit comes from. Lenders deposit capital into a pool, the pool defines the [loan policy](./margin-accounts.md) that every margin account borrowing from it is bound to, and borrowers draw against that capital to take leveraged positions on the venues the policy allows.
+A lending pool is where credit comes from. Lenders deposit capital into a pool, the pool defines the [loan policy](./margin-accounts.md#the-loan-policy) that every margin account borrowing from it is bound to, and borrowers draw against that capital to take leveraged positions on the venues the policy allows.
 
 ## What a lender sets
 
@@ -13,15 +13,16 @@ A pool is defined by its policy, and the policy is where a lender expresses thei
 - **Permitted venues and assets** — the surface the capital is allowed to touch.
 - **Maximum position size** — the ceiling on notional exposure per account.
 - **Liquidation threshold** — the loan-to-value ratio at which the [risk engine](./risk-engine.md) closes a position.
-- **Interest terms** — what borrowing from this pool costs.
 
-A lender who wants different parameters creates a different pool. Policies are not renegotiated per borrower, which is what keeps borrowing permissionless: there is nothing to approve, because everything that would have been approved was decided when the pool was created.
+Separately, the lender sets what borrowing from the pool costs. Interest is a pool parameter rather than part of the bound policy: the rate curve responds to utilization and can be retuned, while the four fields above are fixed for the life of every account created under them.
+
+A lender who wants different policy parameters creates a different pool. Policies are not renegotiated per borrower, which is what keeps borrowing permissionless: there is nothing to approve, because everything that would have been approved was decided when the pool was created.
 
 ## What a lender is and is not exposed to
 
 - **No counterparty exposure.** The borrower is not the counterparty. The margin account is, and it is incapable of absconding with the principal.
-- **No legal exposure.** There is no master loan agreement to draft, no jurisdiction to enforce it in, and no debtor to pursue.
-- **No KYC to administer.** Borrowers are anonymous by design, so there is no identity programme to run and no obligation inherited from having run one.
+- **No counterparty legal exposure.** There is no master loan agreement to draft and no debtor to pursue.
+- **No KYC to administer.** Borrowers are anonymous by design, so there is no identity program to run.
 - **Market risk remains.** A position can still gap through its liquidation threshold. See [Residual risk](./risk-engine.md#residual-risk).
 
 ## Repayment

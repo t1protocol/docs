@@ -4,7 +4,7 @@ title: Programmable Custody
 sidebar_position: 2
 ---
 
-Programmable custody is the primitive the rest of t1 is built on. A margin account's private key lives inside a Trusted Execution Environment, bound at the moment of its creation to a loan policy it can never escape. The key will sign a transaction that satisfies the policy and will not sign one that does not. Nobody — not the borrower, not the lender, not t1 — can make it do otherwise.
+Programmable custody is the primitive the rest of t1 is built on. A margin account's private key lives inside a Trusted Execution Environment, bound at the moment of its creation to a loan policy it can never escape. The key will sign a transaction that satisfies the policy and will not sign one that does not. No party, t1 included, can direct the key outside the policy without running different code inside the enclave, which changes the attestation measurement any lender can check.
 
 The academic name for a key that cannot be used freely by the party holding it is **private key encumbrance**. We call the applied form of it programmable custody.
 
@@ -35,7 +35,7 @@ This is the entire enforcement surface, and it is worth being concrete about it.
 
 The first is a use of funds the lender priced and agreed to. The second is the borrower walking off with the loan, and there is no version of the account that produces a signature for it.
 
-This is why the borrower can be anonymous and unKYC'd. The lender is not extending trust to a person; they are extending capital into an account whose behavior is fixed in advance.
+This is why the borrower can be anonymous, with no KYC. The lender is not extending trust to a person; they are extending capital into an account whose behavior is fixed in advance.
 
 ## Why this cannot be a smart contract
 
@@ -48,6 +48,6 @@ A key does not have this limitation. It sits in front of the transaction rather 
 ## What the borrower gets, and does not get
 
 - **Direction rights.** The borrower decides what the capital does: which venue, which market, which side, when to close.
-- **No withdrawal rights.** The borrower cannot move the capital to an address they control. Not by signing, not by asking, not by compromising their own credentials.
+- **No withdrawal rights.** The borrower cannot move the capital to an address they control: there is no transaction they can submit, and no request they can make, that produces that signature.
 
 Profit realized inside the account is theirs, and is released to them through the policy's own settlement path once the loan and its interest are covered. The principal is never at their disposal.

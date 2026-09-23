@@ -16,7 +16,7 @@ You operate a venue — an exchange, a prediction market, a trading app — and 
 
 ## Provide lending liquidity
 
-You have capital and want it earning on undercollateralized loans without counterparty exposure, a legal agreement, or a KYC programme to administer. Set up a pool with your own parameters, or deposit into an existing one.
+You have capital and want it earning on undercollateralized loans without counterparty exposure, a legal agreement, or a KYC program to administer. Set up a pool with your own parameters, or deposit into an existing one.
 
 → [Provide Lending Liquidity](./lending.md)
 

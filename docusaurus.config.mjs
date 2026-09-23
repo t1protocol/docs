@@ -78,7 +78,7 @@ const config = {
             },
             {
               label: 'Integration',
-              to: '/integration/xChainRead/overview',
+              to: '/integration',
             },
           ],
         },

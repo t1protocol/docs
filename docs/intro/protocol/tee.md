@@ -8,14 +8,14 @@ Trusted Execution Environments (TEEs) are specialized hardware-based environment
 
 ## What t1 uses TEEs for
 
-Three of t1's four uses are what make undercollateralized credit possible, and the fourth is what makes the collateral legible across venues:
+t1 uses them to make undercollateralized credit possible, and to make the collateral legible across the venues a borrower trades on:
 
 - **Hold encumbered keys.** A margin account's private key is generated inside the enclave and never leaves it. The loan policy is bound to the key at creation, and the key signs only transactions that satisfy it. See [Programmable Custody](./programmable-custody.md).
 - **Run the risk engine.** Position monitoring, dynamic loan-to-value, and liquidation execution run inside the enclave at market speed, and their results are attested on-chain. See [Risk Engine and Liquidation](./risk-engine.md).
 - **Read other chains reliably.** t1 runs full nodes for supported chains inside its node infrastructure, so an account's exposure is computed from state that was actually read rather than reported.
 - **Prove execution in real time.** State transitions are proven to Ethereum and supported rollups within a single block. See [Real-Time Proving](./rtp.md).
 
-Remote attestation is what ties these together for a lender. It proves which binary is holding the key and running the risk engine, so "the policy is enforced" is a claim about published code with a verifiable measurement, not a claim about t1's good behavior.
+Remote attestation is what ties these together for a lender. It proves which binary is holding the key and running the risk engine, so "the policy is enforced" is a claim about a specific binary with a verifiable measurement, not a claim about t1's good behavior.
 
 ## Real-time settlement
 
