@@ -78,7 +78,7 @@ const config = {
             },
             {
               label: 'Integration',
-              to: '/integration/xChainRead/overview',
+              to: '/integration',
             },
           ],
         },
@@ -108,7 +108,7 @@ const config = {
             },
             {
               label: 'Discord',
-              href: 'https://discord.com/invite/nbvyXZHgke',
+              href: 'https://discord.com/invite/qVEUA6jmGZ',
             },
           ],
         },

@@ -1,11 +1,20 @@
 ---
 id: rtp
 title: Real-Time Proving
-sidebar_position: 2
+sidebar_position: 7
 ---
 
-Real-Time Proving (RTP) enables immediate validation of computations, allowing systems to verify correct execution with minimal latency. This capability is particularly impactful in in blockchain ecosystems such as Ethereum, where the proliferation of layer 2 rollups has led to liquidity fragmentation and overall user experience degredation. RTP enhances composability by allowing chains and rollups to securely and efficiently interact with one another in near real-time, facilitating cross-chain operations such as asset transfers, contract calls, and state updates.
+Real-Time Proving (RTP) enables immediate validation of computations, allowing systems to verify correct execution with minimal latency. Within a Trusted Execution Environment, the computation of a state transition can be securely executed, producing cryptographic proofs that attest to its correctness. These proofs can be submitted to Ethereum or another chain immediately, without the delays associated with optimistic or zero-knowledge rollups. Proving via multisigs or proof-of-stake can also be fast, but multisig systems do not provide reliability and proof-of-stake systems are very expensive to run.
 
-Within a Trusted Execution Environment (TEE), the computation of rollup state transitions can be securely executed, producing cryptographic proofs that attest to the correctness of these transitions. These proofs can be immediately submitted to other chains or Ethereum without requiring the delays associated with traditional mechanisms like ZK rollups or optimistic rollups. While proving via multisigs and proof-of-stake (PoS) can be fast, these methods face significant limitations. Multisig systems don'provide reliability and PoS systems are very expensive to run.
+## Why credit needs it
 
-By leveraging TEEs, t1 allows chains and rollups to have near-instantaneous interactions with other chains. This real-time interaction reduces friction for developers and users, unlocking advanced use cases such as dynamic liquidity provisioning and seamless multi-chain dApp experiences.
+A margin account is only useful if its collateral can back positions wherever the borrower wants to trade, and that requires knowing what those positions are worth right now, on chains and venues that do not share a settlement layer.
+
+RTP is what makes that knowledge trustworthy rather than merely asserted:
+
+- **Cross-venue collateral.** Positions held on separate venues resolve into one [margin account](./margin-accounts.md) because the reads behind them are proven, not reported.
+- **Risk decisions a lender can check.** The [risk engine](./risk-engine.md) acts on cross-chain state; proving that state is what lets a lender audit a liquidation rather than trust it.
+
+## Beyond credit
+
+The same primitive is what enhances composability generally, letting chains and rollups interact securely in near real time for asset transfers, contract calls, and state updates. t1 exposes it directly to developers as [xChainRead](../../integration/xChainRead/overview.md), a cross-chain read verification primitive that any contract can call.

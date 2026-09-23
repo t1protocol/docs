@@ -27,16 +27,16 @@ export const actions = [
     text: `Get familiar with the core concepts of the t1 Protocol.`,
   },
   {
-    title: 't1 Beta Portal',
-    icon: Chain,
-    to: 'https://beta.t1protocol.com/',
-    text: `Experience real time cross-chain interactions with t1.`,
+    title: 'Programmable Custody',
+    icon: BookOpen,
+    to: '/intro/protocol/programmable-custody',
+    text: `How an encumbered key enforces a loan policy, and why a smart contract cannot.`,
   },
   {
-    title: 't1 Smart Contracts',
-    icon: BookOpen,
-    to: 'https://github.com/t1protocol/t1/tree/canary/contracts',
-    text: `Learn about the architecture of t1 smart contracts.`,
+    title: 'Ecosystem',
+    icon: Chain,
+    to: '/intro/ecosystem',
+    text: `The applications already running on t1's credit infrastructure.`,
   },
 ]
 
@@ -48,24 +48,28 @@ export const developerSafeLinks = [
   },
 ]
 
-export const dAppGuides = [
+export const ecosystemApps = [
   {
-    title: 't1 RTP Intent Bridge',
-    text: 'Real-Time Proving for fast solver repayment and tight spreads.',
-    to: 'https://beta.t1protocol.com/swap',
+    title: 'amplifi',
+    text: 'Permissionless prime brokerage for prediction markets and perpDEXs. 10× leverage on Polymarket.',
+    to: '/intro/ecosystem#amplifi',
   },
   {
-    title: 'More products coming soon',
-    text: 'Stay tuned for additional dApps built on t1.',
-    to: '',
-    disabled: true,
+    title: 'juiced',
+    text: 'Leverage on memecoins before they list on perpDEXs. 5× on Robinhood Chain.',
+    to: '/intro/ecosystem#juiced',
   },
 ]
-export const smartContractGuides = [
+export const integrationGuides = [
   {
-    title: 'Cross-Chain Reads',
-    text: "Request data to be read from other chains and proven by t1 back to your chain. You'll then be able to use the result in your contract. This primitive is useful in ERC-7683-enabled cross-chain intents, among others.",
-    to: '/integration/xChainRead/overview',
+    title: 'Offer Leverage',
+    text: 'Let your users trade with borrowed capital on your venue without ever holding it yourself. t1 issues the margin accounts, enforces the loan policy, and runs liquidation.',
+    to: '/integration/leverage',
+  },
+  {
+    title: 'Provide Liquidity',
+    text: 'Deposit into a lending pool, or set one up with your own venues, position limits, and liquidation threshold. Repayment is enforced by the account, not promised by the borrower.',
+    to: '/integration/lending',
   },
 ]
 
@@ -295,7 +299,7 @@ const SafeLinksContainer = styled.div`
 
 export default function Home() {
   return (
-    <Layout title={`t1 Docs`} description="Technical Documentation For The t1 Protocol">
+    <Layout title={`t1 Docs`} description="Documentation for t1, the permissionless credit protocol for DeFi.">
       <StyledTitleImage
         sources={{
           light: useBaseUrl('/img/t1-cover-no-text.png'),
@@ -318,22 +322,26 @@ export default function Home() {
             </div>
             <DescriptionSection>
               <DescriptionText>
-                Our infrastructure allows developers to build composable appchains across the Ethereum rollup ecosystem,
-                enabling fragmenation-free, interoperable scaling. This is possible thanks to:
+                t1 is the permissionless credit protocol for DeFi. Lenders extend undercollateralized loans to anyone,
+                and get repaid without a legal agreement, a custodian, or a pile of idle collateral. This is possible
+                thanks to:
               </DescriptionText>
 
               <DescriptionList>
                 <DescriptionListItem>
-                  <strong>Real-Time Proving:</strong> Using Trusted Execution Environments (TEEs), t1 instantly proves
-                  its execution integrity to Ethereum and rollups.
+                  <strong>Programmable custody:</strong> Each borrower gets a margin account whose private key lives in
+                  a Trusted Execution Environment (TEE) and signs only the transactions their loan policy permits. The
+                  borrower can direct the capital and can never take it.
                 </DescriptionListItem>
                 <DescriptionListItem>
-                  <strong>Programmability:</strong> t1 dApps can host arbitrary logic and are able to read from as well
-                  as write to Ethereum and rollups.
+                  <strong>Real-Time Proving:</strong> Positions held on separate venues and chains resolve into one
+                  margin account, from state that is proven rather than reported.
                 </DescriptionListItem>
               </DescriptionList>
 
-              <DescriptionText>This allows for seamless cross-chain applications and shared liquidity.</DescriptionText>
+              <DescriptionText>
+                Together they put leverage on venues no smart contract can reach: prediction markets and memecoins.
+              </DescriptionText>
             </DescriptionSection>
 
             <Row>
@@ -358,10 +366,8 @@ export default function Home() {
           <>
             {/* Smart Contracts Section */}
             <ExploreContainer>
-              <div style={{ fontSize: '24px', fontWeight: 500, marginBottom: '0.5rem' }}>
-                Integrate Your Smart Contracts
-              </div>
-              <p style={{ marginBottom: '1rem' }}>Build with t1&apos;s cross-chain capabilities</p>
+              <div style={{ fontSize: '24px', fontWeight: 500, marginBottom: '0.5rem' }}>Integrate with t1</div>
+              <p style={{ marginBottom: '1rem' }}>Two ways to build on the credit protocol</p>
 
               <div
                 style={{
@@ -371,7 +377,7 @@ export default function Home() {
                   alignItems: 'stretch',
                 }}
               >
-                {smartContractGuides.map((action) => (
+                {integrationGuides.map((action) => (
                   <SafeLink key={action.to} style={{ textDecoration: 'none', height: '100%' }} to={action.to}>
                     <Card style={{ height: '100%' }}>
                       <SafeLinkRow>
@@ -391,8 +397,8 @@ export default function Home() {
 
             {/* Explore dApps Section */}
             <DappsContainer>
-              <div style={{ fontSize: '24px', fontWeight: 500, marginBottom: '0.5rem' }}>Explore Showcase dApps</div>
-              <p style={{ marginBottom: '1rem' }}>See what&apos;s possible with t1 infrastructure</p>
+              <div style={{ fontSize: '24px', fontWeight: 500, marginBottom: '0.5rem' }}>Built on t1</div>
+              <p style={{ marginBottom: '1rem' }}>Applications already running on t1&apos;s credit infrastructure</p>
 
               <div
                 style={{
@@ -402,7 +408,7 @@ export default function Home() {
                   alignItems: 'stretch',
                 }}
               >
-                {dAppGuides.map((action) => (
+                {ecosystemApps.map((action) => (
                   <SafeLink key={action.title} style={{ textDecoration: 'none', height: '100%' }} to={action.to}>
                     <Card
                       style={{
@@ -442,7 +448,7 @@ export default function Home() {
                   </div>
                 </CenterCard>
               </SafeLink>
-              <SafeLink style={{ textDecoration: 'none' }} href={'https://discord.com/invite/nbvyXZHgke'}>
+              <SafeLink style={{ textDecoration: 'none' }} href={'https://discord.com/invite/qVEUA6jmGZ'}>
                 <CenterCard>
                   <DiscordIcon style={{ width: '48px', height: '48px' }} />
                   <div>
