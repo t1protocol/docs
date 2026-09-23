@@ -54,4 +54,4 @@ Profit realized inside the account is theirs, and is released to them through th
 
 ## Rollout
 
-Programmable custody is being adopted progressively rather than all at once. Controlling keys are being migrated into Trusted Execution Environments, and in certain environments are already held that way; the full TEE architecture described above, across every environment, is the long-term design. For the applications live on t1 today, amplifi's [terms of service](https://amplifi.finance/terms) set out where that migration currently stands.
+Programmable custody is being adopted progressively rather than all at once. Some subsystems already run inside a Trusted Execution Environment, and others are in the process of being moved into one. The full TEE architecture described above is the long-term design. For the applications live on t1 today, amplifi's [terms of service](https://amplifi.finance/terms) set out where that migration currently stands.
