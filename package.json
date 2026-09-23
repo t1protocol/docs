@@ -1,6 +1,6 @@
 {
   "name": "@t1/docs",
-  "description": "t1 Protocol Documentation",
+  "description": "t1 Documentation",
   "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
