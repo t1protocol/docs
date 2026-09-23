@@ -51,3 +51,7 @@ A key does not have this limitation. It sits in front of the transaction rather 
 - **No withdrawal rights.** The borrower cannot move the capital to an address they control: there is no transaction they can submit, and no request they can make, that produces that signature.
 
 Profit realized inside the account is theirs, and is released to them through the policy's own settlement path once the loan and its interest are covered. The principal is never at their disposal.
+
+## Rollout
+
+Programmable custody is being adopted progressively rather than all at once. Controlling keys are being migrated into Trusted Execution Environments, and in certain environments are already held that way; the full TEE architecture described above, across every environment, is the long-term design. For the applications live on t1 today, amplifi's [terms of service](https://amplifi.finance/terms) set out where that migration currently stands.

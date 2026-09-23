@@ -21,3 +21,5 @@ t1's credit infrastructure already powers two applications. They differ in the v
 ## Building on t1
 
 The same infrastructure is available to other venues and applications. If you operate a venue and want your users to trade with borrowed capital you never hold, see [Offer Leverage on Your Venue](../integration/leverage.md). If you want to put capital behind a policy, see [Provide Lending Liquidity](../integration/lending.md).
+
+Both applications are moving onto the full architecture described in [Programmable Custody](./protocol/programmable-custody.md); [Rollout](./protocol/programmable-custody.md#rollout) covers where that stands.

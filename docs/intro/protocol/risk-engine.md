@@ -32,7 +32,7 @@ The borrower cannot block step 3, because the borrower was never the party holdi
 
 Liquidations are attested in real time, so a lender does not learn about a close after the fact from a report: the attestation is evidence that a specific, identified binary produced that decision from that state. That is what makes the engine checkable without the lender having to trust an operator's account of it.
 
-Combined with [Real-Time Proving](./rtp.md) on the cross-chain reads the engine consumes, that closes the loop from market state to liquidation decision to repayment, with no step where a lender is asked to take somebody's word for it.
+Combined with [Real-Time Proving](./rtp.md) on the cross-chain reads the engine consumes, that closes the loop from market state to liquidation decision to repayment, with no step where a lender is asked to take somebody's word for it. See [Rollout](./programmable-custody.md#rollout) for how far this is deployed today.
 
 ## Residual risk
 
