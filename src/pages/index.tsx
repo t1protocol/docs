@@ -71,11 +71,6 @@ export const integrationGuides = [
     text: 'Deposit into a lending pool, or set one up with your own venues, position limits, and liquidation threshold. Repayment is enforced by the account, not promised by the borrower.',
     to: '/integration/lending',
   },
-  {
-    title: 'Cross-Chain Reads',
-    text: "Request data to be read from other chains and proven by t1 back to your chain. You'll then be able to use the result in your contract. This primitive is useful in ERC-7683-enabled cross-chain intents, among others.",
-    to: '/integration/xChainRead/overview',
-  },
 ]
 
 const Container = styled.div`
@@ -372,7 +367,7 @@ export default function Home() {
             {/* Smart Contracts Section */}
             <ExploreContainer>
               <div style={{ fontSize: '24px', fontWeight: 500, marginBottom: '0.5rem' }}>Integrate with t1</div>
-              <p style={{ marginBottom: '1rem' }}>Three ways to build on the credit protocol</p>
+              <p style={{ marginBottom: '1rem' }}>Two ways to build on the credit protocol</p>
 
               <div
                 style={{
