@@ -134,13 +134,13 @@ yarn run start
 
 This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
 
-## Local Development with netlify's features
+## Local preview of the hosted site
 
 ```console
-netlify dev
+yarn build && npx wrangler@4 dev
 ```
 
-This will let you also test e.g. redirects from netlify.toml.
+This serves `build/` the way Cloudflare does, including the redirects from `static/_redirects`.
 
 ## Clear cache
 
@@ -155,3 +155,13 @@ yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+## Hosting and deployment
+
+The site is served from https://docs.t1protocol.com by a Cloudflare Worker that holds only static assets (free plan; `wrangler.jsonc`). Redirects live in `static/_redirects`. The two PDFs in `static/` are the t1 vision litepaper and the TEE architecture paper.
+
+```console
+yarn build && npx wrangler@4 deploy
+```
+
+Nothing deploys on a merge, so run this after merging to `main`. It needs `npx wrangler@4 login` once (a Cloudflare user with access to the t1 account) or `CLOUDFLARE_API_TOKEN` in the shell. Roll back with `npx wrangler@4 rollback`.
